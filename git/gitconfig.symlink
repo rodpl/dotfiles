@@ -1,0 +1,49 @@
+[user]
+	name = Daniel Dabrowski
+	email = dabrowski.daniel@42n.pl
+[include]
+    path = ~/.gitconfig.github
+[alias]
+	glog = log --graph --full-history --all --color --date=short --pretty=format:'%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%ad [%an] %s'
+	glog5 = glog -5
+	ci = commit
+	co = checkout
+	st = status
+	br = branch
+	sf = svn fetch --all
+	sr = svn rebase
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	standup = log --graph --full-history --all --color --date=short --pretty=format:'%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%ad [%an] %s' --since=yesterday --author=ddabrows
+	svnup = !git svn fetch && git svn rebase -l && git push . remotes/trunk:master
+	svnup2 = !git svn fetch && git svn rebase -l && git push $GIT_DIR remotes/trunk:master
+	svnci = !git svn dcommit && git push . remotes/trunk:master && git checkout master
+	svnci2 = !git svn dcommit && git push $GIT_DIR remotes/trunk:master && git checkout master
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[merge]
+	tool = p4merge
+[diff]
+	guitool = p4merge
+	tool = vimdiff
+	renames = copies
+[core]
+	autocrlf = false
+	quotepath = off
+	excludesfile = ~/.gitignore_global
+[i18n]
+	filesEncoding = utf-8
+[push]
+	default = upstream
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+	keepBackup = false
+[log]
+	date = relative
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
