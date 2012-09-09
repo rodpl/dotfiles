@@ -1,0 +1,7 @@
+colorscheme vividchalk
+"set gfn=DejaVu\ Sans\ Mono:h11:cEASTEUROPE antialias
+set gfn=Droid\ Sans\ Mono:h11:cEASTEUROPE antialias
+"set gfn=Monaco:h10:cEASTEUROPE antialias
+"set gfn=Consolas:h11:cEASTEUROPE antialias
+
+set go-=T

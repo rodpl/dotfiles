@@ -1,0 +1,48 @@
+[submodule "vim/vim.symlink/bundle/slurper"]
+	path = vim/vim.symlink/bundle/slurper
+	url = git@github.com:rodpl/vim-slurper.git
+[submodule "vim/vim.symlink/bundle/Python-Syntax"]
+	path = vim/vim.symlink/bundle/Python-Syntax
+	url = https://github.com/vim-scripts/Python-Syntax.git
+[submodule "vim/vim.symlink/bundle/aftercolors"]
+	path = vim/vim.symlink/bundle/aftercolors
+	url = https://github.com/vim-scripts/AfterColors.vim.git
+[submodule "vim/vim.symlink/bundle/blogit"]
+	path = vim/vim.symlink/bundle/blogit
+	url = http://git.symlink.me/pub/romain/blogit.git
+[submodule "vim/vim.symlink/bundle/dotnet"]
+	path = vim/vim.symlink/bundle/dotnet
+	url = git@github.com:rodpl/vim-dotnet.git
+[submodule "vim/vim.symlink/bundle/fugitive"]
+	path = vim/vim.symlink/bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/vim.symlink/bundle/nerdcommenter"]
+	path = vim/vim.symlink/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/vim.symlink/bundle/nerdtree"]
+	path = vim/vim.symlink/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/vim.symlink/bundle/pandoc"]
+	path = vim/vim.symlink/bundle/pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc.git
+[submodule "vim/vim.symlink/bundle/snipmate"]
+	path = vim/vim.symlink/bundle/snipmate
+	url = https://github.com/vim-scripts/snipMate.git
+[submodule "vim/vim.symlink/bundle/tagbar"]
+	path = vim/vim.symlink/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "vim/vim.symlink/bundle/vibrantink"]
+	path = vim/vim.symlink/bundle/vibrantink
+	url = https://github.com/vim-scripts/vibrantink.git
+[submodule "vim/vim.symlink/bundle/visincr"]
+	path = vim/vim.symlink/bundle/visincr
+	url = https://github.com/vim-scripts/VisIncr.git
+[submodule "vim/vim.symlink/bundle/vividchalk"]
+	path = vim/vim.symlink/bundle/vividchalk
+	url = https://github.com/tpope/vim-vividchalk.git
+[submodule "vim/vim.symlink/bundle/xml"]
+	path = vim/vim.symlink/bundle/xml
+	url = https://github.com/othree/xml.vim.git
+[submodule "vim/vim.symlink/bundle/zencoding"]
+	path = vim/vim.symlink/bundle/zencoding
+	url = https://github.com/mattn/zencoding-vim.git

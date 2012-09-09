@@ -1,0 +1,41 @@
+" Mappings 
+map <S-Enter> O<Esc>    "awesome, inserts new line without going into insert mode
+map <Enter> o<Esc>
+
+cnoremap <c-n> <down>
+cnoremap <c-p> <up>
+
+" No multiple-key chord mapping supported in ViEmu
+"nnoremap <leader><space> :noh<cr>
+nnoremap <esc> :noh<cr><esc>
+
+" Use tabs for indentation
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+vmap <TAB> >gv
+vmap <S-TAB> <gv
+
+" Use space for pageup page down
+nnoremap <space> <C-f>
+nnoremap <S-space> <C-b>
+
+" Turning off some keys {{{2
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+nnoremap <F1> <ESC>
+inoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" Speed up buffer switching {{{2
+map <C-k> <C-W>k
+map <C-j> <C-W>j
+map <C-h> <C-W>h
+map <C-l> <C-W>l

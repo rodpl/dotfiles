@@ -1,0 +1,247 @@
+" Folding cheet sheetIndicates a fast terminal connection.
+" zR    open all folds
+" zM    close all folds
+" za    toggle fold at cursor position
+" zj    move down to start of next fold
+" zk    move up to end of previous fold
+language mes en
+" Manage plugins {{{1
+filetype off            " force reloading *after* pathogen loaded
+silent! call pathogen#runtime_append_all_bundles()
+silent! call pathogen#helptags()
+filetype plugin indent on " enable detection, plugins and indenting in one step
+
+" Settings {{{1
+set nocompatible        " Don't force vi compatibility
+"  Language and encodings {{{2
+set langmenu=en_US.UTF-8
+set enc=utf-8
+set fileencodings=utf-8,latin2
+
+source $VIMRUNTIME/mswin.vim
+set keymodel=""         " mswin includes start/stopsel.
+set aw                  " Save file when compiling, etc.
+set guioptions=Ttma     " Toolbar, menu, tearoffs, autoselect
+set viminfo='20,\"50    " Read/write a .viminfo file, don't store more than 50 lines of registers
+set whichwrap=b,s,<,>,[,] " End of line cursor support
+set nobackup            " Do not create backup files
+set undofile            " Return the name of the undo file that would be used for a file with name {name} when writing.  
+syntax on
+
+" Folders and files {{{2
+set directory=./_backup,$HOME/vimfiles/temp,$VIMRUNTIME/_files,. " directory is the directory for temp file
+set makeef=make.err     " Name of the errorfile for the :make command
+
+" UI {{{2
+set background=dark
+
+set linespace=1         " number of pixel lines inserted between characters
+set wildmenu            " command-line completion operates in an enhanced mode
+set wildmode=list:longest
+set ruler               " Show the line and column number of the cursor position
+"set number              " Print the line number in front of each line
+set relativenumber      " Show the line number relative to the line with the cursor in front of each line. 
+set scrolloff=3         " Minimal number of screen lines to keep above and below the cursor.
+set showmode            " Show (partial) command in the last line of the screen.
+set cmdheight=2         " Number of screen lines to use for the command-line
+set lazyredraw          " do not redraw while running macros (much faster) (LazyRedraw)
+set hidden              " buffer becomes hidden when it is abandoned
+set backspace=2         " make backspace work normal (indent, eol, start)
+set whichwrap+=<,>,h,l  " allow backspace and cursor keys to cross line boundaries
+set mouse=a             " use mouse everywhere
+set shortmess=atI       " shortens messages to avoid 'press a key' prompt
+set report=0            " tell us when any line is changed via : commands
+set visualbell          " Use visual bell instead of beeping.
+set noerrorbells        " don't make noise on error messages
+set cursorline          " Highlight the screen line of the cursor with CursorLine
+set ttyfast             " Indicates a fast terminal connection.
+set fillchars=vert:\ ,stl:\ ,stlnc:\    " make the splitters between windows be blank
+
+" Text formatting {{{2
+set formatoptions=qrn1  " how automatic formatting is to be done
+"set formatoptions=tcqn  " how automatic formatting is to be done
+set autoindent          " take indent for new line from previous line
+set smartindent         " smart autoindenting for C programs
+set smarttab            " use tabs at the start of a line, spaces elsewhere
+set cindent             " do c-style indenting
+set tabstop=4           " tab spacing (settings below are just to unify it)
+set softtabstop=4       " unify
+set shiftwidth=4        " unify
+set expandtab           " No tabs in the output file!
+set nowrap              " do not wrap lines
+set textwidth=79
+set colorcolumn=85
+
+set list
+set lcs=tab:»˙   "show tabs
+set lcs+=trail:˙ "show trailing spaces
+set lcs+=eol:¬   "show end of lines
+
+" Shearching {{{2
+set ignorecase      " If the 'ignorecase' option is on, the case of normal letters is ignored.
+set smartcase       " Override the 'ignorecase' option if the search pattern contains upper case characters.   
+set gdefault        " When on, the ':substitute' flag 'g' is default on.  
+set incsearch       " While typing a search command, show where the pattern, as it was typed so far, matches.  
+set showmatch       " When a bracket is inserted, briefly jump to the matching one.
+set hlsearch        " When there is a previous search pattern, highlight all its matches.
+
+" Mappings {{{1
+let mapleader = ","
+let maplocalleader = "\\"
+
+" Loading shared mappings {{{1
+source $HOME/_vimcommon
+
+" Revert mswin.vim changes {{{2
+imap <C-Y> <C-Y>
+" Speed up formating paragraph {{{2
+nmap <leader>q gqip
+" Content formatting {{{2
+" Xml formatting
+nmap <leader>fxa :%s/></>\r</g<CR>gg=G
+" Strip all trailing whitespaces in the current file
+nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
+" Fold tag
+nnoremap <leader>ft Vatzf
+" Speed up tab switching {{{2
+map <C-S-]> gt
+map <C-S-[> gT
+map <localleader>1 1gt
+map <localleader>2 2gt
+map <localleader>3 3gt
+map <localleader>4 4gt
+map <localleader>5 5gt
+map <localleader>6 6gt
+map <localleader>7 7gt
+map <localleader>8 8gt
+map <localleader>9 9gt
+map <localleader>0 :tablast<CR>
+" Easily modify vimrc {{{2
+nmap <leader>vr :call Edit_vimrc()<CR>
+nmap <leader>vg :call Edit_gvimrc()<CR>
+" http://stackoverflow.com/questions/2400264/is-it-possible-to-apply-vim-configurations-without-restarting/2400289#2400289
+if has("autocmd")
+    augroup myvimrchooks
+        au!
+        au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+        augroup END
+    endif
+" Session management {{{2
+nmap <F12> :call SaveSession()<CR>
+nmap <s-F12> :1,$bd <bar> so ~/.vim/sessions/
+set sessionoptions=buffers,curdir,help,tabpages,winsize,resize
+function! SaveSession()
+  wall
+    let ses = strftime("%y-%m-%d_%H-%M")
+    try
+        exe "mksession! "."~\\.vimsessions\\".ses
+        echomsg "mks success! session file : ".ses
+    catch /^Vim\%((\a\+)\)\=:/
+        echoe "mks failure! error: " .v:exception
+    endtry
+endfunction
+" Toggles & Switches {{{1 
+
+" Toggle line numbers and fold column for easy copying:
+nnoremap <leader><F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+" ,l rapidly toggle 'set list'
+nmap <leader>l :set list!<CR> 
+" ,w rapidly toggle 'set wrap'
+nmap <leader>w :set wrap!<CR>
+" ,s toggle spell checking
+nmap <leader>s :setlocal spell!<CR>
+map <leader>sp :setlocal spell spelllang=pl<CR>
+map <leader>se :setlocal spell spelllang=en<CR>
+
+" Commands and Functions {{{1
+" :Wrap {{{2
+command! -nargs=* Wrap set wrap linebreak nolist
+" Set tabstop, softtabstop and shiftwidth to the same value {{{2
+command! -nargs=* Stab call Stab()
+
+function! Stab()
+  let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+  if l:tabstop > 0
+    let &l:sts = l:tabstop
+    let &l:ts = l:tabstop
+    let &l:sw = l:tabstop
+  endif
+  call SummarizeTabs()
+endfunction
+  
+function! SummarizeTabs()
+  try
+    echohl ModeMsg
+    echon 'tabstop='.&l:ts
+    echon ' shiftwidth='.&l:sw
+    echon ' softtabstop='.&l:sts
+    if &l:et
+      echon ' expandtab'
+    else
+      echon ' noexpandtab'
+    endif
+  finally
+    echohl None
+  endtry
+endfunction
+
+" Edit vim config files {{{2
+function! Edit_gvimrc()
+    if filereadable('C:\Projects\rod\dotfiles.BitBucket\gvimrc')
+        tabedit C:\Projects\rod\dotfiles.BitBucket\gvimrc
+    endif
+    if filereadable('C:\Projects\dotfiles.BitBucket\gvimrc')
+        tabedit C:\Projects\dotfiles.BitBucket\gvimrc
+    endif
+endfunction
+
+function! Edit_vimrc()
+    if filereadable('C:\Projects\rod\dotfiles.BitBucket\vimrc')
+        tabedit C:\Projects\rod\dotfiles.BitBucket\vimrc
+    endif
+    if filereadable('C:\Projects\dotfiles.BitBucket\vimrc')
+        tabedit C:\Projects\dotfiles.BitBucket\vimrc
+    endif
+endfunction
+" File types {{{1
+" Only do this part when compiled with support for autocommands
+if has("autocmd")
+  " Enable file type detection
+  filetype on
+
+  " Syntax of these languages is fussy over tabs Vs spaces
+  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+  " Customisations based on house-style (arbitrary)
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+
+  " Treat .rss files as XML
+  autocmd BufNewFile,BufRead *.rss, *.config, *.StyleCop, *.xml, *.xamlx setfiletype xml
+  autocmd BufNewFile,BufRead *.boo setfiletype boo 
+  autocmd BufNewFile,BufRead *.brail setfiletype brail
+  autocmd BufNewFile,BufRead *.ps1 setfiletype ps1
+  autocmd BufNewFile,BufRead *.bat :set tw=0
+  autocmd BufNewFile,BufRead *.cmd :set tw=0
+endif
+
+" Plugins {{{1
+" Pandoc {{{2
+let g:pandoc_use_hard_wraps = 1
+let g:pandoc_auto_format = 0
+if has("autocmd")
+    autocmd FileType pandoc setlocal tw=80 ts=2 sw=2 sts=2 expandtab spell nolist wrap
+endif
+" NERDTree {{{2
+map <F2> :NERDTreeToggle<CR>
+imap <F2> <ESC>:NERDTreeToggle<CR>
+map <A-S-l> :NERDTreeFind<CR>
+imap <A-S-l> <ESC>:NERDTreeFind<CR>
+" Tagbar {{2
+nmap <F8> :TagbarToggle<CR>
+"  Modelines {{{1
+" vim: nowrap fdm=marker
+"z }}}
+
