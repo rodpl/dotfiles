@@ -10,6 +10,7 @@
 [submodule "vim/vim.symlink/bundle/blogit"]
 	path = vim/vim.symlink/bundle/blogit
 	url = http://git.symlink.me/pub/romain/blogit.git
+    ignore = dirty
 [submodule "vim/vim.symlink/bundle/dotnet"]
 	path = vim/vim.symlink/bundle/dotnet
 	url = git@github.com:rodpl/vim-dotnet.git
@@ -28,6 +29,7 @@
 [submodule "vim/vim.symlink/bundle/snipmate"]
 	path = vim/vim.symlink/bundle/snipmate
 	url = https://github.com/vim-scripts/snipMate.git
+    ignore = dirty
 [submodule "vim/vim.symlink/bundle/tagbar"]
 	path = vim/vim.symlink/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
@@ -37,6 +39,7 @@
 [submodule "vim/vim.symlink/bundle/visincr"]
 	path = vim/vim.symlink/bundle/visincr
 	url = https://github.com/vim-scripts/VisIncr.git
+    ignore = dirty
 [submodule "vim/vim.symlink/bundle/vividchalk"]
 	path = vim/vim.symlink/bundle/vividchalk
 	url = https://github.com/tpope/vim-vividchalk.git
@@ -46,3 +49,4 @@
 [submodule "vim/vim.symlink/bundle/zencoding"]
 	path = vim/vim.symlink/bundle/zencoding
 	url = https://github.com/mattn/zencoding-vim.git
+    ignore = dirty
