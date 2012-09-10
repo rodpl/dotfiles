@@ -28,7 +28,7 @@ task :install do
       FileUtils.rm_rf(target) if overwrite || overwrite_all
       `mv "$HOME/.#{file}" "$HOME/.#{file}.backup"` if backup || backup_all
     end
-    `ln -s "$PWD/#{linkable}" "#{target}"`
+    symlink_file(linkable, target)
   end
 
   Rake::Task['update'].invoke
@@ -57,3 +57,51 @@ task :update do
 end
 
 task :default => 'install'
+
+def symlink_file(linkable, target)
+    if (windows?)
+        symlink_file_on_windows(linkable, target)
+    else
+        `ln -s "$PWD/#{linkable}" "#{target}"`
+    end
+end
+
+def symlink_file_on_windows(linkable, target)
+    command = [] << "cmd" << "/c" << "mklink" 
+    command << "/d" if File.directory?(linkable)
+    command << target << linkable
+end
+
+# Platform checks
+
+def windows?
+  (/mswin|msys|mingw32/ =~ RbConfig::CONFIG['host_os']) != nil
+end
+
+def mac?
+  (/darwin|mac os/ =~ RbConfig::CONFIG['host_os']) != nil
+end
+
+def linux?
+  (/linux/ =~ RbConfig::CONFIG['host_os']) != nil
+end
+
+def cygwin?
+  RUBY_PLATFORM.downcase.include?("cygwin")
+end
+
+def unix?
+  linux? or mac?
+end
+
+def classpath_separator?
+  if cygwin? then
+    ";"
+  else
+    File::PATH_SEPARATOR
+  end
+end
+
+def all?
+  true
+end
