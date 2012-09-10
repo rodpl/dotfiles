@@ -1,6 +1,29 @@
 require 'rake'
+class String
+    def in(dir)
+        File.join(dir, self)
+    end
+
+    def to_absolute
+        File.expand_path(self)
+    end
+
+    def winpath
+        self.gsub(File::SEPARATOR, File::ALT_SEPARATOR || File::SEPARATOR)
+    end
+end
+
+WINDOWS_FILE_MAP = {
+  '.vim' => 'vimfiles',
+  '.gvimrc' => '_gvimrc',
+  '.vimrc' => '_vimrc',
+  '.vimcommon' => '_vimcommon',
+  '.vsvimrc' => '_vsvimrc',
+}
+
 desc "Link the dotfiles into position"
 task :install do
+    puts "Installing ..."
     linkables = Dir.glob('*/**{.symlink}')
 
     skip_all = false
@@ -11,8 +34,10 @@ task :install do
         overwrite = false
         backup = false
 
-        file = linkable.split('/').last.split('.symlink').last
-        target = "#{ENV['HOME']}/.#{file}"
+        target = map_to_target(linkable)
+        next if target == :skip
+        linkable = linkable.winpath if (windows?)
+        target = target.winpath if (windows?)
         if File.exists?(target) || File.symlink?(target)
             unless skip_all || overwrite_all || backup_all
                 puts "File already exists: #{target}, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all, [A]bort"
@@ -25,13 +50,14 @@ task :install do
                 when 's' then next
                 end
             end
-            FileUtils.rm_rf(target) if overwrite || overwrite_all
+            overwrite_file(target) if overwrite || overwrite_all
             `mv "$HOME/.#{file}" "$HOME/.#{file}.backup"` if backup || backup_all
         end
         symlink_file(linkable, target)
     end
 
     Rake::Task['update'].invoke
+    puts "Installed."
 end
 
 task :uninstall do
@@ -58,7 +84,30 @@ end
 
 task :default => 'install'
 
+def map_to_target(linkable)
+    puts linkable
+    puts file
+    file = linkable.split('/').last.split('.symlink').last
+    puts file
+    file = "." << file
+    puts file
+    target = file
+    target = WINDOWS_FILE_MAP[file] if windows? && WINDOWS_FILE_MAP[file]
+    puts target
+    target == :skip ? :skip : "#{ENV['HOME']}/#{target}"
+end
+
+
+def overwrite_file(file)
+  if windows? && File.directory?(file)
+    system %Q{rmdir /s /q "#{file}"}
+  else
+    rm_rf(file)
+  end
+end
+
 def symlink_file(linkable, target)
+    puts "Symlinking: " << linkable << " is linked as " << target
     if (windows?)
         symlink_file_on_windows(linkable, target)
     else
@@ -67,9 +116,12 @@ def symlink_file(linkable, target)
 end
 
 def symlink_file_on_windows(linkable, target)
+    linkable_absolute = linkable.to_absolute.winpath
+    target_absoulte = target.to_absolute.winpath
     command = [] << "cmd" << "/c" << "mklink" 
-    command << "/d" if File.directory?(linkable)
-    command << target << linkable
+    command << "/d" if File.directory?(linkable_absolute)
+    command << target_absoulte << linkable_absolute
+    sh(*command)
 end
 
 # Platform checks
@@ -104,6 +156,6 @@ end
 
 def all?
     true
-e5@nd
+end
 
 # vim: nowrap sw=2 sts=2 ts=8 ft=ruby:
