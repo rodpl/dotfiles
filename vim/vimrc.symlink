@@ -4,7 +4,8 @@
 " za    toggle fold at cursor position
 " zj    move down to start of next fold
 " zk    move up to end of previous fold
-language mes en
+set langmenu=en_US.UTF-8
+" language en
 " Manage plugins {{{1
 filetype off            " force reloading *after* pathogen loaded
 silent! call pathogen#runtime_append_all_bundles()
@@ -90,7 +91,11 @@ let mapleader = ","
 let maplocalleader = "\\"
 
 " Loading shared mappings {{{1
-source $HOME/_vimcommon
+if has('win32')
+    source $HOME/_vimcommon
+else
+    source $HOME/.vimcommon
+endif
 
 " Revert mswin.vim changes {{{2
 imap <C-Y> <C-Y>
