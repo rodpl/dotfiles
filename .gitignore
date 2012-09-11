@@ -1,3 +1,3 @@
-vim/vim.symlink/doc/tags
+*.pyc
 vim/vim.symlink/doc/tags
 powershell/WindowsPowerShell.symlink/environment.ps1
