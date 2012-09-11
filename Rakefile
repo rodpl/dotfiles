@@ -15,16 +15,18 @@ class String
 end
 
 WINDOWS_FILE_MAP = {
-  '.vim' => 'vimfiles',
-  '.gvimrc' => '_gvimrc',
-  '.vimrc' => '_vimrc',
-  '.vimcommon' => '_vimcommon',
-  '.vsvimrc' => '_vsvimrc',
-  '.ReSharper' => 'Documents/ReSharper',
+  '.vim'               => 'vimfiles',
+  '.gvimrc'            => '_gvimrc',
+  '.vimrc'             => '_vimrc',
+  '.vimcommon'         => '_vimcommon',
+  '.vsvimrc'           => '_vsvimrc',
+  '.ReSharper'         => 'Documents/ReSharper',
+  '.WindowsPowerShell' => 'Documents/WindowsPowerShell',
 }
 
 MAC_FILE_MAP = {
-  '.ReSharper' => :skip
+  '.ReSharper'         => :skip,
+  '.WindowsPowerShell' => :skip,
 }
 
 desc "Link the dotfiles into position"

@@ -50,3 +50,12 @@
 	path = vim/vim.symlink/bundle/zencoding
 	url = https://github.com/mattn/zencoding-vim.git
     ignore = dirty
+[submodule "powershell/WindowsPowerShell.symlink/Modules/posh-git"]
+	path = powershell/WindowsPowerShell.symlink/Modules/posh-git
+	url = https://github.com/dahlbyk/posh-git.git
+[submodule "powershell/WindowsPowerShell.symlink/Modules/posh-hg"]
+	path = powershell/WindowsPowerShell.symlink/Modules/posh-hg
+	url = https://github.com/JeremySkinner/posh-hg.git
+[submodule "powershell/WindowsPowerShell.symlink/Modules/posh-svn"]
+	path = powershell/WindowsPowerShell.symlink/Modules/posh-svn
+	url = https://github.com/JeremySkinner/posh-svn.git
