@@ -1,0 +1,18 @@
+<TemplatesExport>
+  <Template uid="2883fd7a-5a7e-4fbd-93ef-f0bf4086a0a1" shortcut="" description="#region constructors..." text="#region contructors...&#xD;&#xA;$SELECTION$&#xD;&#xA;#endregion&#xD;&#xA;" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories />
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="dba24f77-3f31-471f-814a-10dbc0a92eff" shortcut="" description="cursor changing" text="try&#xD;&#xA;{&#xD;&#xA;	this.Cursor = Cursors.WaitCursor;&#xD;&#xA;	$SELECTION$&#xD;&#xA;}&#xD;&#xA;finally&#xD;&#xA;{&#xD;&#xA;	this.Cursor = Cursors.Default;&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Expression" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables />
+    <CustomProperties />
+  </Template>
+</TemplatesExport>

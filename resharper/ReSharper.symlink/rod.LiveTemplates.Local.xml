@@ -1,0 +1,60 @@
+<TemplatesExport>
+  <Template uid="fc2f3ada-c863-4d36-bb0d-4b6d8071c7aa" shortcut="gmock" description="Generates mock" text=" MockRepository.GenerateMock&lt;$TYPE$&gt;();" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Expression" minimumLanguageVersion="3.0" />
+    </Context>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables>
+      <Variable name="TYPE" expression="guessExpectedType()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="1fdb14d5-ce54-406b-b7a7-69d278aa47b3" shortcut="record" description="" text="using (MockRepository.Record())&#xD;&#xA;{&#xD;&#xA;	$END$&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;using (MockRepository.Playback())&#xD;&#xA;{&#xD;&#xA;	&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Expression" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="f7b541d7-384e-43bb-81fa-6d68ccb629f2" shortcut="pmock" description="" text="MockRepository.PartialMock&lt;$TYPE$&gt;()" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Expression" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables>
+      <Variable name="TYPE" expression="guessExpectedType()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="17114b4d-0d66-4d61-9e0a-c716b83dfc01" shortcut="dmock" description="" text="MockRepository.DynamicMock&lt;$TYPE$&gt;()" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Expression" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables>
+      <Variable name="TYPE" expression="guessExpectedType()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="9ceb5310-5d7e-4a00-aebb-1ec441a5544f" shortcut="cmock" description="Creates Mock" text="MockRepository.StrictMock&lt;$TYPE$&gt;()" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Expression" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables>
+      <Variable name="TYPE" expression="guessExpectedType()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+</TemplatesExport>

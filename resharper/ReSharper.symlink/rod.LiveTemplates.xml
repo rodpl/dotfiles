@@ -1,0 +1,601 @@
+<TemplatesExport>
+  <Template uid="5f925e94-c79b-4b1f-8dd0-5962152208bd" shortcut="ntest" description="New Test" text="[Test]&#xD;&#xA;public void $TESTNAME$()&#xD;&#xA;{&#xD;&#xA;   $END$    &#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Test" />
+    </Categories>
+    <Variables>
+      <Variable name="TESTNAME" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="c27927b6-2779-4195-8314-9ce09682ec0d" shortcut="esp" description="Set Property Expectation" text="Expect.Once.On($MOCKOBJECT$).SetProperty(&quot;$PROPERTYNAME$&quot;).To($PROPERTYVALUE$);" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories />
+    <Variables>
+      <Variable name="MOCKOBJECT" expression="" initialRange="0" />
+      <Variable name="PROPERTYNAME" expression="" initialRange="0" />
+      <Variable name="PROPERTYVALUE" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="02ac9850-c842-449b-8764-bc12ff49d313" shortcut="rec" description="region constructors" text="#region constructors...&#xD;&#xA;$END$&#xD;&#xA;#endregion" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories>
+      <Category name="Regions" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="b004e7a5-9f8f-44dd-86ad-d6a1af52edf2" shortcut="pb" description="PropertyBag" text="PropertyBag[&quot;$KEY$&quot;] = $VALUE$;" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="MonoRail" />
+    </Categories>
+    <Variables>
+      <Variable name="KEY" expression="" initialRange="0" />
+      <Variable name="VALUE" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="1e1a48c1-a83d-468d-b79b-de619282f423" shortcut="sgp" description="Stub Get Property" text="Stub.On($MOCKOBJECT$).GetProperty(&quot;$PROPERTYNAME$&quot;).Will(Return.Value($RETURNVALUE$));" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="MOCKOBJECT" expression="" initialRange="0" />
+      <Variable name="PROPERTYNAME" expression="" initialRange="0" />
+      <Variable name="RETURNVALUE" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="4e59d004-4520-488f-bb82-dcf1e6ecf540" shortcut="ra" description="ReplayAll" text="mockery.ReplayAll();" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="24657317-656a-44b5-ab8a-732c0c79f420" shortcut="sr" description="SetupResult.For" text="SetupResult.For($EXPECTATION$).Return($RETURN$);" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables>
+      <Variable name="EXPECTATION" expression="" initialRange="0" />
+      <Variable name="RETURN" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="fae11e33-21ce-4317-a986-f01a07ab0675" shortcut="rtest" description="Row Test" text="[RowTest]&#xD;&#xA;public void $TESTNAME$()&#xD;&#xA;{&#xD;&#xA;  $END$&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Test" />
+    </Categories>
+    <Variables>
+      <Variable name="TESTNAME" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="6995cc2f-44c9-4462-a2ce-0a6ac9fe59bb" shortcut="glist" description="Generic IList&lt;T&gt; Declaration" text="IList&lt;$LISTTYPE$&gt; $LISTNAME$ = new List&lt;$LISTTYPE$&gt;();" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="LISTTYPE" expression="" initialRange="0" />
+      <Variable name="LISTNAME" expression="suggestVariableName()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="41b01656-dffe-4398-b2ed-ba2a36f7c749" shortcut="log" description="log4net statement" text="#region Logging&#xD;&#xA;&#xD;&#xA;    private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);&#xD;&#xA;&#xD;&#xA;#endregion" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="1f04b4d4-3ec9-48f1-bb91-bd283a8c26fb" shortcut="aif" description="Assert.IsFalse" text="Assert.IsFalse($CONDITION$);" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories>
+      <Category name="Asserts" />
+    </Categories>
+    <Variables>
+      <Variable name="CONDITION" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="0b741b39-c6a3-4068-a07d-f0420c6d4c45" shortcut="ain" description="Assert.IsNull" text="Assert.IsNull($OBJECTTOCHECK$);" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories>
+      <Category name="Asserts" />
+    </Categories>
+    <Variables>
+      <Variable name="OBJECTTOCHECK" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="45c407eb-3c7c-4b6b-a805-987641bfc383" shortcut="ait" description="Assert.IsTrue" text="Assert.IsTrue($CONDITION$);" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories>
+      <Category name="Asserts" />
+    </Categories>
+    <Variables>
+      <Variable name="CONDITION" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="fcc709f4-71c9-4366-83fe-eb6e1adeef5c" shortcut="ann" description="Assert.IsNotNull" text="Assert.IsNotNull($OBJECTTOCHECK$);" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories>
+      <Category name="Asserts" />
+    </Categories>
+    <Variables>
+      <Variable name="OBJECTTOCHECK" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="f39c2431-7b04-4ecc-a859-2525fefc92f9" shortcut="nprop" description="NAnt Prop" text="&lt;property name=&quot;$NAME$&quot; value=&quot;$VALUE$&quot; /&gt;" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <FileNameContext mask="*.build; *.xml" />
+    </Context>
+    <Categories>
+      <Category name="NAnt" />
+    </Categories>
+    <Variables>
+      <Variable name="NAME" expression="" initialRange="0" />
+      <Variable name="VALUE" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="cbec972a-1d6b-4dd8-b6df-10560c935c92" shortcut="ec" description="Expect Call for Rhino Mocks" text="Expect.Call($CALL$);" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables>
+      <Variable name="CALL" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="f9303af8-ae3c-4c6c-8fd7-aec1999fb317" shortcut="ecr" description="Expect Call Return for Rhino Mocks" text="Expect.Call($CALL$).Return($RETURN$);" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables>
+      <Variable name="CALL" expression="" initialRange="0" />
+      <Variable name="RETURN" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="60f944c7-1b96-4755-9295-25f3639d335f" shortcut="ect" description="Expect Call Throw for Rhino Mocks" text="Expect.Call($CALL$).Throw(new Exception());" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables>
+      <Variable name="CALL" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="a476b41d-7f33-4705-a1fa-38da54fb3cc1" shortcut="fsu" description="Test Fixture Setup" text="[TestFixtureSetUp]&#xD;&#xA;public void FixtureSetUp()&#xD;&#xA;{&#xD;&#xA;   $END$&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories>
+      <Category name="Test" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="8b42d1a4-d3b8-4b5e-b748-3d4e74f51238" shortcut="ftd" description="Test Fixture Tear Down" text="[TestFixtureTearDown]&#xD;&#xA;public void FixtureTearDown()&#xD;&#xA;{&#xD;&#xA;   $END$&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories>
+      <Category name="Test" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="4daa071e-3d06-4709-8aaa-ff71a6395946" shortcut="su" description="SetUp" text="[SetUp]&#xD;&#xA;public void SetUp()&#xD;&#xA;{&#xD;&#xA;   $END$&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories>
+      <Category name="Test" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="0b8a560c-35fe-4828-8758-510a2a95effd" shortcut="td" description="TearDown" text="[TearDown]&#xD;&#xA;public void TearDown()&#xD;&#xA;{&#xD;&#xA;  $END$&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories>
+      <Category name="Test" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="e8cee938-60a4-4530-bc62-712c80a43082" shortcut="anon" description="Anonymous delegate" text="delegate&#xD;&#xA;{&#xD;&#xA;    $METHODBODY$&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories />
+    <Variables>
+      <Variable name="METHODBODY" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="341de493-3eed-4e43-93a4-988b67592b90" shortcut="egp" description="Get Property Expectation" text="Expect.Once.On($MOCKOBJECT$).GetProperty(&quot;$PROPERTYNAME$&quot;).Will(Return.Value($RETURNVALUE$));" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories />
+    <Variables>
+      <Variable name="MOCKOBJECT" expression="" initialRange="0" />
+      <Variable name="PROPERTYNAME" expression="" initialRange="0" />
+      <Variable name="RETURNVALUE" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="1b03c9b6-7158-4bf6-90bb-d295dfb46024" shortcut="em" description="Method Expectation" text="Expect.Once.On($MOCKOBJECT$).Method(&quot;$METHODNAME$&quot;);" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories />
+    <Variables>
+      <Variable name="MOCKOBJECT" expression="" initialRange="0" />
+      <Variable name="METHODNAME" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="4879b555-13e9-490d-bc66-5344448d6384" shortcut="ema" description="Method Expectation With Arguments" text="Expect.Once.On($MOCKOBJECT$).Method(&quot;$METHODNAME$&quot;).With($ARGUMENTS$);" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories />
+    <Variables>
+      <Variable name="MOCKOBJECT" expression="" initialRange="0" />
+      <Variable name="METHODNAME" expression="" initialRange="0" />
+      <Variable name="ARGUMENTS" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="e924b77b-75f0-461f-b4f2-1fc93fcaa90a" shortcut="emar" description="Method Expectation With Arguments And Return Value" text="Expect.Once.On($MOCKOBJECT$).Method(&quot;$METHODNAME$&quot;).With($ARGUMENTS$).Will(Return.Value($RETURNVALUE$));" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories />
+    <Variables>
+      <Variable name="MOCKOBJECT" expression="" initialRange="0" />
+      <Variable name="METHODNAME" expression="" initialRange="0" />
+      <Variable name="ARGUMENTS" expression="" initialRange="0" />
+      <Variable name="RETURNVALUE" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="def1a5fc-ac22-484c-9826-4c753bcfce6a" shortcut="emr" description="Method Expectation With Return Value" text="Expect.Once.On($MOCKOBJECT$).Method(&quot;$METHODNAME$&quot;).Will(Return.Value($RETURNVALUE$));" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories />
+    <Variables>
+      <Variable name="MOCKOBJECT" expression="" initialRange="0" />
+      <Variable name="METHODNAME" expression="" initialRange="0" />
+      <Variable name="RETURNVALUE" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="fa529415-e6dc-4847-99b6-4d71cc71258e" shortcut="psrs" description="public static readonly string" text="public static readonly string $NAME$ = $VALUE$;" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories />
+    <Variables>
+      <Variable name="NAME" expression="" initialRange="0" />
+      <Variable name="VALUE" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="f2539d3a-b7ad-4dc0-b675-0bda3b817a0a" shortcut="thrn" description="Not implemented exception" text="throw new NotImplementedException();" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories />
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="e01e3cd3-8d58-486e-9536-2c476386b0cf" shortcut="tsu" description="Test SetUp" text="		[SetUp]&#xD;&#xA;		public void SetUp()&#xD;&#xA;		{&#xD;&#xA;			$END$&#xD;&#xA;		}&#xD;&#xA;" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Expression, TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Test" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="e328b9d4-71af-4e0f-ba2e-affea80f7bba" shortcut="pbm" description="Public method" text="public $TYPE$ $NAME$ ($PARAMS$)&#xD;&#xA;{&#xD;&#xA;	$END$&#xD;&#xA;}&#xD;&#xA;" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Methods" />
+    </Categories>
+    <Variables>
+      <Variable name="TYPE" expression="constant(&quot;void&quot;)" initialRange="0" />
+      <Variable name="NAME" expression="constant(&quot;Name&quot;)" initialRange="0" />
+      <Variable name="PARAMS" expression="constant(&quot;&quot;)" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="7283ccd7-ad93-4235-add4-eb5ac0beae46" shortcut="pbmb" description="public bool method" text="public bool $NAME$ ($PARAMS$)&#xD;&#xA;{&#xD;&#xA;	$END$&#xD;&#xA;	return false;&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Methods" />
+    </Categories>
+    <Variables>
+      <Variable name="NAME" expression="" initialRange="0" />
+      <Variable name="PARAMS" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="aeaa48bd-cf61-4e84-a701-b48b8ef8aace" shortcut="wlem" description="DebugWriteLine" text="Debug.WriteLine(String.Format(&quot;{0} : $METHODNAME$- {1}&quot;, GetType(), $END$));" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Statement" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="METHODNAME" expression="typeMember()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="0941b396-576e-4291-8160-77a4c4756cda" shortcut="ptmockery" description="Creates protected mockery property" text="protected MockRepository Mockery { get; set; }&#xD;&#xA;" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="17bac088-9930-4f99-8b8c-557ab3ef6f66" shortcut="record" description="" text="using (Mockery.Record())&#xD;&#xA;{&#xD;&#xA;	$END$&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;using (Mockery.Playback())&#xD;&#xA;{&#xD;&#xA;	&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Expression" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="86809561-71eb-4b14-882a-18f2b3a2b354" shortcut="gmock" description="Generates mock" text=" MockRepository.GenerateMock&lt;$TYPE$&gt;();" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Expression" minimumLanguageVersion="3.0" />
+    </Context>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables>
+      <Variable name="TYPE" expression="guessExpectedType()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="1d91c41f-a60c-40df-8064-7a3aa2bc7691" shortcut="cmock" description="Creates Mock" text="Mockery.StrictMock&lt;$TYPE$&gt;()" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Expression" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables>
+      <Variable name="TYPE" expression="guessExpectedType()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="ff92dfaa-0b07-414d-8c02-540e3f51c95e" shortcut="cexception" description="Exception class definition" text="	[Serializable]&#xD;&#xA;	public class $EXCEPTION_NAME$ : $BASE_EXCEPTION$&#xD;&#xA;	{&#xD;&#xA;		public $EXCEPTION_NAME$(string message) : base(message)&#xD;&#xA;		{&#xD;&#xA;		}&#xD;&#xA;&#xD;&#xA;		public $EXCEPTION_NAME$()&#xD;&#xA;		{&#xD;&#xA;		}&#xD;&#xA;&#xD;&#xA;		public $EXCEPTION_NAME$(SerializationInfo info, StreamingContext context) : base(info, context)&#xD;&#xA;		{&#xD;&#xA;		}&#xD;&#xA;&#xD;&#xA;		public $EXCEPTION_NAME$(string message, Exception innerException) : base(message, innerException)&#xD;&#xA;		{&#xD;&#xA;		}&#xD;&#xA;	}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="TypeAndNamespace" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="EXCEPTION_NAME" expression="" initialRange="0" />
+      <Variable name="BASE_EXCEPTION" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="2ec6ca15-7113-42e0-ad6e-53395ad70bd4" shortcut="dmock" description="" text="Mockery.DynamicMock&lt;$TYPE$&gt;()" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Expression" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables>
+      <Variable name="TYPE" expression="guessExpectedType()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="897dd263-f8df-4d5f-b917-bf13ff12a2ac" shortcut="pmock" description="" text="Mockery.PartialMock&lt;$TYPE$&gt;()" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Expression" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Rhino" />
+    </Categories>
+    <Variables>
+      <Variable name="TYPE" expression="guessExpectedType()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="a1735b3f-209f-4e6a-b5b8-b595d6406297" shortcut="ioob" description="Override implicit operator fo ObjectBuilder" text="public static implicit operator $TYPE$($TYPE$ObjectBuilder builder)&#xD;&#xA;{&#xD;&#xA;	return builder.Return();&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Test" />
+    </Categories>
+    <Variables>
+      <Variable name="TYPE" expression="guessExpectedType()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="2eca4298-a37e-48fe-a60f-9ef761396275" shortcut="fs" description="Field string" text="private string $END$;" reformat="False" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Fields" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="25017a40-ac58-4899-97e5-2c2a3b2e2a4c" shortcut="rt" description="return true" text="return true;" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Expression" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="3d7d6118-c56d-4941-b969-e476317b6e42" shortcut="he" description="Hack comment" text="HACK: $DATE$ ($USER$) - $END$" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories />
+    <Variables>
+      <Variable name="DATE" expression="getCurrentDate(&quot;yyyy-MM-dd&quot;)" initialRange="0" />
+      <Variable name="USER" expression="getFullUserName()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="4e9048c3-314f-4241-96ad-c5a8d03cdc2c" shortcut="aae" description="Assert.AreEqual" text="Assert.AreEqual($EXPECTED$, $ACTUAL$);" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories>
+      <Category name="Asserts" />
+    </Categories>
+    <Variables>
+      <Variable name="ACTUAL" expression="" initialRange="0" />
+      <Variable name="EXPECTED" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="db1686e0-6e02-4eb7-baaf-17d15e8ab2f6" shortcut="lep" description="Localizable element property" text="        [XmlIgnore]&#xD;&#xA;        public LocalizableElement $PROP_NAME$&#xD;&#xA;        {&#xD;&#xA;            get { return GetElement(&quot;$PROP_NAME$&quot;); }&#xD;&#xA;            set { SetElement(&quot;$PROP_NAME$&quot;, value); }&#xD;&#xA;        }" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="PROP_NAME" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="2693e63d-a7c1-42e9-9b26-958e1eaabe2e" shortcut="deb" description="Debug line" text="Debug.WriteLine(&quot;[$PROJECT$] - $CLASS$ - $METHOD$ $END$&quot;);" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Statement" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="PROJECT" expression="getOutputName()" initialRange="0" />
+      <Variable name="CLASS" expression="typeName()" initialRange="0" />
+      <Variable name="METHOD" expression="typeMember()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="d03d17ed-03cf-48c5-8528-58790204ae75" shortcut="aaa" description="Arrange Act Assert" text="		// Arrange&#xD;&#xA;		$END$&#xD;&#xA;		// Act&#xD;&#xA;		// Assert" reformat="False" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="InCSharpExpression" minimumLanguageVersion="2.0" />
+    </Scopes>
+    <Categories>
+      <Category name="Test" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="cfdf27ea-2ea1-45fe-9212-758e458124e8" shortcut="note" description="" text="Note: $DATE$ ($USER$) - $END$" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories />
+    <Variables>
+      <Variable name="DATE" expression="getCurrentDate(&quot;yyyy-mm-dd&quot;)" initialRange="0" />
+      <Variable name="USER" expression="getFullUserName()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="c56cc40b-3122-4020-a1df-7ffed58045a4" shortcut="subf" description="" text="Substitute.For&lt;$T$&gt;();$END$" reformat="True" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="InCSharpFile" minimumLanguageVersion="2.0" />
+    </Scopes>
+    <Categories>
+      <Category name="NSubstitute" />
+    </Categories>
+    <Variables>
+      <Variable name="T" expression="guessExpectedType()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="4279e4b0-1332-4271-a355-5afcdcb13bc4" shortcut="saa" description="" text="Arg.Any&lt;$T$&gt;()$END$" reformat="False" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="InCSharpFile" minimumLanguageVersion="2.0" />
+    </Scopes>
+    <Categories>
+      <Category name="NSubstitute" />
+    </Categories>
+    <Variables>
+      <Variable name="T" expression="guessExpectedType()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="3cfe2040-9ab2-40e7-a419-4c1af4c6f691" shortcut="sai" description="" text="Arg.Is&lt;$T$&gt;($END$)" reformat="False" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="InCSharpFile" minimumLanguageVersion="2.0" />
+    </Scopes>
+    <Categories>
+      <Category name="NSubstitute" />
+    </Categories>
+    <Variables>
+      <Variable name="T" expression="guessExpectedType()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+</TemplatesExport>

@@ -1,4 +1,5 @@
 require 'rake'
+
 class String
     def in(dir)
         File.join(dir, self)
@@ -19,6 +20,11 @@ WINDOWS_FILE_MAP = {
   '.vimrc' => '_vimrc',
   '.vimcommon' => '_vimcommon',
   '.vsvimrc' => '_vsvimrc',
+  '.ReSharper' => 'Documents/ReSharper',
+}
+
+MAC_FILE_MAP = {
+  '.ReSharper' => :skip
 }
 
 desc "Link the dotfiles into position"
@@ -85,15 +91,11 @@ end
 task :default => 'install'
 
 def map_to_target(linkable)
-    puts linkable
-    puts file
     file = linkable.split('/').last.split('.symlink').last
-    puts file
     file = "." << file
-    puts file
     target = file
     target = WINDOWS_FILE_MAP[file] if windows? && WINDOWS_FILE_MAP[file]
-    puts target
+    target = MAC_FILE_MAP[file] if mac? && MAC_FILE_MAP[file]
     target == :skip ? :skip : "#{ENV['HOME']}/#{target}"
 end
 

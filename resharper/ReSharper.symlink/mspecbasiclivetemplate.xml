@@ -1,0 +1,20 @@
+<TemplatesExport>
+  <Template uid="09e620db-e86b-4fa1-aa63-9ccceeda4f8d" shortcut="espec" description="Empty Specification" text="[Subject(&quot;$subject$&quot;)]&#xD;&#xA;public class $when$&#xD;&#xA;{&#xD;&#xA;	It $should$;$END$&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Categories />
+    <Variables>
+      <Variable name="subject" expression="" initialRange="0" />
+      <Variable name="when" expression="" initialRange="0" />
+      <Variable name="should" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="7e691a71-f8c8-4019-8833-d6eba2d9d0e6" shortcut="spec" description="Specification" text="[Subject(&quot;$subject$&quot;)]&#xD;&#xA;public class $when$ &#xD;&#xA;{&#xD;&#xA;	Establish context = () =&gt;&#xD;&#xA;	{&#xD;&#xA;	};&#xD;&#xA;&#xD;&#xA;	Because of = () =&gt;&#xD;&#xA;	{&#xD;&#xA;	};&#xD;&#xA;&#xD;&#xA;	It $should$ = () =&gt; &#xD;&#xA;	{&#xD;&#xA;		$END$&#xD;&#xA;	};&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Categories />
+    <Variables>
+      <Variable name="subject" expression="" initialRange="0" />
+      <Variable name="when" expression="" initialRange="0" />
+      <Variable name="should" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+</TemplatesExport>

@@ -1,0 +1,39 @@
+<TemplatesExport>
+  <Template uid="ef72527e-8a57-4463-a05a-94aa20fe7c8a" shortcut="inpc" description="INotifyPropertyChanged event declaration" text="#region INotifyPropertyChanged event&#xD;&#xA;&#xD;&#xA;///&lt;summary&gt;&#xD;&#xA;///Occurs when a property value changes.&#xD;&#xA;///&lt;/summary&gt;&#xD;&#xA;public event PropertyChangedEventHandler PropertyChanged;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;/// &lt;summary&gt;&#xD;&#xA;/// Raises the &lt;see cref=&quot;PropertyChanged&quot;/&gt; event for&#xD;&#xA;/// a given property.&#xD;&#xA;/// &lt;/summary&gt;&#xD;&#xA;/// &lt;param name=&quot;propertyName&quot;&gt;The name of the changed property.&lt;/param&gt;&#xD;&#xA;protected void OnPropertyChanged(string propertyName)&#xD;&#xA;{&#xD;&#xA;  //validate the property name in debug builds&#xD;&#xA;  VerifyProperty(propertyName);&#xD;&#xA;  &#xD;&#xA;  if (PropertyChanged != null)&#xD;&#xA;  {&#xD;&#xA;    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;/// &lt;summary&gt;&#xD;&#xA;/// Verifies whether the current class provides a property with a given&#xD;&#xA;/// name. This method is only invoked in debug builds, and results in&#xD;&#xA;/// a runtime exception if the &lt;see cref=&quot;OnPropertyChanged&quot;/&gt; method&#xD;&#xA;/// is being invoked with an invalid property name. This may happen if&#xD;&#xA;/// a property's name was changed but not the parameter of the property's&#xD;&#xA;/// invocation of &lt;see cref=&quot;OnPropertyChanged&quot;/&gt;.&#xD;&#xA;/// &lt;/summary&gt;&#xD;&#xA;/// &lt;param name=&quot;propertyName&quot;&gt;The name of the changed property.&lt;/param&gt;&#xD;&#xA;[Conditional(&quot;DEBUG&quot;)]&#xD;&#xA;private void VerifyProperty(string propertyName)&#xD;&#xA;{&#xD;&#xA;  Type type = this.GetType();&#xD;&#xA;&#xD;&#xA;  //look for a *public* property with the specified name&#xD;&#xA;  PropertyInfo pi = type.GetProperty(propertyName);&#xD;&#xA;  if (pi == null)&#xD;&#xA;  {&#xD;&#xA;    //there is no matching property - notify the developer&#xD;&#xA;    string msg = &quot;OnPropertyChanged was invoked with invalid property name {0}: &quot;;&#xD;&#xA;    msg += &quot;{0} is not a public property of {1}.&quot;;&#xD;&#xA;    msg = String.Format(msg, propertyName, type.FullName);&#xD;&#xA;    Debug.Fail(msg);&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;#endregion" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Properties" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="2faced7a-a5a1-4b8d-9cd9-aadfcc359d91" shortcut="pce" description="Triggers a PropertyChanged event for a given property." text="this.OnPropertyChanged(&quot;$PropertyName$&quot;);" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="Everywhere" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Properties" />
+    </Categories>
+    <Variables>
+      <Variable name="PropertyName" expression="typeMember()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="7c5761ca-399c-456c-a1dd-0c95b732fb17" shortcut="pcp" description="Property with Notification" text="private $Type$ $FieldName$ = $DefaultValue$;&#xD;&#xA;&#xD;&#xA;public $Type$ $PropertyName$$END$&#xD;&#xA;{&#xD;&#xA;  get&#xD;&#xA;  {&#xD;&#xA;      return this.$FieldName$;&#xD;&#xA;  }&#xD;&#xA;&#xD;&#xA;  set&#xD;&#xA;  {&#xD;&#xA;    if (this.$FieldName$ == value)&#xD;&#xA;    {&#xD;&#xA;        return;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    this.$FieldName$ = value;&#xD;&#xA;    this.OnPropertyChanged(&quot;$PropertyName$&quot;);&#xD;&#xA;  }&#xD;&#xA;}" reformat="False" shortenQualifiedReferences="True">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Properties" />
+    </Categories>
+    <Variables>
+      <Variable name="Type" expression="" initialRange="1" />
+      <Variable name="PropertyName" expression="" initialRange="1" />
+      <Variable name="FieldName" expression="decapitalize(PropertyName)" initialRange="-1" />
+      <Variable name="DefaultValue" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+</TemplatesExport>

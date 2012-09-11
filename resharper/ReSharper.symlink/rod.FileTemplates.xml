@@ -1,0 +1,44 @@
+<TemplatesExport>
+  <Template uid="e4e83b7d-09af-4787-8fae-319ea67b8a36" shortcut="" description="MbUnitTest" text="namespace $NAMESPACE$&#xD;&#xA;{&#xD;&#xA;	using MbUnit.Framework;&#xD;&#xA;	&#xD;&#xA;	[TestFixture]&#xD;&#xA;	public class $CLASS$&#xD;&#xA;	{&#xD;&#xA;		[SetUp]&#xD;&#xA;		public void SetUp()&#xD;&#xA;		{&#xD;&#xA;		}$END$&#xD;&#xA;	}&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <ProjectLanguageContext language="CSharp" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="NAMESPACE" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="CLASS" expression="getFileNameWithoutExtension()" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="Test" />
+      <Property key="Extension" value="cs" />
+      <Property key="ValidateFileName" value="False" />
+    </CustomProperties>
+  </Template>
+  <Template uid="aba68eb7-1a91-438d-8d2d-a85e8bf02871" shortcut="" description="NHibernate Mapping" text="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;hibernate-mapping xmlns=&quot;urn:nhibernate-mapping-2.2&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&#xD;&#xA;                   namespace=&quot;SOF2.Domain&quot;&#xD;&#xA;                   assembly=&quot;SOF2.Domain&quot;&#xD;&#xA;                   default-lazy=&quot;false&quot;&gt;&#xD;&#xA;&lt;/hibernate-mapping&gt;&#xD;&#xA;" reformat="False" shortenQualifiedReferences="True">
+    <Scopes>
+      <Scope type="Everywhere" />
+    </Scopes>
+    <Categories />
+    <Variables />
+    <CustomProperties>
+      <Property key="FileName" value="NewFile.hbm" />
+      <Property key="Extension" value="xml" />
+      <Property key="ValidateFileName" value="False" />
+    </CustomProperties>
+  </Template>
+  <Template uid="842f3fef-2716-4a25-b5a1-39e12e5ff65e" shortcut="" description="NUnit Test" text="namespace $NAMESPACE$&#xD;&#xA;{&#xD;&#xA;	using NUnit.Framework;&#xD;&#xA;&#xD;&#xA;	[TestFixture]&#xD;&#xA;	public class $CLASS$&#xD;&#xA;	{&#xD;&#xA;		[SetUp]&#xD;&#xA;		public void SetUp()&#xD;&#xA;		{&#xD;&#xA;			&#xD;&#xA;		}&#xD;&#xA;		&#xD;&#xA;		$END$&#xD;&#xA;	}&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <ProjectLanguageContext language="CSharp" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="NAMESPACE" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="CLASS" expression="getFileNameWithoutExtension()" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="Class" />
+      <Property key="Extension" value="cs" />
+      <Property key="ValidateFileName" value="False" />
+    </CustomProperties>
+  </Template>
+</TemplatesExport>

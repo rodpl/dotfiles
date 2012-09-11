@@ -1,0 +1,19 @@
+<TemplatesExport>
+  <Template uid="f98639e9-107d-40a4-82d0-de07afb1360f" shortcut="" description="Spec" text="namespace $Namespace$&#xD;&#xA;{&#xD;&#xA;	using System;&#xD;&#xA;&#xD;&#xA;	using Machine.Specifications;&#xD;&#xA;&#xD;&#xA;	[Subject(typeof($subject$))]&#xD;&#xA;	public class When_$when$&#xD;&#xA;	{&#xD;&#xA;		Establish context = () =&gt; { };&#xD;&#xA;&#xD;&#xA;		Because of = () =&gt; { };&#xD;&#xA;&#xD;&#xA;		It should_$should$ = () =&gt; { $END$ };&#xD;&#xA;	}&#xD;&#xA;}" reformat="True" shortenQualifiedReferences="True">
+    <Context>
+      <ProjectLanguageContext language="CSharp" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="Namespace" expression="fileDefaultNamespace()" initialRange="-1" />
+      <Variable name="subject" expression="" initialRange="0" />
+      <Variable name="when" expression="" initialRange="0" />
+      <Variable name="should" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="Specs" />
+      <Property key="Extension" value="cs" />
+      <Property key="ValidateFileName" value="True" />
+    </CustomProperties>
+  </Template>
+</TemplatesExport>
