@@ -59,3 +59,9 @@
 [submodule "powershell/WindowsPowerShell.symlink/Modules/posh-svn"]
 	path = powershell/WindowsPowerShell.symlink/Modules/posh-svn
 	url = https://github.com/JeremySkinner/posh-svn.git
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "zsh/oh-my-zsh.symlink"]
+	path = zsh/oh-my-zsh.symlink
+	url = https://github.com/robbyrussell/oh-my-zsh.git
