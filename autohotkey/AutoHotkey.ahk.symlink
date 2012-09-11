@@ -1,0 +1,181 @@
+;==========================
+;Initialise
+;==========================
+#NoEnv
+SendMode Input
+SetWorkingDir %A_ScriptDir% 
+SetTitleMatchMode 2
+
+EnvSet, __COMPAT_LAYER
+
+;=============================
+;MACROS
+;=============================
+::pzdr ::
+(
+Pozdrawiam
+
+Daniel Dąbrowski
+)
+
+;=============================
+;STANDARD KEY MAPPINGS
+;=============================
+
+;Map altGr to alt
+;RAlt::Alt
+;RShift::Shift
+;RCtrl::Ctrl
+
+;Map to insert
+AppsKey & 1::send, {Insert} 
+
+;Map to escape or shift + escape
+AppsKey & e:: 
+GetKeyState, state, shift, P
+if state = D
+send, {shift}+{escape}
+else
+send, {escape}
+return
+
+;Map to delete
+AppsKey & x::send, {delete} 
+
+;send right mouse button or ctrl shift r
+AppsKey & r::
+GetKeyState, state, rshift, P
+if state = D 
+send, ^+r
+else
+send, {shift}+{F10}
+return
+
+;Map to left arrow or ctrl left arrow
+AppsKey & h::
+GetKeyState, state, shift, P
+if state = D 
+send, ^{left}
+else
+send, {left} 
+return
+
+
+;Map to right arrow or ctrl right arrow
+AppsKey & l::
+GetKeyState, state, shift, P
+if state = D 
+send, ^{right}
+else
+send, {right} 
+return
+
+;Map to up arrow
+AppsKey & k::
+GetKeyState, state, shift, P
+if state = D 
+send, {shift}+{up}
+else
+send, {up}
+return
+
+;Map to down arrow
+AppsKey & j::
+GetKeyState, state, shift, P
+if state = D 
+send, {shift}+{down}
+else
+send, {down}
+return
+
+;Map to Alt + Tab
+AppsKey & d:: ShiftAltTab
+
+;Map to Alt + Shift + Tab
+AppsKey & f:: AltTab
+
+;Map c to close window
+AppsKey & c::
+GetKeyState, state, shift, P
+if state = D 
+send !{F4}
+else
+send, ^{F4}
+return
+
+;=============================
+;RESHARPER
+;=============================
+
+;Resharper navigate from here (Note ` is escape character in autohotkey
+AppsKey & n:: send, !``
+
+;Resharper quick doc
+AppsKey & q:: send, ^+{F1}
+
+;Resharper generate code(alt + insert) or in solution explorer Create file from template 
+AppsKey & g:: send, !{insert}
+
+;Resharper go to next member/tag
+$!j:: send, !{down}
+
+;Resharper go to previous member/tag
+$!k:: send, !{up}
+
+;Resharper move code up
+$^+!k:: send, ^+!{up}
+
+;Resharper move code down
+$^+!j:: send, ^+!{down}
+
+;Resharper go to next error
+$+!j:: send, $+!{pgdown}
+
+;Resharper go to previous error
+$+!k:: send, $+!{pgup}
+
+;Highlight Current Usages
+AppsKey & u:: Send, +!{F11}
+
+;Process Go to next usage 
+$^!J:: Send, ^!{PgDn}
+
+;Process Go to previous usage 
+$^!K:: Send, ^!{PgUp}
+
+;Stop capslock & key from toggling capslock.
+AppsKey:: send, {AppsKey}
+capslock:: send, {escape}
+*capslock::
++capslock::
+capslock & down:: 
+capslock & up::
+capslock & right::
+capslock & left::
+capslock & appskey::
+capslock & tab::
+capslock & `::
+capslock & 3:: 
+capslock & 5::
+capslock & 7::
+capslock & 8::
+capslock & 9::
+capslock & 0::
+capslock & -::
+capslock & =::
+capslock & y::
+capslock & a::
+capslock & s::
+capslock & `;::
+capslock & \::
+capslock & z::
+capslock & v::
+capslock & p:: 
+capslock & ,::
+capslock & .::
+capslock & space::
+capslock & enter::
+capslock & w::
+capslock & [::
+capslock & ]::
+capslock & #::

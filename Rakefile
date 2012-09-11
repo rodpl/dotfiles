@@ -22,9 +22,11 @@ WINDOWS_FILE_MAP = {
   '.vsvimrc'           => '_vsvimrc',
   '.ReSharper'         => 'Documents/ReSharper',
   '.WindowsPowerShell' => 'Documents/WindowsPowerShell',
+  '.AutoHotkey.ahk'    => 'Documents/AutoHotkey.ahk',
 }
 
 MAC_FILE_MAP = {
+  '.AutoHotkey.ahk'    => :skip,
   '.ReSharper'         => :skip,
   '.WindowsPowerShell' => :skip,
 }
