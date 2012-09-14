@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Make sure we’re using the latest Homebrew
+brew update
+
+# Upgrade any already-installed formulae
+brew upgrade
+
+# Install wget with IRI support
+brew install wget --enable-iri
+
+# Install everything else
+brew install mc
+brew install git
+brew install mercurial
+brew install lynx
+brew install macvim
+
+# Linking apps
+brew linkapps
+
+# Remove outdated versions from the cellar
+brew cleanup

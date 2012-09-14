@@ -23,6 +23,7 @@ WINDOWS_FILE_MAP = {
   '.ReSharper'         => 'Documents/ReSharper',
   '.WindowsPowerShell' => 'Documents/WindowsPowerShell',
   '.AutoHotkey.ahk'    => 'Documents/AutoHotkey.ahk',
+  '.brew'              => :skip,
 }
 
 MAC_FILE_MAP = {
