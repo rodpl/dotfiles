@@ -46,6 +46,7 @@
 [submodule "vim/vim.symlink/bundle/xml"]
 	path = vim/vim.symlink/bundle/xml
 	url = https://github.com/othree/xml.vim.git
+    ignore = dirty
 [submodule "vim/vim.symlink/bundle/zencoding"]
 	path = vim/vim.symlink/bundle/zencoding
 	url = https://github.com/mattn/zencoding-vim.git
