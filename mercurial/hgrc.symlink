@@ -47,6 +47,7 @@ record=
 hgexternals=~/.mercurial/hgexternals/hgexternals.py
 flow=~/.mercurial/hgflow/hgflow.py
 hggit=~/.mercurial/hggit
+prompt=~/.mercurial/hg-prompt/prompt.py
 
 [alias]
 glog5 = glog -l 5
