@@ -6,8 +6,7 @@ cnoremap <c-n> <down>
 cnoremap <c-p> <up>
 
 " No multiple-key chord mapping supported in ViEmu
-"nnoremap <leader><space> :noh<cr>
-nnoremap <esc> :noh<cr><esc>
+nnoremap <leader><space> :noh<cr>
 
 " Use tabs for indentation
 nnoremap <Tab> >>
@@ -39,3 +38,5 @@ map <C-k> <C-W>k
 map <C-j> <C-W>j
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" vim:set ft=vim:
