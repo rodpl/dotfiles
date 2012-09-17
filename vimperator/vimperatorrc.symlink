@@ -1,0 +1,16 @@
+" display the menu, but not the toolbar
+set gui=none,tabs,bookmarks
+" when completing a URL, search first for history, then bookmarks
+set complete=hbs
+" highlight searches
+set hlsearch
+" undo stupid changes to backspace key
+map <BS> <Esc>:back<cr>
+map <S-BS> <Esc>:forward<cr>
+" disable bell
+set visualbell
+
+let g:hintsio="i" 
+
+set editor="gvim -c 'set spell spelllang=pl' -c 'set filetype=mail' -c 'set tw=72' -f"
+set hintchars='asdfghjklqweruio'
