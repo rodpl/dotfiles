@@ -6,8 +6,16 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
+# Install dev tools and libs
+brew install autoconf
+brew install automake
+brew install libtool
+
 # Install wget with IRI support
 brew install wget --enable-iri
+
+# Install mono
+brew install mono --use-llvm
 
 # Install everything else
 brew install mc

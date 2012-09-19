@@ -73,7 +73,7 @@ git=1
 from = Daniel Dabrowski <dabrowski.daniel@42n.pl>
 
 [color]
-mode = win32
+mode = auto
 status.modified = cyan
 status.added = green
 status.removed = red
