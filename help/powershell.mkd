@@ -1,0 +1,14 @@
+Environment Valriables
+======================
+
+Read variable
+    $Env:variable_name
+
+Set variable
+    $Env:variable_name = "value"
+
+Remove variable
+    Remove-Item Env:\variable_name
+
+Delete recursively
+    Get-ChildItem -Rec | Where {$_.Extension -match "orig"} | Remove-Item 

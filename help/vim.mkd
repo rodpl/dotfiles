@@ -1,0 +1,66 @@
+Tabs
+====
+
+Convert all Tab to Spaces
+    :set et
+    :ret!
+
+Convert all Spaces to Tab
+    :set et!
+    :ret!
+
+Building
+========
+:make - This will run the regular old make in the command line for you.
+:copen - Opens the quickfix window, to show the results of the compilation. Opens the window even if there are no errors in compilation.
+:cw[indow] - Opens the quickfix window only if there is an error. If quickfix window is open and there are now errors, the window is closed.
+
+:cn - Goto the next error in source code.
+:cp - Goto the previous error in source code.
+:cfirst - Goto the first error in source code.
+:clast - Goto the last error in source code.
+
+Navigating help
+===============
+Ctrl-]
+ ~ Go to definition
+g]
+ ~ List of definitions
+Ctrl-T
+ ~ Go back
+
+Searching
+=========
+<leader><space> 
+  ~ Turning off highlighted text by search.
+
+Code completion
+===============
+Ctrl-x Ctrl-]
+ ~ Tag based completion
+Ctrl-x Ctrl-i
+ ~ Included and source file completion
+Ctrl-x Ctrl-o
+ ~ Omni completion
+
+
+Spellchecking
+=============
+
+]s [s
+  ~ move between spelling errors
+z=
+  ~ displays spell propositions
+1z=
+  ~ corrects mistake with first proposition
+zg
+  ~ adds word to dictionary
+
+Sessions
+========
+:mks
+  ~ Makes session
+
+Pandoc
+======
+, p - Preview markdown 

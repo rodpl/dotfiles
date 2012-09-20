@@ -1,0 +1,16 @@
+Config
+======
+
+HttpProxy
+Need to set another proxy for http and another for https
+
+    http_proxy = http://proxy:8080
+    https_proxy = http://proxy:8080
+
+To debug proxy set env GIT_CURL_VERBOSE=1
+
+Diff in powershell
+    git diff | Out-File file.patch -encodinf utf8
+
+Track svn branches
+    git checkout --track -b releases/1.31 remotes/1.31
