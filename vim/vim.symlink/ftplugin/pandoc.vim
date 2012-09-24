@@ -91,4 +91,8 @@ function!PreviewMarkdown()
 endfunction
 
 " Map this feature to the key sequence ',p' (comma lowercase-p)
-map ,p :call PreviewMarkdown()<CR>
+if has('win32')
+    map ,p :call PreviewMarkdown()<CR>
+else
+    map ,p :silent !open -a Marked.app '%:p'<CR>
+endif
