@@ -795,6 +795,21 @@ public void $TESTNAME$()&#xD;
 {&#xD;
   $END$&#xD;
 }</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/Description/@EntryValue">TODO</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/Field/=date/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/Field/=date/Expression/@EntryValue">getCurrentDate("yyyy-MM-dd")</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/Field/=date/Order/@EntryValue">1</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/Field/=user/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/Field/=user/Expression/@EntryValue">getFullUserName()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/Field/=user/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/Scope/=139FF4CE89E7094686FDA7BF5FFBBE92/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/Scope/=139FF4CE89E7094686FDA7BF5FFBBE92/Type/@EntryValue">Everywhere</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/Shortcut/@EntryValue">todo</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=350C2EAFC9B84F43B3E40ADE0E5A1E4F/Text/@EntryValue">TODO: $user$ - ($date$) - $END$</s:String>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=38E9CEE8A4603045BC62712C80A43082/@KeyIndexDefined">True</s:Boolean>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=38E9CEE8A4603045BC62712C80A43082/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=38E9CEE8A4603045BC62712C80A43082/Categories/=Imported_00202011_002D12_002D22/@EntryIndexedValue">Imported 2011-12-22</s:String>
