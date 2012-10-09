@@ -25,6 +25,7 @@ WINDOWS_FILE_MAP = {
   '.AutoHotkey.ahk'    => 'Documents/AutoHotkey.ahk',
   '.brew'              => :skip,
   '.bin'               => :skip,
+  '.keymando'          => :skip,
 }
 
 MAC_FILE_MAP = {
