@@ -2,7 +2,9 @@
 	<s:Boolean x:Key="/Default/CodeEditing/Intellisense/CodeCompletion/AutoCompleteBasicCompletion/@EntryValue">False</s:Boolean>
 	<s:String x:Key="/Default/CodeEditing/Intellisense/CodeCompletion/ParenthesesInsertType/@EntryValue">None</s:String>
 	<s:Int64 x:Key="/Default/CodeEditing/Intellisense/ParameterInfo/AutopopupDelay/@EntryValue">2000</s:Int64>
-	<s:Boolean x:Key="/Default/CodeEditing/Intellisense/ParameterInfo/AutopopupOn/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeEditing/Intellisense/ParameterInfo/AutopopupOn/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeEditing/Intellisense/ParameterInfo/DelegatesAsLambdas/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeEditing/Intellisense/ParameterInfo/UseArrowsForSignatureNavigation/@EntryValue">True</s:Boolean>
 	<s:String x:Key="/Default/CodeEditing/TypingAssist/BraceInsertType/@EntryValue">DISABLED</s:String>
 	<s:Boolean x:Key="/Default/CodeEditing/TypingAssist/Html/FormatOnClosingTag/@EntryValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeEditing/TypingAssist/Html/FormatOnEnter/@EntryValue">False</s:Boolean>
