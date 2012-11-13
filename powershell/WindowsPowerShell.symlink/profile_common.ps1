@@ -108,7 +108,7 @@ function Get-Batchfile ($file) {
     }
 }
 
-function Enable-VisualStudio($version = "10.0") {
+function Enable-VisualStudio($version = "11.0") {
     if ([intptr]::size -eq 8) {
         $key = "HKLM:SOFTWARE\Wow6432Node\Microsoft\VisualStudio\" + $version
     }
