@@ -37,6 +37,7 @@ winmergeu.fixeol = True
 winmergeu.gui = True
 
 [extensions]
+purge=
 mq=
 rebase=
 color=
