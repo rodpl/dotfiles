@@ -26,12 +26,14 @@ WINDOWS_FILE_MAP = {
   '.brew'              => :skip,
   '.bin'               => :skip,
   '.keymando'          => :skip,
+  '.ConEmu.xml'        => '/Bat/ConEmu/ConEmu/ConEmu.xml',
 }
 
 MAC_FILE_MAP = {
   '.AutoHotkey.ahk'    => :skip,
   '.ReSharper'         => :skip,
   '.WindowsPowerShell' => :skip,
+  '.ConEmu.xml'        => :skip,
 }
 
 desc "Link the dotfiles into position"
@@ -103,7 +105,7 @@ def map_to_target(linkable)
     target = file
     target = WINDOWS_FILE_MAP[file] if windows? && WINDOWS_FILE_MAP[file]
     target = MAC_FILE_MAP[file] if mac? && MAC_FILE_MAP[file]
-    target == :skip ? :skip : "#{ENV['HOME']}/#{target}"
+    target == :skip ? :skip : target[0] == '/' ? "C:/#{target}" : "#{ENV['HOME']}/#{target}"
 end
 
 
