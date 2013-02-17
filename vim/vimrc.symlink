@@ -103,7 +103,7 @@ imap <C-Y> <C-Y>
 nmap <leader>q gqip
 " Content formatting {{{2
 " Xml formatting
-nmap <leader>fxa :%s/></>\r</g<CR>gg=G
+nmap <leader>fxa :%s/></>\r</<CR>gg=G
 " Strip all trailing whitespaces in the current file
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 " Fold tag
