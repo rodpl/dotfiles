@@ -552,7 +552,7 @@ II.2.12 &lt;HandlesEvent /&gt;&#xD;
 	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/UserRules/=b3d85629_002D9809_002D4431_002Da08a_002De2fec90ffe5a/@EntryIndexedValue">&lt;Policy&gt;&lt;Descriptor Staticness="Static, Instance" AccessRightKinds="Private, Protected, ProtectedInternal, Internal, Public" Description="Machine.Specifications Class"&gt;&lt;ElementKinds&gt;&lt;Kind Name="Machine.Specifications_Context" /&gt;&lt;Kind Name="Machine.Specifications_ContextBase" /&gt;&lt;/ElementKinds&gt;&lt;/Descriptor&gt;&lt;Policy Inspect="True" Prefix="" Suffix="" Style="Aa_bb" /&gt;&lt;/Policy&gt;</s:String>
 	<s:Int64 x:Key="/Default/Environment/SpellCheck/SpellCheckDictionaries/=en_005FUS/@EntryIndexedValue">0</s:Int64>
 	<s:Int64 x:Key="/Default/Environment/SpellCheck/SpellCheckDictionaries/=pl_005FPL/@EntryIndexedValue">0</s:Int64>
-	<s:String x:Key="/Default/Environment/UnitTesting/ExcludedCategoriesList/@EntryValue">web,selenium</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/ExcludedCategoriesList/@EntryValue">web,selenium,DataIntegration</s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/ShadowCopy/@EntryValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/Environment/UserInterface/TipsManager/ShowTipsOnStartup/@EntryValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=04D0594E20458F48BB82DCF1E6ECF540/@KeyIndexDefined">True</s:Boolean>
