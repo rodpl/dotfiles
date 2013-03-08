@@ -1,0 +1,8 @@
+syntax: glob
+
+# Temporary files
+*.un~
+
+# Visual Studio Files
+_ReSharper*
+*.suo
