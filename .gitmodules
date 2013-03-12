@@ -63,6 +63,12 @@
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+    ignore = dirty
 [submodule "zsh/oh-my-zsh.symlink"]
 	path = zsh/oh-my-zsh.symlink
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+    ignore = dirty
+[submodule "vim/vim.symlink/bundle/dbext"]
+	path = vim/vim.symlink/bundle/dbext
+	url = https://github.com/vim-scripts/dbext.vim.git
+    ignore = dirty
