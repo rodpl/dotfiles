@@ -4,6 +4,9 @@ ssh = c:\bat\plink.exe -ssh -i C:\users\rod\.ssh\id_rsa_putty.ppk
 editor = vim
 ignore = ~/.hgignore
 
+%include .hgrc_mac
+%include .hgrc_win
+
 [merge-tools]
 kdiff3.priority = -1
 kdiff3.args = -L1 base --L2 local --L3 other $base $local $other -o $output
@@ -75,7 +78,6 @@ git=1
 from = Daniel Dabrowski <dabrowski.daniel@42n.pl>
 
 [color]
-mode = win32
 status.modified = cyan
 status.added = green
 status.removed = red

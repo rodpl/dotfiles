@@ -27,6 +27,7 @@ WINDOWS_FILE_MAP = {
   '.bin'               => :skip,
   '.keymando'          => :skip,
   '.ConEmu.xml'        => '/Bat/ConEmu/ConEmu/ConEmu.xml',
+  '.hgrc_mac'          => :skip,
 }
 
 MAC_FILE_MAP = {
@@ -34,6 +35,7 @@ MAC_FILE_MAP = {
   '.ReSharper'         => :skip,
   '.WindowsPowerShell' => :skip,
   '.ConEmu.xml'        => :skip,
+  '.hgrc_win'          => :skip,
 }
 
 desc "Link the dotfiles into position"
