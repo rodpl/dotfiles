@@ -1,7 +1,11 @@
 syntax: glob
 
+# System files
+.DS_Store
+
 # Temporary files
 *.un~
+*.swp
 
 # Visual Studio Files
 _ReSharper*
