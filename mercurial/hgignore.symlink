@@ -10,3 +10,7 @@ syntax: glob
 # Visual Studio Files
 _ReSharper*
 *.suo
+
+# MonoDevelop / Xamarin files
+**/test-results/**
+*.userprefs
