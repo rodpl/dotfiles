@@ -45,4 +45,4 @@ map "<Cmd-l>", "<Right>"
 map "<Cmd-m>", "<Tab>"
 map "<Cmd-,>", "<Shift-Tab>"
 map "<Cmd-n>", "<Ctrl-n>"
-map "<Cmd-p>", Commands.press_button_on_ui
+map "<Cmd-p>", Commands.press_button_on_ui	
