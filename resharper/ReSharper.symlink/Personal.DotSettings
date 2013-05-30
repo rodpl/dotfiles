@@ -835,6 +835,17 @@ public void $TESTNAME$()&#xD;
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3A9D53F2ADB7C04DB6750BDA3B817A0A/Shortcut/@EntryValue">thrn</s:String>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3A9D53F2ADB7C04DB6750BDA3B817A0A/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3A9D53F2ADB7C04DB6750BDA3B817A0A/Text/@EntryValue">throw new NotImplementedException();</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DC2215DD2878442AB5CBD570ADFC4C3/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DC2215DD2878442AB5CBD570ADFC4C3/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DC2215DD2878442AB5CBD570ADFC4C3/Categories/=Orchard/@EntryIndexedValue">Orchard</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DC2215DD2878442AB5CBD570ADFC4C3/Description/@EntryValue">Logger for Orchard</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DC2215DD2878442AB5CBD570ADFC4C3/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DC2215DD2878442AB5CBD570ADFC4C3/Scope/=B68999B9D6B43E47A02B22C12A54C3CC/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DC2215DD2878442AB5CBD570ADFC4C3/Scope/=B68999B9D6B43E47A02B22C12A54C3CC/CustomProperties/=minimumLanguageVersion/@EntryIndexedValue">2.0</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DC2215DD2878442AB5CBD570ADFC4C3/Scope/=B68999B9D6B43E47A02B22C12A54C3CC/Type/@EntryValue">InCSharpTypeMember</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DC2215DD2878442AB5CBD570ADFC4C3/Shortcut/@EntryValue">logger</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DC2215DD2878442AB5CBD570ADFC4C3/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DC2215DD2878442AB5CBD570ADFC4C3/Text/@EntryValue">public ILogger Logger { get; set; }</s:String>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DE69326C1A7E9429B26958E1EAABE2E/@KeyIndexDefined">True</s:Boolean>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DE69326C1A7E9429B26958E1EAABE2E/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3DE69326C1A7E9429B26958E1EAABE2E/Categories/=Imported_00202011_002D12_002D22/@EntryIndexedValue">Imported 2011-12-22</s:String>
