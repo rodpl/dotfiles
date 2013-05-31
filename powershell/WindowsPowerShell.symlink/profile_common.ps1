@@ -74,6 +74,13 @@ cd $modules\posh-svn
 Import-Module .\posh-svn
 popd
 
+# Run posh-rake init script
+pushd
+cd $modules\posh-rake
+# Load posh-rake module from current directory
+Import-Module .\posh-rake
+popd
+
 # Configure prompt
 . $profileRoot\configurePrompt.ps1
 
