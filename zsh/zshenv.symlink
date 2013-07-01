@@ -1,0 +1,3 @@
+PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH
+eval "$(rbenv init -)"
