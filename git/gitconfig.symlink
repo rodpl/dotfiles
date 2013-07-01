@@ -54,3 +54,6 @@
     cmd = \"C:/Program Files/PlasticSCM4/semanticmerge/semanticmergetool.exe\" -b=\"$BASE\" -d=\"$LOCAL\" -s=\"$REMOTE\" -r=\"$MERGED\" -l=csharp -emt=\"mergetool.exe -b=\"\"@basefile\"\" -bn=\"\"@basesymbolic\"\" -s=\"\"@sourcefile\"\" -sn=\"\"@sourcesymbolic\"\" -d=\"\"@destinationfile\"\" -dn=\"\"@destinationsymbolic\"\" -r=\"\"@output\"\" -t=\"\"@filetype\"\" -i=\"\"@comparationmethod\"\" -e=\"\"@fileencoding\"\"\" -edt=\"mergetool.exe  -s=\"\"@sourcefile\"\" -sn=\"\"@sourcesymbolic\"\" -d=\"\"@destinationfile\"\" -dn=\"\"@destinationsymbolic\"\" -t=\"\"@filetype\"\" -i=\"\"@comparationmethod\"\" -e=\"\"@fileencoding\"\"\"
 [color]
 	ui = auto
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
