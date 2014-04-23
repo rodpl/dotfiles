@@ -27,6 +27,7 @@ WINDOWS_FILE_MAP = {
   '.bin'               => :skip,
   '.keymando'          => :skip,
   '.ConEmu.xml'        => '/Bat/ConEmu/ConEmu/ConEmu.xml',
+  '.gitconfig_mac'     => :skip,
   '.hgrc_mac'          => :skip,
 }
 
@@ -35,6 +36,7 @@ MAC_FILE_MAP = {
   '.ReSharper'         => :skip,
   '.WindowsPowerShell' => :skip,
   '.ConEmu.xml'        => :skip,
+  '.gitconfig_win'     => :skip,
   '.hgrc_win'          => :skip,
 }
 

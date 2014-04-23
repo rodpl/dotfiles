@@ -2,7 +2,9 @@
 	name = Daniel Dabrowski
 	email = dabrowski.daniel@42n.pl
 [include]
-    path = ~/.gitconfig.github
+  path = ~/.gitconfig.github
+  path = .gitconfig_win
+  path = .gitconfig_mac
 [alias]
 	glog = log --graph --full-history --all --color --date=short --pretty=format:'%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%ad [%an] %s'
 	glog5 = glog -5
