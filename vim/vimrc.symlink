@@ -40,8 +40,8 @@ set linespace=1         " number of pixel lines inserted between characters
 set wildmenu            " command-line completion operates in an enhanced mode
 set wildmode=list:longest
 set ruler               " Show the line and column number of the cursor position
-"set number              " Print the line number in front of each line
-set relativenumber      " Show the line number relative to the line with the cursor in front of each line. 
+set number              " Print the line number in front of each line
+"set relativenumber      " Show the line number relative to the line with the cursor in front of each line. 
 set scrolloff=3         " Minimal number of screen lines to keep above and below the cursor.
 set showmode            " Show (partial) command in the last line of the screen.
 set cmdheight=2         " Number of screen lines to use for the command-line
@@ -108,6 +108,8 @@ nmap <leader>fxa :%s/></>\r</<CR>gg=G
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 " Fold tag
 nnoremap <leader>ft Vatzf
+" Indent whole file and return to original position
+nmap <leader>= mzgg=G`z
 " Speed up tab switching {{{2
 map <C-S-]> gt
 map <C-S-[> gT
@@ -132,8 +134,8 @@ if has("autocmd")
         augroup END
     endif
 " Session management {{{2
-nmap <F12> :call SaveSession()<CR>
-nmap <s-F12> :1,$bd <bar> so ~/.vim/sessions/
+nmap <c-F12> :call SaveSession()<CR>
+nmap <c-s-F12> :1,$bd <bar> so ~/.vim/sessions/
 set sessionoptions=buffers,curdir,help,tabpages,winsize,resize
 function! SaveSession()
   wall
