@@ -29,6 +29,15 @@ g]
 Ctrl-T
  ~ Go back
 
+Folding
+=======
+,ft
+ ~  Fold tag
+
+vimrc management
+================
+`:so ~/.vimrc` - Repload config
+
 Searching
 =========
 <leader><space> 
@@ -63,4 +72,10 @@ Sessions
 
 Pandoc
 ======
-, p - Preview markdown 
+, p
+  ~ Preview markdown 
+
+Zencoding
+=========
+Ctrl-y ,
+  ~ Run zencoding
