@@ -29,6 +29,7 @@ WINDOWS_FILE_MAP = {
   '.ConEmu.xml'        => '/Bat/ConEmu/ConEmu/ConEmu.xml',
   '.gitconfig_mac'     => :skip,
   '.hgrc_mac'          => :skip,
+  '.tmux.conf'         => :skip,
 }
 
 MAC_FILE_MAP = {
