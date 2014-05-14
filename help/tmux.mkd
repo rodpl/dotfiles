@@ -1,0 +1,29 @@
+Global
+=================
+
+`Ctrl-<Space>`
+: Prefix
+
+Session Management
+=================
+
+`Apple`
+: Some one
+
+Window Management
+=================
+
+Pane Management
+=================
+
+`Ctrl-D`
+: Delete pane
+
+`prefix <Space>`
+: Auto arrange panes
+
+`:break-pane`
+: Move pane to newly created window
+
+`:join-pane -s 1`
+: Join pane to window no 1

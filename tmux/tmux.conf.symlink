@@ -1,21 +1,153 @@
-set -g default-terminal "screen-256color"
-setw -g mode-mouse on
-set -g prefix C-a
+# To reload these configurations in a tmux session, do: 
+# $ tmux source-file ~/.tmux.conf
+#
+# Variables:
+# #S session name
+# #T current window title
 
-setw -g mode-keys vi
+# remap prefix to ctrl-space
+set -g prefix C-Space
+bind C-Space send-prefix
+unbind C-b
 
+
+### Windows
+#
+# Windows base index starts from 1
+set -g base-index 1
+
+# Window titles
+set -g set-titles on
+set -g set-titles-string '#S:#I.#P #W'
+
+# Windowing (| for vertical splitting, - for horizontal splitting)
+unbind %
+bind | split-window -h
+bind - split-window -v
+#
+# Don't use prefix-n/p to navigate windows
+unbind n
+unbind p
+
+# <prefix>-l/h to navigate to next/previous window
+bind C-l next-window
+bind C-h previous-window
+
+# Notifying if other windows has activities
+#setw -g monitor-activity on
+set -g visual-activity on
+
+### Panes
+#
+# Vim-style pane selection
 bind h select-pane -L
-bind j select-pane -D
+bind j select-pane -D 
 bind k select-pane -U
 bind l select-pane -R
 
-bind-key -r C-h select-window -t :-
-bind-key -r C-l select-window -t :+
+# quick pane cycling
+bind C-Space select-pane -t :.+
+
+
+### Colors
+#
+# 256 colors in vim
+set -g default-terminal "screen-256color"
+
+# Status bar colours
+set-option -g status-utf8 on
+set-option -g status-bg black
+set-option -g status-fg white
+set-option -g status-interval 60
+set-option -g status-left-length 30
+set-option -g status-left "#[fg=green][#S] #[fg=colour237]#I:#P"
+set-option -g status-justify left
+set-option -g status-right-length 150
+#set-option -g status-right "#[fg=yellow]#T #[fg=blue]%A %Y-%b-%d %H:%M"
+set-option -g status-right '#[fg=cyan]#(/usr/local/bin/icalBuddy -li 1 -npn -eep "url" -ps "/ » /" eventsToday+5) #[fg=yellow]#(/usr/local/bin/icalBuddy -li 1 -npn -eep "url" -ps "/ » /" tasksDueBefore:today+5) #[fg=green]#(/usr/bin/dstat --battery-remain --nocolor 1 0 | tail -1) #[fg=green]#(whoami)@#H #[fg=yellow]#(cut -d " " -f 1 /proc/loadavg) #[default]%a %d %b %R'
+
+# Window modes color
+setw -g mode-bg colour240
+setw -g mode-fg colour255
+
+# Message/command input colors
+set -g message-bg colour240
+set -g message-fg colour255
+
+# Active window colours
+set-window-option -g window-status-current-bg colour202
+set-window-option -g window-status-current-fg black
+
+# Window status colors
+setw -g window-status-bg black
+setw -g window-status-fg colour248
+#setw -g window-status-alert-attr underscore
+#setw -g window-status-alert-bg colour235
+#setw -g window-status-alert-fg colour248
+setw -g window-status-current-attr bright
+setw -g window-status-current-bg colour235
+setw -g window-status-current-fg colour248
+
+# Clock
+setw -g clock-mode-colour colour250
+setw -g clock-mode-style 24
+
+# Active pane border colours
+set -g pane-active-border-fg colour238
+set -g pane-active-border-bg default
+
+# Regular pane border colours
+set -g pane-border-fg colour238
+set -g pane-border-bg default
+
+# Pane numbers colour (when you press `<prefix>q`)
+set-option -g display-panes-active-colour green
+set-option -g display-panes-colour blue
+
+### Inputs
+#
+# Keyboard setting
+set -g repeat-time 125
+
+# Enable scrolling with the mouse
+set -g mode-mouse on
+
+
+# Be able to select text in panes/windows with the mouse; hold <option> and
+# the left mouse button to select. 
+set -g mouse-select-pane on
+set -g mouse-select-window on
+
+# Bind r to reload the config file
+bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf file."
+
+### Coping #####################################################################
+# vim keybindings in copy mode
+setw -g mode-keys vi
+
+# vi-style copy-mode bindings (<prefix>+[)
+bind -t vi-copy v begin-selection
+bind -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy" # Copies to the tmux buffer and to osx
+
+# For xclip to work in an SSH session...
+# On the client:
+# - X11/XQuartz must be installed 
+# - `ForwardX11 yes` should be set in ~/.ssh/config 
+# On the server:
+# - `ForwardX11 yes` should be set in /etc/ssh/sshd_config (default for Ubuntu)
+# - `echo $DISPLAY` should output something like `localhost:10.0`
+bind y run-shell "tmux save-buffer - | xclip -selection clipboard -i"\; display-message "Buffer copied to x clipboard"
+bind p run-shell "tmux set-buffer \"$(xclip -selection clipboard -o)\"; tmux paste-buffer"\; display-message "Pasted from x clipboard"
 
 # copy to osx
 set-option -g default-command "reattach-to-user-namespace -l zsh"
 bind ^y run-shell "reattach-to-user-namespace -l zsh -c 'tmux showb | pbcopy'"
 
-# quick pane cycling
-unbind ^a
-bind ^a select-pane -t :.+
+# switching cursor shape in vim
+set -sg escape-time 0
+set-option -g terminal-overrides '*88col*:colors=88,*256col*:colors=256,xterm*:XT:Ms=\E]52;%p1%s;%p2%s\007:Cs=\E]12;%p1%s\007:Cr=\E]112\007:Ss=\E]50;CursorShape=%?%p1%{3}%<%t%{0}%e%p1%{2}%-%;%d\007'
+
+### Misc
+#
+# History
+set -g history-limit 1000
