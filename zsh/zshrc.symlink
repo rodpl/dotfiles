@@ -11,6 +11,13 @@ ZSH_THEME="rod"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+alias t="tmux -u"
+
+
+# Set to this to eliminate escape lag delay
+KEYTIMEOUT=1
+bindkey -rpM viins '^['
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -30,7 +37,82 @@ ZSH_THEME="rod"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew mercurial)
+plugins=(git brew mercurial battery osx forklift virtualenv django python pip rake ruby rvm rbenvi nvm npm node gitignore github bower web-search tmux tmuxinator)
+
+set -o vi
+export EDITOR=vim
+export VISUAL=vim
+
+function zle-keymap-select zle-line-init
+{
+    # change cursor shape in iTerm2
+    if [[ $TMUX != "" ]]
+    then
+        case $KEYMAP in
+            vicmd)      print -n -- "\033Ptmux;\033\E]50;CursorShape=0\C-G\033\\";;  # block cursor
+            viins|main) print -n -- "\033Ptmux;\033\E]50;CursorShape=1\C-G\033\\";;  # line cursor
+        esac
+    else
+        case $KEYMAP in
+            vicmd)      print -n -- "\E]50;CursorShape=0\C-G";;  # block cursor
+            viins|main) print -n -- "\E]50;CursorShape=1\C-G";;  # line cursor
+        esac
+    fi
+
+    zle reset-prompt
+    zle -R
+}
+
+function zle-line-finish
+{
+    if [[ $TMUX != "" ]]
+    then
+        print -n -- "\033Ptmux;\033\E]50;CursorShape=0\C-G\033\\"
+    else
+        print -n -- "\E]50;CursorShape=0\C-G"
+    fi
+}
+
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select
+
+bindkey -v
+
+# # 10ms for key sequences
+KEYTIMEOUT=1
+
+# init cursor, apparently only needed for tmux, but left the conditional for consistency
+if [[ $TMUX != "" ]]
+then
+    print -n -- "\033Ptmux;\033\E]50;CursorShape=0\C-G\033\\"
+else
+    print -n -- "\E]50;CursorShape=0\C-G"
+fi
+
+
+# use cursor as indicator of vi mode
+zle-keymap-select () {
+    if [ $KEYMAP = vicmd ]; then
+        if [[ $TMUX = '' ]]; then
+            echo -ne "\033]12;Red\007"
+        else
+            printf '\033Ptmux;\033\033]12;red\007\033\\'
+        fi
+    else
+        if [[ $TMUX = '' ]]; then
+            echo -ne "\033]12;Grey\007"
+        else
+            printf '\033Ptmux;\033\033]12;grey\007\033\\'
+        fi
+    fi
+}
+zle-line-init () {
+    zle -K viins
+    echo -ne "\033]12;Grey\007"
+}
+zle -N zle-keymap-select
+zle -N zle-line-init
 
 source $ZSH/oh-my-zsh.sh
 
