@@ -71,6 +71,7 @@
 [submodule "vim/vim.symlink/bundle/sqlutilities"]
 	path = vim/vim.symlink/bundle/sqlutilities
 	url = https://github.com/vim-scripts/SQLUtilities.git
+    ignore = dirty
 [submodule "vim/vim.symlink/bundle/html5"]
 	path = vim/vim.symlink/bundle/html5
 	url = https://github.com/othree/html5.vim.git
