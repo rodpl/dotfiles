@@ -1,5 +1,8 @@
 PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH
 export PATH
+
+export DISABLE_AUTO_TITLE=true
+
 eval "$(rbenv init -)"
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
