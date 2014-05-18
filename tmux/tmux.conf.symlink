@@ -143,9 +143,11 @@ bind -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy" # Copies to the 
 bind y run-shell "tmux save-buffer - | xclip -selection clipboard -i"\; display-message "Buffer copied to x clipboard"
 bind p run-shell "tmux set-buffer \"$(xclip -selection clipboard -o)\"; tmux paste-buffer"\; display-message "Pasted from x clipboard"
 
+# Default shell same as parent
+set-option -g default-command "reattach-to-user-namespace -l $SHELL -l"
+
 # copy to osx
-set-option -g default-command "reattach-to-user-namespace -l zsh"
-bind ^y run-shell "reattach-to-user-namespace -l zsh -c 'tmux showb | pbcopy'"
+bind ^y run-shell "reattach-to-user-namespace -l $SHELL -c 'tmux showb | pbcopy'"
 
 # switching cursor shape in vim
 set -sg escape-time 0
