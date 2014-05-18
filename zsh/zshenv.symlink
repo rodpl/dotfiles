@@ -3,7 +3,33 @@ export PATH
 eval "$(rbenv init -)"
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
+
+syspip(){
+    PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+syspip3(){
+    PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
+}
+
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
+# Initialize virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+if [ ! -d $WORKON_HOME ]; then
+    mkdir $WORKON_HOME
+fi
+
+if [ -f $(brew --prefix)/bin/virtualenvwrapper.sh ]; then
+    source $(brew --prefix)/bin/virtualenvwrapper.sh
+fi
+
+
+# Initialize autoenv
+if [ -f $(brew --prefix)/opt/autoenv/activate.sh ]; then
+    source $(brew --prefix)/opt/autoenv/activate.sh
+fi
+
+# Node
 export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
+
