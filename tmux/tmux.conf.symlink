@@ -68,7 +68,7 @@ set-option -g status-left "#[fg=green][#S] #[fg=colour237]#I:#P"
 set-option -g status-justify left
 set-option -g status-right-length 150
 #set-option -g status-right "#[fg=yellow]#T #[fg=blue]%A %Y-%b-%d %H:%M"
-set-option -g status-right '#[fg=cyan]#(/usr/local/bin/icalBuddy -li 1 -npn -eep "url" -ps "/ » /" eventsToday+5) #[fg=yellow]#(/usr/local/bin/icalBuddy -li 1 -npn -eep "url" -ps "/ » /" tasksDueBefore:today+5) #[fg=green]#(/usr/bin/dstat --battery-remain --nocolor 1 0 | tail -1) #[fg=green]#(whoami)@#H #[fg=yellow]#(cut -d " " -f 1 /proc/loadavg) #[default]%a %d %b %R'
+set-option -g status-right '#[fg=cyan]#(/usr/local/bin/icalBuddy -n -li 1 -npn -eep "url, notes" -ps "/ » /" eventsToday+5) #[fg=yellow]#(/usr/local/bin/icalBuddy -li 1 -npn -eep "url" -ps "/ » /" tasksDueBefore:today+5) #[fg=green]#(/usr/bin/dstat --battery-remain --nocolor 1 0 | tail -1) #[fg=green]#(whoami)@#H #[fg=yellow]#(cut -d " " -f 1 /proc/loadavg) #[default]%a %d %b %R'
 
 # Window modes color
 setw -g mode-bg colour240
