@@ -7,11 +7,14 @@ Global
 Session Management
 =================
 
-`Apple`
-: Some one
+`prefix $`
+: Rename session
 
 Window Management
 =================
+
+`prefix ,`
+: Rename window
 
 Pane Management
 =================
