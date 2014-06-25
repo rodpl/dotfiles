@@ -32,6 +32,23 @@ WINDOWS_FILE_MAP = {
   '.tmux.conf'         => :skip,
 }
 
+CYGWIN_FILE_MAP = {
+  '.vim'               => 'vimfiles',
+  '.gvimrc'            => '_gvimrc',
+  '.vimrc'             => '_vimrc',
+  '.vimcommon'         => '_vimcommon',
+  '.vsvimrc'           => '_vsvimrc',
+  '.ReSharper'         => :skip,
+  '.WindowsPowerShell' => :skip,
+  '.AutoHotkey.ahk'    => :skip,
+  '.brew'              => :skip,
+  '.bin'               => :skip,
+  '.keymando'          => :skip,
+  '.ConEmu.xml'        => :skip,
+  '.gitconfig_mac'     => :skip,
+  '.hgrc_mac'          => :skip,
+}
+
 MAC_FILE_MAP = {
   '.AutoHotkey.ahk'    => :skip,
   '.ReSharper'         => :skip,
@@ -109,6 +126,7 @@ def map_to_target(linkable)
     file = "." << file
     target = file
     target = WINDOWS_FILE_MAP[file] if windows? && WINDOWS_FILE_MAP[file]
+    target = CYGWIN_FILE_MAP[file] if cygwin? && CYGWIN_FILE_MAP[file]
     target = MAC_FILE_MAP[file] if mac? && MAC_FILE_MAP[file]
     target == :skip ? :skip : target[0] == '/' ? "C:/#{target}" : "#{ENV['HOME']}/#{target}"
 end
@@ -155,7 +173,7 @@ def linux?
 end
 
 def cygwin?
-    RUBY_PLATFORM.downcase.include?("cygwin")
+    (/cygwin/ =~ RbConfig::CONFIG['host_os']) != nil
 end
 
 def unix?

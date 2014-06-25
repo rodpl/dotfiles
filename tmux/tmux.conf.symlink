@@ -6,7 +6,7 @@
 # #T current window title
 
 # remap prefix to ctrl-space
-set -g prefix C-Space
+set-option -g prefix C-Space
 bind C-Space send-prefix
 unbind C-b
 
@@ -131,7 +131,7 @@ setw -g mode-keys vi
 
 # vi-style copy-mode bindings (<prefix>+[)
 bind -t vi-copy v begin-selection
-bind -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy" # Copies to the tmux buffer and to osx
+#bind -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy" # Copies to the tmux buffer and to osx
 
 # For xclip to work in an SSH session...
 # On the client:
@@ -140,8 +140,8 @@ bind -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy" # Copies to the 
 # On the server:
 # - `ForwardX11 yes` should be set in /etc/ssh/sshd_config (default for Ubuntu)
 # - `echo $DISPLAY` should output something like `localhost:10.0`
-bind y run-shell "tmux save-buffer - | xclip -selection clipboard -i"\; display-message "Buffer copied to x clipboard"
-bind p run-shell "tmux set-buffer \"$(xclip -selection clipboard -o)\"; tmux paste-buffer"\; display-message "Pasted from x clipboard"
+#bind y run-shell "tmux save-buffer - | xclip -selection clipboard -i"\; display-message "Buffer copied to x clipboard"
+#bind p run-shell "tmux set-buffer \"$(xclip -selection clipboard -o)\"; tmux paste-buffer"\; display-message "Pasted from x clipboard"
 
 # Default shell same as parent
 set-option -g default-command "reattach-to-user-namespace -l $SHELL -l"
