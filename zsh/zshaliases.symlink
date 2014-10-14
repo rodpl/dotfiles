@@ -1,0 +1,9 @@
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+alias t="tmux -u"
+
+alias -s rb=vim
+alias -s py=vim
+
+# vim:set ft=zsh:
