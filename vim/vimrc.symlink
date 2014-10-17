@@ -14,6 +14,10 @@ filetype plugin indent on " enable detection, plugins and indenting in one step
 
 " Settings {{{1
 set nocompatible        " Don't force vi compatibility
+"  Better copy and paste {{{2
+set pastetoggle=<F3>
+set clipboard=unnamed   " Yank text directly to clipboard on Windows and MacOs
+
 "  Language and encodings {{{2
 set langmenu=en_US.UTF-8
 set enc=utf-8
@@ -67,8 +71,7 @@ end
 
 " Inputs {{{2
 set backspace=2         " make backspace work normal (indent, eol, start)
-set clipboard=unnamed   " Yank text directly to clipboard on Windows and MacOs
-set mouse=a             " use mouse everywhere
+set mouse=a             " use mouse everywhere on OSX press ALT and click
 set timeoutlen=1000 ttimeoutlen=0 " eliminatin key delays
 set whichwrap+=<,>,h,l  " allow backspace and cursor keys to cross line boundaries
 
@@ -125,8 +128,8 @@ nnoremap <leader>ft Vatzf
 " Indent whole file and return to original position
 nmap <leader>= mzgg=G`z
 " Speed up tab switching {{{2
-map <C-S-]> gt
-map <C-S-[> gT
+map <Leader>n <esc>gT
+map <Leader>m <esc>gt
 map <localleader>1 1gt
 map <localleader>2 2gt
 map <localleader>3 3gt

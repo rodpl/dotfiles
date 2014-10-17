@@ -8,11 +8,9 @@ cnoremap <c-p> <up>
 " No multiple-key chord mapping supported in ViEmu
 nnoremap <leader><space> :noh<cr>
 
-" Use tabs for indentation
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
-vmap <TAB> >gv
-vmap <S-TAB> <gv
+" easier moving code of blocks
+vnoremap < <gv
+vnoremap > >gv
 
 " Use space for pageup page down
 nnoremap <space> <C-f>
