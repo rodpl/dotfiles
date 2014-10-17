@@ -144,9 +144,9 @@ nmap <leader>vg :call Edit_gvimrc()<CR>
 if has("autocmd")
     augroup myvimrchooks
         au!
-        au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
-        augroup END
-    endif
+        au BufWritePost vimrc.symlink,.vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+    augroup END
+endif
 " Session management {{{2
 nmap <c-F12> :call SaveSession()<CR>
 nmap <c-s-F12> :1,$bd <bar> so ~/.vim/sessions/
