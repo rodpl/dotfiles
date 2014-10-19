@@ -264,6 +264,8 @@ map <A-S-l> :NERDTreeFind<CR>
 imap <A-S-l> <ESC>:NERDTreeFind<CR>
 " Tagbar {{2
 nmap <F8> :TagbarToggle<CR>
+" Airline {{{2
+set laststatus=2
 "  Modelines {{{1
 " vim: nowrap fdm=marker
 "z }}}

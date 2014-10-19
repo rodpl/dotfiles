@@ -87,3 +87,7 @@
 [submodule "vim/vim.symlink/bundle/emmet"]
 	path = vim/vim.symlink/bundle/emmet
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "vim/vim.symlink/bundle/airline"]
+	path = vim/vim.symlink/bundle/airline
+	url = https://github.com/bling/vim-airline.git
+	branch = master
