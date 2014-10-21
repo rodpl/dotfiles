@@ -32,10 +32,6 @@
 	path = zsh/oh-my-zsh.symlink
 	url = https://github.com/robbyrussell/oh-my-zsh.git
     ignore = dirty
-[submodule "vim/vim.symlink/bundle/surround"]
-	path = vim/vim.symlink/bundle/surround
-	url = https://github.com/tpope/vim-surround.git
-	branch = master
 [submodule "vim/vim.symlink/bundle/syntastic"]
 	path = vim/vim.symlink/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
