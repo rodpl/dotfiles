@@ -28,6 +28,9 @@ Plugin 'bling/vim-airline'
 " Color schemes {{{3
 Plugin 'tpope/vim-vividchalk'
 
+" Syntax checking {{{3
+Plugin 'scrooloose/syntastic'
+
 " -- Post {{{2
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -310,4 +313,3 @@ let g:syntastic_python_checkers = ['pylama', 'python']
 "  Modelines {{{1
 " vim: nowrap fdm=marker
 "z }}}
-
