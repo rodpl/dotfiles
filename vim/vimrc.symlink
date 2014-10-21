@@ -28,6 +28,9 @@ Plugin 'bling/vim-airline'
 " Color schemes {{{3
 Plugin 'tpope/vim-vividchalk'
 
+" Finders {{{3
+Plugin 'kien/ctrlp.vim'
+
 " Syntax checking {{{3
 Plugin 'scrooloose/syntastic'
 
