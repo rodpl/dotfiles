@@ -63,9 +63,6 @@
 	path = vim/vim.symlink/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
 	branch = master
-[submodule "vim/vim.symlink/bundle/emmet"]
-	path = vim/vim.symlink/bundle/emmet
-	url = https://github.com/mattn/emmet-vim.git
 [submodule "vim/vim.symlink/bundle/syntastic"]
 	path = vim/vim.symlink/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
