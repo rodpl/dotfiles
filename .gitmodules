@@ -1,6 +1,3 @@
-[submodule "vim/vim.symlink/bundle/vibrantink"]
-	path = vim/vim.symlink/bundle/vibrantink
-	url = https://github.com/vim-scripts/vibrantink.git
 [submodule "vim/vim.symlink/bundle/visincr"]
 	path = vim/vim.symlink/bundle/visincr
 	url = https://github.com/vim-scripts/VisIncr.git
