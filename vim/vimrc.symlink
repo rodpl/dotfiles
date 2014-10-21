@@ -9,14 +9,23 @@ set langmenu=en_US.UTF-8
 set nocompatible        " Don't force vi compatibility
 " language en
 " Vundle {{{1
+" -- Pre {{{2
 filetype off            " force reloading *after* vundle loaded
 " set the runtime path to include Vundle and initialize
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Plugins {{{2
+"
+" Common {{{3
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+"
+" UI {{{3
+Plugin 'bling/vim-airline'
 
+" -- Post {{{2
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
