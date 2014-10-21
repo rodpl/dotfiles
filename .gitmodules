@@ -54,10 +54,6 @@
 	path = zsh/oh-my-zsh.symlink
 	url = https://github.com/robbyrussell/oh-my-zsh.git
     ignore = dirty
-[submodule "vim/vim.symlink/bundle/dbext"]
-	path = vim/vim.symlink/bundle/dbext
-	url = https://github.com/vim-scripts/dbext.vim.git
-    ignore = dirty
 [submodule "vim/vim.symlink/bundle/sqlutilities"]
 	path = vim/vim.symlink/bundle/sqlutilities
 	url = https://github.com/vim-scripts/SQLUtilities.git
