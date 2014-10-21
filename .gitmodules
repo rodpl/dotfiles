@@ -1,9 +1,6 @@
 [submodule "vim/vim.symlink/bundle/slurper"]
 	path = vim/vim.symlink/bundle/slurper
 	url = https://github.com/rodpl/vim-slurper.git
-[submodule "vim/vim.symlink/bundle/nerdtree"]
-	path = vim/vim.symlink/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/vim.symlink/bundle/pandoc"]
 	path = vim/vim.symlink/bundle/pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc.git
