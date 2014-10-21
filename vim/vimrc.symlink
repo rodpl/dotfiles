@@ -1,4 +1,5 @@
 " Folding cheet sheetIndicates a fast terminal connection.
+"
 " zR    open all folds
 " zM    close all folds
 " za    toggle fold at cursor position
@@ -118,9 +119,12 @@ let maplocalleader = "\\"
 
 " Loading shared mappings {{{1
 if has('win32')
-    source $HOME/_vimcommon
+    let $MYVIMCOMMON = $HOME.'/_vimcommon'
 else
-    source $HOME/.vimcommon
+    let $MYVIMCOMMON = $HOME.'/.vimcommon'
+endif
+if filereadable($MYVIMCOMMON)
+    source $MYVIMCOMMON
 endif
 
 " Revert mswin.vim changes {{{2
@@ -152,11 +156,12 @@ map <localleader>0 :tablast<CR>
 " Easily modify vimrc {{{2
 nmap <leader>vr :call Edit_vimrc()<CR>
 nmap <leader>vg :call Edit_gvimrc()<CR>
+nmap <leader>vc :call Edit_vimcommon()<CR>
 " http://stackoverflow.com/questions/2400264/is-it-possible-to-apply-vim-configurations-without-restarting/2400289#2400289
 if has("autocmd")
     augroup myvimrchooks
         au!
-        au BufWritePost vimrc.symlink,.vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+        au BufWritePost vimrc.symlink,.vimrc,_vimrc,vimrc,vimcommon.symlink,.vimcommon,_vimcommon,vimcommon,gvimrc.symlink,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
     augroup END
 endif
 " Session management {{{2
@@ -220,6 +225,9 @@ endfunction
 
 " Edit vim config files {{{2
 function! Edit_gvimrc()
+    if filereadable($MYGVIMRC)
+        tabedit $MYGVIMRC
+    endif
     if filereadable('C:\Projects\rod\dotfiles.BitBucket\gvimrc')
         tabedit C:\Projects\rod\dotfiles.BitBucket\gvimrc
     endif
@@ -229,11 +237,20 @@ function! Edit_gvimrc()
 endfunction
 
 function! Edit_vimrc()
+    if filereadable($MYVIMRC)
+        tabedit $MYVIMRC
+    endif
     if filereadable('C:\Projects\rod\dotfiles.BitBucket\vimrc')
         tabedit C:\Projects\rod\dotfiles.BitBucket\vimrc
     endif
     if filereadable('C:\Projects\dotfiles.BitBucket\vimrc')
         tabedit C:\Projects\dotfiles.BitBucket\vimrc
+    endif
+endfunction
+
+function! Edit_vimcommon()
+    if filereadable($MYVIMCOMMON)
+        tabedit $MYVIMCOMMON
     endif
 endfunction
 " File types {{{1
