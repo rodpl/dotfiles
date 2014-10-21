@@ -5,14 +5,24 @@
 " zj    move down to start of next fold
 " zk    move up to end of previous fold
 set langmenu=en_US.UTF-8
+set nocompatible        " Don't force vi compatibility
 " language en
-" Manage plugins {{{1
-filetype off            " force reloading *after* pathogen loaded
-call pathogen#infect()
-filetype plugin indent on " enable detection, plugins and indenting in one step
+" Vundle {{{1
+filetype off            " force reloading *after* vundle loaded
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
 
 " Settings {{{1
-set nocompatible        " Don't force vi compatibility
 "  Better copy and paste {{{2
 set pastetoggle=<F3>
 set clipboard=unnamed   " Yank text directly to clipboard on Windows and MacOs
