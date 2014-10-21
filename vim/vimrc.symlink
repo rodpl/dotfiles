@@ -34,6 +34,9 @@ Plugin 'kien/ctrlp.vim'
 " Syntax checking {{{3
 Plugin 'scrooloose/syntastic'
 
+" Version control systems {{{3
+Plugin 'tpope/vim-fugitive'
+
 " Python {{{3
 Plugin 'jmcantrell/vim-virtualenv'
 
