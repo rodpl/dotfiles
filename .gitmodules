@@ -1,9 +1,6 @@
 [submodule "vim/vim.symlink/bundle/slurper"]
 	path = vim/vim.symlink/bundle/slurper
 	url = https://github.com/rodpl/vim-slurper.git
-[submodule "vim/vim.symlink/bundle/Python-Syntax"]
-	path = vim/vim.symlink/bundle/Python-Syntax
-	url = https://github.com/vim-scripts/Python-Syntax.git
 [submodule "vim/vim.symlink/bundle/aftercolors"]
 	path = vim/vim.symlink/bundle/aftercolors
 	url = https://github.com/vim-scripts/AfterColors.vim.git
