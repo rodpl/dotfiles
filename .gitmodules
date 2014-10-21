@@ -1,10 +1,6 @@
 [submodule "vim/vim.symlink/bundle/slurper"]
 	path = vim/vim.symlink/bundle/slurper
 	url = https://github.com/rodpl/vim-slurper.git
-[submodule "vim/vim.symlink/bundle/blogit"]
-	path = vim/vim.symlink/bundle/blogit
-	url = http://git.symlink.me/pub/romain/blogit.git
-    ignore = dirty
 [submodule "vim/vim.symlink/bundle/dotnet"]
 	path = vim/vim.symlink/bundle/dotnet
 	url = https://github.com/rodpl/vim-dotnet.git
