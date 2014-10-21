@@ -25,6 +25,9 @@ Plugin 'gmarik/Vundle.vim'
 " UI {{{3
 Plugin 'bling/vim-airline'
 
+" Color schemes {{{3
+Plugin 'tpope/vim-vividchalk'
+
 " -- Post {{{2
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
