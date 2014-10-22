@@ -34,6 +34,10 @@ Plugin 'kien/ctrlp.vim'
 " Autocompletion {{{3
 Plugin 'Valloric/YouCompleteMe'
 
+" Snippets {{{3
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 " Syntax checking {{{3
 Plugin 'scrooloose/syntastic'
 
