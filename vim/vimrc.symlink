@@ -27,6 +27,10 @@ Plugin 'bling/vim-airline'
 
 " Color schemes {{{3
 Plugin 'tpope/vim-vividchalk'
+Plugin 'alem0lars/vim-colorscheme-darcula'
+Plugin 'chankaward/vim-railscasts-theme'
+Plugin 'jnurmine/Zenburn'
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 " Finders {{{3
 Plugin 'kien/ctrlp.vim'
