@@ -85,8 +85,8 @@ set linespace=1         " number of pixel lines inserted between characters
 set wildmenu            " command-line completion operates in an enhanced mode
 set wildmode=list:longest
 set ruler               " Show the line and column number of the cursor position
+set relativenumber      " Show the line number relative to the line with the cursor in front of each line. 
 set number              " Print the line number in front of each line
-"set relativenumber      " Show the line number relative to the line with the cursor in front of each line. 
 set scrolloff=3         " Minimal number of screen lines to keep above and below the cursor.
 set showmode            " Show (partial) command in the last line of the screen.
 set cmdheight=1         " Number of screen lines to use for the command-line
