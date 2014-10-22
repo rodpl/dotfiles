@@ -330,6 +330,13 @@ nmap <F8> :TagbarToggle<CR>
 set laststatus=2
 " Syntastic {{{2
 let g:syntastic_python_checkers = ['pylama', 'python']
+
+" UltiSnip {{{2
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+
 "  Modelines {{{1
 " vim: nowrap fdm=marker
 "z }}}
