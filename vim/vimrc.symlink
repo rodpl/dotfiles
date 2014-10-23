@@ -30,6 +30,7 @@ Plugin 'gmarik/Vundle.vim'
 "
 " UI {{{3
 Plugin 'bling/vim-airline'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Color schemes {{{3
 Plugin 'tpope/vim-vividchalk'
