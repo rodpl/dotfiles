@@ -54,6 +54,7 @@ Plugin 'scrooloose/syntastic'
 
 " Version control systems {{{3
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 " Python {{{3
 Plugin 'jmcantrell/vim-virtualenv'
@@ -335,6 +336,11 @@ imap <A-S-l> <ESC>:NERDTreeFind<CR>
 nmap <F8> :TagbarToggle<CR>
 " Airline {{{2
 set laststatus=2
+
+" GitGutter {{{2
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+
 " Syntastic {{{2
 let g:syntastic_python_checkers = ['pylama', 'python']
 

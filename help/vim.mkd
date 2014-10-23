@@ -79,3 +79,16 @@ Zencoding
 =========
 Ctrl-y ,
   ~ Run zencoding
+
+Git
+===
+]h
+  ~ Next hunk
+[h
+  ~ Previous hunk
+, hs
+  ~ Stage hunk
+, hr
+  ~ Revert hunk
+, hp
+  ~ Preview hunk
