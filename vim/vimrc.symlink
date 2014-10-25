@@ -338,6 +338,7 @@ imap <A-S-l> <ESC>:NERDTreeFind<CR>
 nmap <F8> :TagbarToggle<CR>
 " Airline {{{2
 set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
 
 " GitGutter {{{2
 nmap ]h <Plug>GitGutterNextHunk
