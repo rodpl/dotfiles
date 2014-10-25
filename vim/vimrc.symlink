@@ -32,6 +32,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'andersoncustodio/vim-tmux'
+Plugin 'wellle/tmux-complete.vim'
 
 " Color schemes {{{3
 Plugin 'tpope/vim-vividchalk'
