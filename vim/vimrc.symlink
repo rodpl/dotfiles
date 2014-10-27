@@ -39,7 +39,11 @@ Plugin 'tpope/vim-vividchalk'
 Plugin 'alem0lars/vim-colorscheme-darcula'
 Plugin 'chankaward/vim-railscasts-theme'
 Plugin 'jnurmine/Zenburn'
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+if has('win32') || has('win64')
+    Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
+else
+    Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+endif
 
 " Finders {{{3
 Plugin 'kien/ctrlp.vim'
