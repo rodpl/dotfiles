@@ -100,6 +100,7 @@ set makeef=make.err     " Name of the errorfile for the :make command
 " UI {{{2
 set guioptions=Ttma     " Toolbar, menu, tearoffs, autoselect
 set background=dark
+colorscheme railscasts
 
 set linespace=1         " number of pixel lines inserted between characters
 set wildmenu            " command-line completion operates in an enhanced mode
