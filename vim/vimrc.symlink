@@ -44,6 +44,8 @@ if has('win32') || has('win64')
 else
     Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 endif
+Plugin 'cschlueter/vim-mustang'
+Plugin 'godlygeek/csapprox'
 
 " Finders {{{3
 Plugin 'kien/ctrlp.vim'
