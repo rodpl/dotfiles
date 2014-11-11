@@ -30,7 +30,7 @@ bindkey -rpM viins '^['
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew mercurial battery osx forklift virtualenv django python pip rake ruby rvm rbenvi nvm npm node gitignore github bower web-search tmux tmuxinator)
+plugins=(git brew mercurial battery osx forklift virtualenv django python pip rake ruby rvm rbenvi nvm npm node gitignore github bower web-search tmux tmuxinator golang)
 
 set -o vi
 
