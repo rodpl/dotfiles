@@ -69,6 +69,9 @@ Plugin 'airblade/vim-gitgutter'
 " Python {{{3
 Plugin 'jmcantrell/vim-virtualenv'
 
+" GoLang {{{3
+Plugin 'fatih/vim-go'
+
 " -- Post {{{2
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -362,6 +365,9 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+
+" Vim Go
+let g:go_disable_autoinstall = 0
 
 "  Modelines {{{1
 " vim: nowrap fdm=marker
