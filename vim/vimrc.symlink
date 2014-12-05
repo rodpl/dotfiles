@@ -33,6 +33,7 @@ Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'andersoncustodio/vim-tmux'
 Plugin 'wellle/tmux-complete.vim'
+Plugin 'majutsushi/tagbar'
 
 " Color schemes {{{3
 Plugin 'tpope/vim-vividchalk'
