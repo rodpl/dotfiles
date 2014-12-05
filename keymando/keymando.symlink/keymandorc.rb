@@ -42,8 +42,8 @@ map "`ai", lambda { activate('iTerm') }
 map "`ae", lambda { activate('Messages') }
 map "`aa", lambda { activate('Mail') }
 map "`as", lambda { activate('Safari') }
-map "`an", lambda { application_previous }
-map "`am", lambda { application_next }
+map "`n", lambda { application_previous }
+map "`m", lambda { application_next }
 
 # Commands
 # -----------------------------------------------------------
