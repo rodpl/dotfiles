@@ -73,6 +73,10 @@ Plugin 'jmcantrell/vim-virtualenv'
 " GoLang {{{3
 Plugin 'fatih/vim-go'
 
+" Markdown {{{3
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+
 " -- Post {{{2
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
