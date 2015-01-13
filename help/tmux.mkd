@@ -16,6 +16,9 @@ Window Management
 `prefix ,`
 : Rename window
 
+`prefix &`
+: Kill window
+
 Pane Management
 =================
 
@@ -30,3 +33,8 @@ Pane Management
 
 `:join-pane -s 1`
 : Join pane to window no 1
+
+Resources
+=========
+
+CheatSheet - https://gist.github.com/MohamedAlaa/2961058

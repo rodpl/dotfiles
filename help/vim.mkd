@@ -1,3 +1,9 @@
+Command Mode
+============
+
+Ctrl-d
+ ~ Reveal a list of possible completions. To cycle use Tab and S-Tab.
+
 Tabs
 ====
 
