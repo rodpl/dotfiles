@@ -77,6 +77,9 @@ Plugin 'fatih/vim-go'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 
+" Database {{{3
+Plugin 'vim-scripts/dbext.vim'
+
 " -- Post {{{2
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -249,9 +252,9 @@ nmap <leader>l :set list!<CR>
 " ,w rapidly toggle 'set wrap'
 nmap <leader>w :set wrap!<CR>
 " ,s toggle spell checking
-nmap <leader>s :setlocal spell!<CR>
-map <leader>sp :setlocal spell spelllang=pl<CR>
-map <leader>se :setlocal spell spelllang=en<CR>
+nmap <leader>sp :setlocal spell!<CR>
+map <leader>spp :setlocal spell spelllang=pl<CR>
+map <leader>spe :setlocal spell spelllang=en<CR>
 
 " Commands and Functions {{{1
 " :Wrap {{{2

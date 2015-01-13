@@ -8,3 +8,6 @@ end
 "set gfn=Consolas:h11:cEASTEUROPE antialias
 
 set go-=T
+let g:dbext_default_profile_PMSDSN = 'type=SQLSRV:integratedlogin=1:extra=-D PMS'
+let g:dbext_default_profile_sqlexpress_master = 'type=SQLSRV:integratedlogin=1:srvname=.\SQLEXPRESS:dbname=master'
+
