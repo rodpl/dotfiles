@@ -8,7 +8,7 @@
 <key name="Software">
 	<key name="ConEmu">
 		<!-- Main configuration (/config argument is not specified) -->
-		<key name=".Vanilla" modified="2015-01-08 20:58:52" build="141117">
+		<key name=".Vanilla" modified="2015-01-13 10:01:52" build="141221">
 			<value name="IconID" type="long" data="1"/>
 			<value name="BackGround Image show" type="hex" data="00"/>
 			<value name="BackGround Image" type="string" data="c:\back.bmp"/>
@@ -16,7 +16,11 @@
 			<value name="FontSizeX" type="ulong" data="0"/>
 			<value name="TabMargins" type="hex" data="00,00,00,00,19,00,00,00,00,00,00,00,00,00,00,00"/>
 			<value name="WindowMode" type="dword" data="0000051f"/>
-			<value name="CmdLineHistory" type="multi"><line data="{Powershell}"/><line data="{Medicover Loyalty}"/><line data="{Medicover Mol}"/><line data="{GIT Bash}"/><line data="{VS Console 2012 x86}"/><line data="{Lease Broker}"/><line data="%SystemRoot%\syswow64\WindowsPowerShell\v1.0\powershell.exe"/><line data="%comspec% /k RenameTab &quot;VS Console&quot; &amp;&amp; &quot;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\vcvarsall.bat&quot; x86"/></value>
+			<value name="CmdLineHistory" type="multi"><line data="{Powershell}"/><line data="{Far}"/><line data="{GIT Bash}"/>
+				<line data="{PowerShell}"/>
+				<line data="{Git bash}"/>
+				<line data="{cmd}"/>
+			</value>
 			
 			<value name="ExtendColors" type="hex" data="00"/>
 			<value name="ExtendColorIdx" type="long" data="14"/>
@@ -115,10 +119,10 @@
 			<value name="FontBold" type="hex" data="00"/>
 			<value name="FontItalic" type="hex" data="00"/>
 			<value name="Monospace" type="hex" data="02"/>
-			<value name="ConWnd Width" type="ulong" data="33554532"/>
-			<value name="ConWnd Height" type="ulong" data="37"/>
+			<value name="ConWnd Width" type="ulong" data="240"/>
+			<value name="ConWnd Height" type="ulong" data="50"/>
 			<value name="16bit Height" type="ulong" data="0"/>
-			<value name="ConWnd X" type="long" data="60"/>
+			<value name="ConWnd X" type="long" data="1917"/>
 			<value name="ConWnd Y" type="long" data="-3"/>
 			<value name="Cascaded" type="hex" data="01"/>
 			<value name="SkipFocusEvents" type="hex" data="00"/>
@@ -468,9 +472,9 @@
 			<value name="KeyMacro32.Text" type="string" data=""/>
 			<value name="CTS.VkPrompt" type="hex" data="00"/>
 			<value name="WndDragKey" type="dword" data="00121101"/>
-				<key name="Tasks" modified="2014-07-24 11:49:26" build="140505">
+				<key name="Tasks" modified="2015-01-08 11:37:31" build="141208">
 				<value name="Count" type="dword" data="00000009"/>
-						<key name="Task1" modified="2014-07-24 11:49:26" build="140505">
+						<key name="Task1" modified="2015-01-08 11:37:31" build="141208">
 					<value name="Name" type="string" data="{Far}"/>
 					<value name="GuiArgs" type="string" data=""/>
 					<value name="Cmd1" type="string" data="C:\Bat\Far\Far.exe"/>
@@ -478,7 +482,7 @@
 					<value name="Count" type="dword" data="00000001"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 				</key>
-						<key name="Task2" modified="2014-07-24 11:49:26" build="140505">
+						<key name="Task2" modified="2015-01-08 11:37:31" build="141208">
 					<value name="Name" type="string" data="{Powershell}"/>
 					<value name="GuiArgs" type="string" data="/icon &quot;C:\Bat\vspowershell.ico&quot; /dir &quot;C:\Projects&quot; /single"/>
 					<value name="Cmd1" type="string" data="%SystemRoot%\syswow64\WindowsPowerShell\v1.0\powershell.exe"/>
@@ -486,7 +490,7 @@
 					<value name="Count" type="dword" data="00000001"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 				</key>
-						<key name="Task3" modified="2014-07-24 11:49:26" build="140505">
+						<key name="Task3" modified="2015-01-08 11:37:31" build="141208">
 					<value name="Name" type="string" data="{VS Console 2012 x86}"/>
 					<value name="GuiArgs" type="string" data="/icon &quot;C:\Bat\vscommand.ico&quot; /dir &quot;C:\Projects&quot; /single"/>
 					<value name="Cmd1" type="string" data="%comspec% /k RenameTab &quot;VS Console&quot; &amp;&amp; &quot;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\vcvarsall.bat&quot; x86"/>
@@ -494,7 +498,7 @@
 					<value name="Count" type="dword" data="00000001"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 				</key>
-						<key name="Task4" modified="2014-07-24 11:49:26" build="140505">
+						<key name="Task4" modified="2015-01-08 11:37:31" build="141208">
 					<value name="Name" type="string" data="{GIT Bash}"/>
 					<value name="GuiArgs" type="string" data="/icon &quot;C:\Program Files (x86)\Git\etc\git.ico&quot;"/>
 					<value name="Cmd1" type="string" data="C:\Windows\SysWOW64\cmd.exe /k RenameTab &quot;Git Bash&quot; &amp;&amp; &quot;&quot;&quot;C:\Program Files (x86)\Git\bin\sh.exe&quot; --login -i&quot;&quot;"/>
@@ -503,7 +507,7 @@
 					<value name="Count" type="dword" data="00000001"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 				</key>
-						<key name="Task5" modified="2014-07-24 11:49:26" build="140505">
+						<key name="Task5" modified="2015-01-08 11:37:31" build="141208">
 					<value name="Name" type="string" data="{Lease Broker}"/>
 					<value name="GuiArgs" type="string" data="/dir &quot;C:\Projects\LB\git&quot;"/>
 					<value name="Cmd1" type="string" data="&gt;%SystemRoot%\syswow64\WindowsPowerShell\v1.0\powershell.exe"/>
@@ -512,7 +516,7 @@
 					<value name="Count" type="dword" data="00000002"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 				</key>
-						<key name="Task6" modified="2014-07-24 11:49:26" build="140505">
+						<key name="Task6" modified="2015-01-08 11:37:31" build="141208">
 					<value name="Name" type="string" data="{Orchard-Workshop}"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data="/dir &quot;C:\Projects\Rod\orchard\orchard-workshop&quot;"/>
@@ -521,7 +525,7 @@
 					<value name="Active" type="dword" data="00000001"/>
 					<value name="Count" type="dword" data="00000002"/>
 				</key>
-						<key name="Task7" modified="2014-07-24 11:49:26" build="140505">
+						<key name="Task7" modified="2015-01-08 11:37:31" build="141208">
 					<value name="Name" type="string" data="{Medicover Mol}"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data="/dir &quot;C:\Projects\Medicover\Mol&quot;"/>
@@ -530,7 +534,7 @@
 					<value name="Active" type="dword" data="00000001"/>
 					<value name="Count" type="dword" data="00000002"/>
 				</key>
-						<key name="Task8" modified="2014-07-24 11:49:26" build="140505">
+						<key name="Task8" modified="2015-01-08 11:37:31" build="141208">
 					<value name="Name" type="string" data="{Medicover Loyalty}"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data="/dir &quot;C:\Projects\Medicover\Loyalty&quot;"/>
@@ -539,7 +543,7 @@
 					<value name="Active" type="dword" data="00000001"/>
 					<value name="Count" type="dword" data="00000002"/>
 				</key>
-						<key name="Task9" modified="2014-07-24 11:49:26" build="140505">
+						<key name="Task9" modified="2015-01-08 11:37:31" build="141208">
 					<value name="Name" type="string" data="{Show ANSI colors}"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=""/>
@@ -548,7 +552,7 @@
 					<value name="Count" type="dword" data="00000001"/>
 				</key>
 			</key>
-				<key name="Apps" modified="2014-07-24 11:49:26" build="140505">
+				<key name="Apps" modified="2015-01-08 11:37:31" build="141208">
 				<value name="Count" type="dword" data="00000000"/>
 			</key>
 			<value name="CursorTypeActive" type="dword" data="000232c1"/>
@@ -592,7 +596,7 @@
 			<value name="PasteFileKey" type="dword" data="00101146"/>
 			<value name="PastePathKey" type="dword" data="00101144"/>
 			<value name="PasteCygwinKey" type="dword" data="00005d2d"/>
-				<key name="Colors" modified="2014-07-24 11:49:26" build="140505">
+				<key name="Colors" modified="2015-01-08 11:37:31" build="141208">
 				<value name="Count" type="dword" data="00000000"/>
 			</key>
 			<value name="SetDefaultTerminalStartupTSA" type="hex" data="01"/>
@@ -650,6 +654,34 @@
 			<value name="Key.JumpNextMonitor" type="dword" data="00105b27"/>
 			<value name="Key.TileToLeft" type="dword" data="00005b25"/>
 			<value name="Key.TileToRIght" type="dword" data="00005b27"/>
+			<value name="DefaultTerminalAgressive" type="hex" data="01"/>
+			<value name="ProcessCmdStart" type="hex" data="01"/>
+			<value name="Multi.ShowSearch" type="hex" data="01"/>
+			<value name="Multi.DupConfirm" type="hex" data="01"/>
+			<value name="Multi.DetachConfirm" type="hex" data="01"/>
+			<value name="FontUseDpi" type="hex" data="01"/>
+			<value name="FontUseUnits" type="hex" data="00"/>
+			<value name="UseScrollLock" type="hex" data="01"/>
+			<value name="CTS.ForceLocale" type="dword" data="00000000"/>
+			<value name="StatusBar.Hide.VisL" type="hex" data="01"/>
+			<value name="StatusBar.Hide.KeyHooks" type="hex" data="01"/>
+			<value name="StatusBar.Hide.WVBack" type="hex" data="01"/>
+			<value name="StatusBar.Hide.WVDC" type="hex" data="01"/>
+			<value name="StatusBar.Hide.Zoom" type="hex" data="01"/>
+			<value name="StatusBar.Hide.Dpi" type="hex" data="01"/>
+			<value name="TabFlashChanged" type="dword" data="00000008"/>
+			<value name="TabModifiedSuffix" type="string" data="[*]"/>
+			<value name="Multi.SplitMaximize" type="dword" data="00005d0d"/>
+			<value name="Multi.Pause" type="dword" data="80808013"/>
+			<value name="Multi.GroupInput" type="dword" data="00005d47"/>
+			<value name="CloseZombiesKey" type="dword" data="00000000"/>
+			<value name="HighlightMouseSwitchX" type="dword" data="00005d58"/>
+			<value name="Key.BufHfPgUp" type="dword" data="00005d21"/>
+			<value name="Key.BufHfPgDn" type="dword" data="00005d22"/>
+			<value name="Key.BufTop" type="dword" data="00005d24"/>
+			<value name="Key.BufBottom" type="dword" data="00005d23"/>
+			<value name="Key.BufCursor" type="dword" data="00005d08"/>
+			<value name="FontOriginalKey" type="dword" data="00001104"/>
 		</key>
 
 		<!-- Named configurations (choosed by /config argument) are placed in subkeys -->
