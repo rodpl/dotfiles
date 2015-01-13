@@ -374,7 +374,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
-" Vim Go
+" Vim Go {{{2
 let g:go_disable_autoinstall = 0
 
 " neocomplete {{{2
