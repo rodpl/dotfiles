@@ -377,8 +377,15 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 " Vim Go {{{2
 let g:go_disable_autoinstall = 0
 
+<<<<<<< HEAD
 " neocomplete {{{2
 let g:neocomplete#enable_at_startup = 1
+=======
+" DbExt {{{2
+if !has('win32') && !has('win64')
+    let g:dbext_default_SQLSRV_bin = "mssql.sh"
+endif
+>>>>>>> VIM: DbExt must use wrapper for connecting sql server from osx
 "  Modelines {{{1
 " vim: nowrap fdm=marker
 "z }}}
