@@ -50,7 +50,7 @@ Plugin 'godlygeek/csapprox'
 
 " Finders & Completion {{{3
 Plugin 'kien/ctrlp.vim'
-Plugin 'Shougo/neocomplete.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 " Operators, motions, etc ... {{{3
 Plugin 'tpope/vim-commentary'
@@ -376,9 +376,6 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 " Vim Go {{{2
 let g:go_disable_autoinstall = 0
-
-" neocomplete {{{2
-let g:neocomplete#enable_at_startup = 1
 
 " DbExt {{{2
 if !has('win32') && !has('win64')
