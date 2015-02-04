@@ -1,7 +1,4 @@
 " Mappings 
-map <S-Enter> O<Esc>    "awesome, inserts new line without going into insert mode
-map <Enter> o<Esc>
-
 cnoremap <c-n> <down>
 cnoremap <c-p> <up>
 
