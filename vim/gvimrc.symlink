@@ -9,5 +9,5 @@ end
 
 set go-=T
 let g:dbext_default_profile_PMSDSN = 'type=SQLSRV:integratedlogin=1:extra=-D PMS -p'
-let g:dbext_default_profile_sqlexpress_master = 'type=SQLSRV:integratedlogin=1:srvname=.\SQLEXPRESS:dbname=master'
-
+let g:dbext_default_profile_PMSIntegrationDSN = 'type=SQLSRV:integratedlogin=1:extra=-D PMSIntegration -p'
+let g:dbext_default_profile_SqlExpress_PMS = 'type=SQLSRV:integratedlogin=1:srvname=.\SQLEXPRESS:dbname=PermissionManagementSystem'
