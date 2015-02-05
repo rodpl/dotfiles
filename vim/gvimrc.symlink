@@ -1,4 +1,3 @@
-colorscheme vividchalk
 "set gfn=DejaVu\ Sans\ Mono:h11:cEASTEUROPE antialias
 if has('win32')
     set gfn=Droid\ Sans\ Mono\ for\ Powerline:h11:cEASTEUROPE antialias

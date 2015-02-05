@@ -15,84 +15,125 @@ let s:is_conemu = !empty($CONEMUBUILD)
 set langmenu=en_US.UTF-8
 set nocompatible        " Don't force vi compatibility
 " language en
-" Vundle {{{1
-" -- Pre {{{2
-filetype off            " force reloading *after* vundle loaded
-" set the runtime path to include Vundle and initialize
 
-if has('win32') || has('win64')
-    set rtp+=~/vimfiles/bundle/Vundle.vim
-    let path='~/vimfiles/bundle'
-    call vundle#begin(path)
-else
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
+if s:is_windows
+  set rtp+=~/.vim       " Change from vimfiles to .vim
 endif
 
-" Plugins {{{2
-"
-" Common {{{3
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-"
-" UI {{{3
-Plugin 'bling/vim-airline'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'andersoncustodio/vim-tmux'
-Plugin 'wellle/tmux-complete.vim'
-Plugin 'majutsushi/tagbar'
+" Plugins with settings {{{1
 
-" Color schemes {{{3
-Plugin 'tpope/vim-vividchalk'
-Plugin 'alem0lars/vim-colorscheme-darcula'
-Plugin 'chankaward/vim-railscasts-theme'
-Plugin 'jnurmine/Zenburn'
-if has('win32') || has('win64')
-    Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
-else
-    Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+" Package manager: vim-plug {{{2
+if !filereadable(expand("~/.vim/autoload/plug.vim"))
+    echo "Installing vim-plug and plugins. Restart vim after finishing the process."
+    silent call mkdir(expand("~/.vim/autoload", 1), 'p')
+    execute "!curl -kfLo ".expand("~/.vim/autoload/plug.vim", 1)." https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    autocmd VimEnter * PlugInstall
 endif
-Plugin 'cschlueter/vim-mustang'
-Plugin 'godlygeek/csapprox'
 
-" Finders & Completion {{{3
-Plugin 'kien/ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe'
+call plug#begin('~/.vim/plugged')
+let g:plug_url_format = 'https://github.com/%s.git'
+" }}}
 
-" Operators, motions, etc ... {{{3
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
+" UI {{{2
+Plug 'bling/vim-airline' "{{{3
+  set laststatus=2
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline_powerline_fonts = 1
+" }}}
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'andersoncustodio/vim-tmux'
+Plug 'wellle/tmux-complete.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } "{{{3
+  nnoremap <silent> <F4> :NERDTreeToggle<CR>
+  nnoremap <silent> <F5> :NERDTreeFind<CR>
+  let NERDTreeShowHidden=1
+"}}}
+Plug 'majutsushi/tagbar' "{{{3
+  nnoremap <silent> <F3> :TagbarToggle<CR>
+"}}}
 
-" Snippets {{{3
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+" Color schemes {{{2
+Plug 'tpope/vim-vividchalk'
+Plug 'alem0lars/vim-colorscheme-darcula'
+Plug 'chankaward/vim-railscasts-theme'
+Plug 'jnurmine/Zenburn'
+if s:is_windows
+    Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
+else
+    Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+endif
+Plug 'cschlueter/vim-mustang'
+Plug 'godlygeek/csapprox'
 
-" Syntax checking {{{3
-Plugin 'scrooloose/syntastic'
+" Finders & Completion {{{2
+Plug 'kien/ctrlp.vim'
+Plug 'Valloric/YouCompleteMe'
 
-" Version control systems {{{3
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+" Operators, motions, etc ... {{{2
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 
-" Python {{{3
-Plugin 'jmcantrell/vim-virtualenv'
+" Snippets {{{2
+Plug 'sirver/ultisnips', { 'on': [] } "{{{3
+  let g:UltiSnipsSnippetsDir = '~/.vim/plugged/vim-snippets/UltiSnips'
+  let g:UltiSnipsExpandTrigger="<c-j>"
+  let g:UltiSnipsJumpForwardTrigger="<c-j>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+  let g:UltiSnipsListSnippets="<c-l>"
+  let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
-" GoLang {{{3
-Plugin 'fatih/vim-go'
+  inoremap <silent> <C-j> <C-r>=LoadUltiSnips()<cr>
 
-" Markdown {{{3
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
+  " This function only runs when UltiSnips is not loaded
+  function! LoadUltiSnips()
+    let l:curpos = getcurpos()
+    execute plug#load('ultisnips')
+    call cursor(l:curpos[1], l:curpos[2])
+    call UltiSnips#ExpandSnippet()
+    return ""
+  endfunction
+" }}}
+Plug 'honza/vim-snippets'
 
-" Database {{{3
-Plugin 'vim-scripts/dbext.vim'
+" Syntax checking {{{2
+Plug 'scrooloose/syntastic' "{{{3
+  let g:syntastic_python_checkers = ['pylama', 'python']
+" }}}
 
-" -- Post {{{2
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+" Version control systems {{{2
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter' "{{{3
+  nmap ]h <Plug>GitGutterNextHunk
+  nmap [h <Plug>GitGutterPrevHunk
+" }}}
+
+" Python {{{2
+Plug 'jmcantrell/vim-virtualenv'
+
+" GoLang {{{2
+Plug 'fatih/vim-go', { 'for': 'golang' } "{{{3
+  let g:go_disable_autoinstall = 0
+" }}}
+
+" Markdown {{{2
+Plug 'vim-pandoc/vim-pandoc', { 'for': ['pandoc', 'markdown'] } "{{{3
+  let g:pandoc_use_hard_wraps = 1
+  let g:pandoc_auto_format = 0
+  if has("autocmd")
+      autocmd FileType pandoc setlocal tw=80 ts=2 sw=2 sts=2 expandtab spell nolist wrap
+  endif
+" }}}
+Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': ['pandoc', 'markdown'] }
+
+" Database {{{2
+Plug 'vim-scripts/dbext.vim', { 'for': 'sql' } "{{{3
+  if !s:is_windows
+      let g:dbext_default_SQLSRV_bin = "mssql.sh"
+  endif
+" }}}
+
+call plug#end()
+" }}}
 
 " Settings {{{1
 "  Better copy and paste {{{2
@@ -180,7 +221,7 @@ if exists('$ITERM_PROFILE')
     endif
 end
 
-colorscheme moria
+colorscheme railscasts
 " }}}
 " Inputs {{{2
 set backspace=2         " make backspace work normal (indent, eol, start)
@@ -380,45 +421,6 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.cmd :set tw=0
 endif
 
-" Plugins {{{1
-" Pandoc {{{2
-let g:pandoc_use_hard_wraps = 1
-let g:pandoc_auto_format = 0
-if has("autocmd")
-    autocmd FileType pandoc setlocal tw=80 ts=2 sw=2 sts=2 expandtab spell nolist wrap
-endif
-" NERDTree {{{2
-map <F2> :NERDTreeToggle<CR>
-imap <F2> <ESC>:NERDTreeToggle<CR>
-map <A-S-l> :NERDTreeFind<CR>
-imap <A-S-l> <ESC>:NERDTreeFind<CR>
-" Tagbar {{2
-nmap <F8> :TagbarToggle<CR>
-" Airline {{{2
-set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
-" GitGutter {{{2
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
-
-" Syntastic {{{2
-let g:syntastic_python_checkers = ['pylama', 'python']
-
-" UltiSnip {{{2
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips"]
-
-" Vim Go {{{2
-let g:go_disable_autoinstall = 0
-
-" DbExt {{{2
-if !has('win32') && !has('win64')
-    let g:dbext_default_SQLSRV_bin = "mssql.sh"
-endif
 "  Modelines {{{1
 " vim: nowrap fdm=marker ts=2 sts=2 sw=2 fdl=0
 "z }}}
