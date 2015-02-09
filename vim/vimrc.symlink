@@ -106,6 +106,7 @@ Plug 'airblade/vim-gitgutter' "{{{3
   nmap ]h <Plug>GitGutterNextHunk
   nmap [h <Plug>GitGutterPrevHunk
 " }}}
+Plug 'gregsexton/gitv'
 
 " Python {{{2
 Plug 'jmcantrell/vim-virtualenv'
