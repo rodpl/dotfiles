@@ -122,6 +122,7 @@ Plug 'jmcantrell/vim-virtualenv'
 " GoLang {{{2
 Plug 'fatih/vim-go', { 'for': ['golang', 'go'] } "{{{3
   let g:go_disable_autoinstall = 0
+  let g:go_auto_type_info = 1
 " }}}
 
 " Markdown {{{2
