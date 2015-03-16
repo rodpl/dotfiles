@@ -46,8 +46,11 @@ export HOMEBREW_CACHE=$HOME/Library/Caches/Homebrew
 export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 
 # GoLang
-export GOPATH=$HOME/.go
-export PATH="$GOPATH/bin:$PATH"
+if [[ "" = "${ALREADY_GLIDING}" ]]; then
+    export GOPATH=$HOME/.go
+    export PATH="$GOPATH/bin:$PATH"
+fi
+
 export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 
 # Local config
