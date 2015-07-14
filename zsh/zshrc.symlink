@@ -70,6 +70,9 @@ zle -N zle-line-init
 
 source $ZSH/oh-my-zsh.sh
 
+# mono
+#source dnvm.sh
+
 # # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
