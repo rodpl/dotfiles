@@ -13,6 +13,8 @@ install brew-cask
 
 # Shell
 install zsh
+install z
+install fzf
 install mc
 install tmux
 install reattach-to-user-namespace
