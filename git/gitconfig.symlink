@@ -16,7 +16,7 @@
 	sr = svn rebase
 	unstage = reset HEAD --
 	last = log -1 HEAD
-	standup = log --graph --full-history --all --color --date=short --pretty=format:'%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%ad [%an] %s' --since=yesterday --author=ddabrows
+	standup = "!git log --graph --full-history --all --color --date=short --pretty=format:'%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%ad [%an] %s' --since=yesterday --author `git config user.email`"
 	svnup = !git svn fetch && git svn rebase -l && git push . remotes/trunk:master
 	svnup2 = !git svn fetch && git svn rebase -l && git push $GIT_DIR remotes/trunk:master
 	svnci = !git svn dcommit && git push . remotes/trunk:master && git checkout master
