@@ -55,6 +55,7 @@ Plug 'majutsushi/tagbar' "{{{3
   nnoremap <silent> <F3> :TagbarToggle<CR>
 "}}}
 Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/goyo.vim'
 
 " Color schemes {{{2
 Plug 'tpope/vim-vividchalk'
