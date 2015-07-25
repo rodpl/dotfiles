@@ -35,7 +35,7 @@ let g:plug_url_format = 'https://github.com/%s.git'
 " }}}
 
 " System {{{
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Shougo/vimproc.vim', { 'do': 'make clean all' }
 " }}}
 " UI {{{2
 Plug 'bling/vim-airline' "{{{3
@@ -72,9 +72,15 @@ Plug 'godlygeek/csapprox'
 Plug 'kien/ctrlp.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
-" Operators, motions, etc ... {{{2
+" Operators, motions, formatting, editing etc ... {{{2
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] } "{{{3
+  " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+  vmap <Enter> <Plug>(EasyAlign)
+  " Start interactive EasyAlign for motion/text object (e.g. gaip)
+  nmap ga <Plug>(EasyAlign)
+"}}}
 
 " Snippets {{{2
 Plug 'sirver/ultisnips', { 'on': [] } "{{{3
