@@ -54,6 +54,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } "{{{3
 Plug 'majutsushi/tagbar' "{{{3
   nnoremap <silent> <F3> :TagbarToggle<CR>
 "}}}
+Plug 'junegunn/vim-peekaboo'
 
 " Color schemes {{{2
 Plug 'tpope/vim-vividchalk'
