@@ -37,6 +37,7 @@ let g:plug_url_format = 'https://github.com/%s.git'
 " System {{{
 Plug 'Shougo/vimproc.vim', { 'do': 'make clean all' }
 " }}}
+
 " UI {{{2
 Plug 'bling/vim-airline' "{{{3
   set laststatus=2
@@ -113,6 +114,7 @@ Plug 'rodpl/vim-snippets'
 "                 \| call youcompleteme#Enable() | autocmd! load_us_ycm
 " augroup END
 " }}}
+
 " Syntax checking {{{2
 Plug 'scrooloose/syntastic' "{{{3
   let g:syntastic_python_checkers = ['pylama', 'python']
@@ -134,6 +136,7 @@ Plug 'fatih/vim-go', { 'for': ['golang', 'go'] } "{{{3
   let g:go_disable_autoinstall = 0
   let g:go_auto_type_info = 1
 " }}}
+
 " TypeScript & JavaScript {{{2
 Plug 'Quramy/tsuquyomi', { 'for': ['typescript'] }
 Plug 'leafgarland/typescript-vim', { 'for': ['typescript'] } "{{{3
@@ -141,6 +144,10 @@ Plug 'leafgarland/typescript-vim', { 'for': ['typescript'] } "{{{3
 "}}}
 Plug 'jason0x43/vim-js-indent' "{{{3
 " }}}
+
+" JSON {{{2
+Plug 'Quramy/vison'
+
 " Database {{{2
 Plug 'vim-scripts/dbext.vim', { 'for': 'sql' } "{{{3
   if !s:is_windows
