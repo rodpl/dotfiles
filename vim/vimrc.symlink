@@ -137,7 +137,7 @@ Plug 'jmcantrell/vim-virtualenv'
 " GoLang {{{2
 Plug 'fatih/vim-go', { 'for': ['golang', 'go'] } "{{{3
   let g:go_disable_autoinstall = 0
-  let g:go_auto_type_info = 1
+  let g:go_auto_type_info = 0
 " }}}
 
 " TypeScript & JavaScript {{{2
@@ -147,6 +147,9 @@ Plug 'leafgarland/typescript-vim', { 'for': ['typescript'] } "{{{3
 "}}}
 Plug 'jason0x43/vim-js-indent' "{{{3
 " }}}
+
+" TypeScript & JavaScript {{{2
+Plug 'mattn/emmet-vim'
 
 " JSON {{{2
 Plug 'Quramy/vison'
@@ -247,7 +250,7 @@ if exists('$ITERM_PROFILE')
     endif
 end
 
-colorscheme railscasts
+colorscheme vividchalk
 " }}}
 " Inputs {{{2
 set backspace=2         " make backspace work normal (indent, eol, start)
