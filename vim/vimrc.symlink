@@ -250,7 +250,7 @@ if exists('$ITERM_PROFILE')
     endif
 end
 
-colorscheme vividchalk
+colorscheme railscasts
 " }}}
 " Inputs {{{2
 set backspace=2         " make backspace work normal (indent, eol, start)
