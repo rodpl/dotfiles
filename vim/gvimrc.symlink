@@ -1,6 +1,7 @@
 "set gfn=DejaVu\ Sans\ Mono:h11:cEASTEUROPE antialias
-if has('win32')
+if has('win32') || has('win64')
     set gfn=Droid\ Sans\ Mono\ for\ Powerline:h11:cEASTEUROPE antialias
+    let g:plug_threads = 8
  else
     set gfn=Monaco\ for\ Powerline:h12 antialias
 end
