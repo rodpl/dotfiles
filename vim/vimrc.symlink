@@ -125,9 +125,10 @@ Plug 'scrooloose/syntastic' "{{{3
 
 " Version control systems {{{2
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter' "{{{3
-  nmap ]h <Plug>GitGutterNextHunk
-  nmap [h <Plug>GitGutterPrevHunk
+Plug 'mhinz/vim-signify' "{{{3
+  let g:signify_vcs_list = [ 'git' ]
+  nmap ]h <plug>(signify-next-hunk)
+  nmap [h <plug>(signify-prev-hunk)
 " }}}
 Plug 'gregsexton/gitv'
 
