@@ -123,15 +123,8 @@ set-option -g display-panes-colour blue
 # Keyboard setting
 set -g repeat-time 125
 
-# Enable scrolling with the mouse
-set -g mode-mouse on
-
-
-# Be able to select text in panes/windows with the mouse; hold <option> and
-# the left mouse button to select. 
-set -g mouse-select-pane on
-set -g mouse-select-window on
-set -g mouse-resize-pane on
+# Enable mouse
+set -g mouse on
 
 # Bind r to reload the config file
 bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf file."
