@@ -225,14 +225,28 @@ if has("gui_running")
 else
   set noerrorbells visualbell t_vb=
   if s:is_conemu
-      set term=xterm
+      set termencoding=utf8
+      set term=ansi
+      set t_Co=256
+      set nocompatible
+      set backspace=2         " make backspace work normal (indent, eol, start)
+      "set t_kb=<C-Del>
+      "set t_kD=[3~
       set t_ut= " setting for looking properly in tmux
       set t_ti= t_te= " prevent vim from clobbering the scrollback buffer
-      let &t_Co = 256
       if s:is_windows " trick to support 256 colors in conemu for Windows
         let &t_AF="\e[38;5;%dm"
         let &t_AB="\e[48;5;%dm"
       endif
+      let &t_ti="\e[1 q"
+      let &t_SI="\e[5 q"
+      let &t_EI="\e[1 q"
+      let &t_te="\e[0 q"
+      " Fix for vim mouse scrolling in conemu.
+      inoremap <Esc>[62~ <C-X><C-E>
+      inoremap <Esc>[63~ <C-X><C-Y>
+      nnoremap <Esc>[62~ <C-E>
+      nnoremap <Esc>[63~ <C-Y>
   endif
 endif
 

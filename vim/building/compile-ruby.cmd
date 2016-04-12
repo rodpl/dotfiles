@@ -8,9 +8,9 @@ git clone %RUBY_GIT_REPO%
 
 :updateruby
 pushd ruby
+git fetch --all
 git co -- .
 git clean -fd
-git pull
 git co %RUBY_GIT_TAG%
 popd
 
