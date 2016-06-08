@@ -73,7 +73,7 @@ Plug 'godlygeek/csapprox'
 
 " Finders & Completion {{{2
 Plug 'kien/ctrlp.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --omnisharp-completer --gocode-completer --tern-completer' }
 
 " Operators, motions, formatting, editing etc ... {{{2
 Plug 'tpope/vim-commentary'
@@ -149,7 +149,7 @@ Plug 'leafgarland/typescript-vim', { 'for': ['typescript'] } "{{{3
 Plug 'jason0x43/vim-js-indent' "{{{3
 " }}}
 
-" TypeScript & JavaScript {{{2
+" HTML {{{2
 Plug 'mattn/emmet-vim'
 
 " JSON {{{2
