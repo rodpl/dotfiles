@@ -81,6 +81,8 @@ cd $modules\posh-rake
 Import-Module .\posh-rake
 popd
 
+Import-Module VirtualEnvWrapper
+
 # Configure prompt
 . $profileRoot\configurePrompt.ps1
 
