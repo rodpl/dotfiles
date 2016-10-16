@@ -226,7 +226,7 @@ else
   set noerrorbells visualbell t_vb=
   if s:is_conemu
       set termencoding=utf8
-      set term=ansi
+      set term=xterm
       set t_Co=256
       set nocompatible
       set backspace=2         " make backspace work normal (indent, eol, start)
