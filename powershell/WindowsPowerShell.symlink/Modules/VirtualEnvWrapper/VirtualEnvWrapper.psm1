@@ -86,11 +86,15 @@ function New-VirtualEnvironment
 
 function Remove-VirtualEnvironment
 {
-    if (!$args) {
+    param(
+        $Name
+    )
+
+    if (!$Name) {
         throw("You must specify a virtual environment name.")
     }
 
-    $env_name = $args[0]
+    $env_name = $Name
 
     try {
        VerifyWorkonHome
@@ -144,7 +148,12 @@ function Set-VirtualEnvironment
     Activates a virtual environment.
 #>
 {
-    $env_name = "$args"
+    param(
+        $Name
+    )
+
+    $env_name = "$Name"
+
      if (-not([bool]$env_name)) {
         throw("You must specify a virtual environment name.")
     }
@@ -255,8 +264,12 @@ function Copy-VirtualEnvironment
 
 function workon
 {
-    if ("$args") {
-        Set-VirtualEnvironment "$args"
+    param(
+        $Name
+    )
+
+    if ("$Name") {
+        Set-VirtualEnvironment "$Name"
     }
     else {
         Get-VirtualEnvironment
