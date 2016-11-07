@@ -30,6 +30,7 @@ WINDOWS_FILE_MAP = {
   '.gitconfig_mac'     => :skip,
   '.hgrc_mac'          => :skip,
   '.tmux.conf'         => :skip,
+  '.settings.json'     => 'AppData/Roaming/Code/User/settings.json',
 }
 
 CYGWIN_FILE_MAP = {
@@ -56,6 +57,7 @@ MAC_FILE_MAP = {
   '.ConEmu.xml'        => :skip,
   '.gitconfig_win'     => :skip,
   '.hgrc_win'          => :skip,
+  '.settings.json'     => 'Library/Application Support/Code/User/settings.json',
 }
 
 desc "Link the dotfiles into position"
