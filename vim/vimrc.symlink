@@ -247,6 +247,9 @@ else
       inoremap <Esc>[63~ <C-X><C-Y>
       nnoremap <Esc>[62~ <C-E>
       nnoremap <Esc>[63~ <C-Y>
+      " Fix for no backspace in insert mode in conemu
+      inoremap <Char-0x07F> <BS>
+      nnoremap <Char-0x07F> <BS>
   endif
 endif
 
