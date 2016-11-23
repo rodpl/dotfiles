@@ -15,7 +15,6 @@ class String
 end
 
 WINDOWS_FILE_MAP = {
-  '.vim'               => 'vimfiles',
   '.gvimrc'            => '_gvimrc',
   '.vimrc'             => '_vimrc',
   '.vimcommon'         => '_vimcommon',
@@ -34,7 +33,6 @@ WINDOWS_FILE_MAP = {
 }
 
 CYGWIN_FILE_MAP = {
-  '.vim'               => 'vimfiles',
   '.gvimrc'            => '_gvimrc',
   '.vimrc'             => '_vimrc',
   '.vimcommon'         => '_vimcommon',
