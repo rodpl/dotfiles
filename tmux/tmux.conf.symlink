@@ -44,10 +44,10 @@ set -g pane-base-index 1
 set-window-option -g pane-base-index 1
 
 # Vim-style pane selection
-bind h select-pane -L
-bind j select-pane -D 
-bind k select-pane -U
-bind l select-pane -R
+#bind h select-pane -L
+#bind j select-pane -D 
+#bind k select-pane -U
+#bind l select-pane -R
 
 # quick pane cyclin
 bind C-Space select-pane -t :.+
@@ -160,3 +160,24 @@ set-option -g terminal-overrides '*88col*:colors=88,*256col*:colors=256,xterm*:X
 #
 # History
 set -g history-limit 1000
+
+### Plugins
+#
+# List of plugins
+set -g @plugins 'caiogondim/maglev'
+set -g @plugins 'tmux-plugins/tpm'
+set -g @plugins 'tmux-plugins/tmux-sensible'
+set -g @plugins 'tmux-plugins/tmux-resurrect'
+set -g @plugins 'tmux-plugins/tmux-continuum'
+set -g @plugins 'tmux-plugins/tmux-yank'
+set -g @plugins 'tmux-plugins/tmux-pain-control'
+set -g @plugins 'tmux-plugins/tmux-copycat'
+set -g @plugins 'tmux-plugins/tmux-open'
+set -g @plugins 'tmux-plugins/tmux-battery'
+set -g @plugins 'tmux-plugins/tmux-cpu'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+#run-shell '~/.tmux/plugins/tmux-pain-control/pain_control.tmux'
+#run-shell '~/.tmux/plugins/tmux-copycat/copycat.tmux'
+#run-shell '~/.tmux/plugins/tmux-yank/yank.tmux'

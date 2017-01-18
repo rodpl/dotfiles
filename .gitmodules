@@ -19,3 +19,6 @@
 	path = vim/vim.symlink/bundle/Vundle.vim
 	url = https://github.com/gmarik/Vundle.vim.git
 	branch = master
+[submodule "tmux/tmux.symlink/plugins/tpm"]
+	path = tmux/tmux.symlink/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

@@ -29,6 +29,7 @@ WINDOWS_FILE_MAP = {
   '.gitconfig_mac'     => :skip,
   '.hgrc_mac'          => :skip,
   '.tmux.conf'         => :skip,
+  '.tmux'              => :skip,
   '.settings.json'     => 'AppData/Roaming/Code/User/settings.json',
 }
 
