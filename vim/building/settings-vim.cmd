@@ -24,11 +24,11 @@ set DYNAMIC_RUBY=yes
 set RUBY=%RUBY_PATH%
 set RUBY_VER=%RUBY_VERSION%
 :: This is determined by folder name of C:\tools\ruby22\include\ruby-x.x.x
-set RUBY_VER_LONG=2.2.0
+set RUBY_VER_LONG=2.3.0
 :: This is determined by folder name of C:\tools\ruby22\include\ruby-x.x.x\x64-mswin64_120
 set RUBY_PLATFORM=x64-mswin64_120
 :: This is determined by file name of C:\tools\ruby22\lib\x64-msvcr120-ruby220.dll
-set RUBY_INSTALL_NAME=x64-msvcr120-ruby220
+set RUBY_INSTALL_NAME=x64-msvcr120-ruby230
 
 :: Optimization - SPACE, SPEED, MAXSPEED
 set OPTIMIZE=SPEED
