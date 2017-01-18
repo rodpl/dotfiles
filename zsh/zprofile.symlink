@@ -91,7 +91,7 @@ export PATH="$PATH:/usr/local/share/npm/bin"
 
 # GoLang {{{
 if [[ "" = "${ALREADY_GLIDING}" ]]; then
-    export GOPATH=$HOME/.go
+    export GOPATH=$HOME/Code/go
     PATH="$PATH:$GOPATH/bin:$(brew --prefix go)/libexec/bin"
     export PATH
 fi
