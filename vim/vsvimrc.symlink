@@ -7,3 +7,5 @@ set softtabstop=4       " unify
 set shiftwidth=4        " unify
 set number
 set relativenumber
+
+nmap <leader>b :make<CR>

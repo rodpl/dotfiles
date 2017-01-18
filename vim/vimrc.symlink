@@ -317,10 +317,8 @@ set showmatch       " When a bracket is inserted, briefly jump to the matching o
 set hlsearch        " When there is a previous search pattern, highlight all its matches.
 
 " Mappings {{{1
-let mapleader = ","
-let maplocalleader = "\\"
 
-" Loading shared mappings {{{1
+" Loading shared mappings {{{2
 if has('win32')
     let $MYVIMCOMMON = $HOME.'/_vimcommon'
 else
