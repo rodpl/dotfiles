@@ -22,3 +22,6 @@
 [submodule "tmux/tmux.symlink/plugins/tpm"]
 	path = tmux/tmux.symlink/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "emacs/emacs.d.symlink"]
+	path = emacs/emacs.d.symlink
+	url = https://github.com/syl20bnr/spacemacs.git
