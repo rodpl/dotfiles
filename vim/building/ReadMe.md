@@ -19,6 +19,8 @@ to install these tools. There is no bison and sed since 2.8 git. Install from he
 [Bison for Windows](http://gnuwin32.sourceforge.net/packages/bison.htm)
 [Sed for Windows](http://gnuwin32.sourceforge.net/packages/sed.htm)
 
+Ruby compilation needs ruby :( 2.x
+
 1.  Edit settings in  `settings-ruby.cmd` if neccesary.
 2.  Run `compile-ruby.cmd`.
 3.  Add path to ruby install folder.
