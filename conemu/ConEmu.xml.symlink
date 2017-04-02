@@ -16,8 +16,6 @@
 			<value name="FontSizeX" type="ulong" data="0"/>
 			<value name="TabMargins" type="hex" data="00,00,00,00,19,00,00,00,00,00,00,00,00,00,00,00"/>
 			<value name="WindowMode" type="dword" data="0000051f"/>
-			<value name="CmdLineHistory" type="multi"><line data="{Powershell}"/><line data="{Far}"/><line data="{VS Console 2012 x86}"/>
-				<line data="{Babun}"/>
 				<line data="{GIT Bash}"/>
 				<line data="{Show ANSI colors}"/>
 				<line data="{PowerShell}"/>
