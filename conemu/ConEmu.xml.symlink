@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 	Rename this file to "ConEmu.xml" to enable portable mode.
 	You may place "ConEmu.xml" file AFTER ConEmu starts,
@@ -15,7 +15,7 @@
 			<value name="FontSize" type="ulong" data="18"/>
 			<value name="FontSizeX" type="ulong" data="0"/>
 			<value name="TabMargins" type="hex" data="00,00,00,00,19,00,00,00,00,00,00,00,00,00,00,00"/>
-			<value name="WindowMode" type="dword" data="0000051f"/>
+			<value name="WindowMode" type="dword" data="0000051f">
 				<line data="{GIT Bash}"/>
 				<line data="{Show ANSI colors}"/>
 				<line data="{PowerShell}"/>
