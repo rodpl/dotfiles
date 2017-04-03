@@ -103,6 +103,7 @@ if(Test-InPath ssh-agent.*){
     Write-Error "ssh-agent cannot be found in your PATH, please add it"
 }
 
+. $scripts\Pluralsight.ps1
 
 # Environment for git 
 $env:TERM = 'cygwin'
