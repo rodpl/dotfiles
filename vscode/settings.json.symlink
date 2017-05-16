@@ -3,5 +3,6 @@
     // Controls visibility of line numbers
     "editor.lineNumbers": "relative",
 
-    "editor.renderWhitespace": "boundary"
+    "editor.renderWhitespace": "boundary",
+    "workbench.colorTheme": "Visual Studio Dark"
 }
