@@ -34,7 +34,7 @@ bind C-l next-window
 bind C-h previous-window
 
 # Notifying if other windows has activities
-#setw -g monitor-activity on
+setw -g monitor-activity on
 set -g visual-activity on
 
 ### Panes
@@ -43,11 +43,13 @@ set -g visual-activity on
 set -g pane-base-index 1
 set-window-option -g pane-base-index 1
 
+set-option -g status-position top
+
 # Vim-style pane selection
-#bind h select-pane -L
-#bind j select-pane -D 
-#bind k select-pane -U
-#bind l select-pane -R
+bind h select-pane -L
+bind j select-pane -D 
+bind k select-pane -U
+bind l select-pane -R
 
 # quick pane cyclin
 bind C-Space select-pane -t :.+
@@ -69,49 +71,7 @@ bind C-l send-keys 'C-l'
 set -g default-terminal "screen-256color"
 
 # Status bar colours
-set-option -g status-bg black
-set-option -g status-fg white
-set-option -g status-interval 60
-set-option -g status-left-length 30
-set-option -g status-left "#[fg=green][#S] #[fg=colour237]#I:#P"
-set-option -g status-justify left
-set-option -g status-right-length 150
-#set-option -g status-right "#[fg=yellow]#T #[fg=blue]%A %Y-%b-%d %H:%M"
-set-option -g status-right '#[fg=cyan]#(/usr/local/bin/icalBuddy -n -li 1 -npn -eep "url, notes" -ps "/ » /" eventsToday+5) #[fg=yellow]#(/usr/local/bin/icalBuddy -li 1 -npn -eep "url" -ps "/ » /" tasksDueBefore:today+5) #[fg=green]#(/usr/bin/dstat --battery-remain --nocolor 1 0 | tail -1) #[fg=green]#(whoami)@#H #[fg=yellow]#(cut -d " " -f 1 /proc/loadavg) #[default]%a %d %b %R'
-
-# Window modes color
-setw -g mode-bg colour240
-setw -g mode-fg colour255
-
-# Message/command input colors
-set -g message-bg colour240
-set -g message-fg colour255
-
-# Active window colours
-set-window-option -g window-status-current-bg colour202
-set-window-option -g window-status-current-fg black
-
-# Window status colors
-setw -g window-status-bg black
-setw -g window-status-fg colour248
-#setw -g window-status-alert-attr underscore
-#setw -g window-status-alert-bg colour235
-#setw -g window-status-alert-fg colour248
-setw -g window-status-current-attr bright
-setw -g window-status-current-bg colour235
-setw -g window-status-current-fg colour248
-
-# Clock
-setw -g clock-mode-colour colour250
-setw -g clock-mode-style 24
-
-# Active pane border colours
-set -g pane-active-border-fg colour238
-set -g pane-active-border-bg default
-
-# Regular pane border colours
-set -g pane-border-fg colour238
-set -g pane-border-bg default
+#set-option -g status-right '#[fg=cyan]#(/usr/local/bin/icalBuddy -n -li 1 -npn -eep "url, notes" -ps "/ » /" eventsToday+5) #[fg=yellow]#(/usr/local/bin/icalBuddy -li 1 -npn -eep "url" -ps "/ » /" tasksDueBefore:today+5) #[fg=green]#(/usr/bin/dstat --battery-remain --nocolor 1 0 | tail -1) #[fg=green]#(whoami)@#H #[fg=yellow]#(cut -d " " -f 1 /proc/loadavg) #[default]%a %d %b %R'
 
 # Pane numbers colour (when you press `<prefix>q`)
 set-option -g display-panes-active-colour green
@@ -132,10 +92,6 @@ bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf file."
 # vim keybindings in copy mode
 setw -g mode-keys vi
 
-# vi-style copy-mode bindings (<prefix>+[)
-bind -t vi-copy v begin-selection
-bind -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy" # Copies to the tmux buffer and to osx
-
 # For xclip to work in an SSH session...
 # On the client:
 # - X11/XQuartz must be installed 
@@ -143,8 +99,8 @@ bind -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy" # Copies to the 
 # On the server:
 # - `ForwardX11 yes` should be set in /etc/ssh/sshd_config (default for Ubuntu)
 # - `echo $DISPLAY` should output something like `localhost:10.0`
-#bind y run-shell "tmux save-buffer - | xclip -selection clipboard -i"\; display-message "Buffer copied to x clipboard"
-#bind p run-shell "tmux set-buffer \"$(xclip -selection clipboard -o)\"; tmux paste-buffer"\; display-message "Pasted from x clipboard"
+bind y run-shell "tmux save-buffer - | xclip -selection clipboard -i"\; display-message "Buffer copied to x clipboard"
+bind p run-shell "tmux set-buffer \"$(xclip -selection clipboard -o)\"; tmux paste-buffer"\; display-message "Pasted from x clipboard"
 
 # Default shell same as parent
 set-option -g default-command "reattach-to-user-namespace -l $SHELL -l"
@@ -164,20 +120,21 @@ set -g history-limit 1000
 ### Plugins
 #
 # List of plugins
-set -g @plugins 'caiogondim/maglev'
-set -g @plugins 'tmux-plugins/tpm'
-set -g @plugins 'tmux-plugins/tmux-sensible'
-set -g @plugins 'tmux-plugins/tmux-resurrect'
-set -g @plugins 'tmux-plugins/tmux-continuum'
-set -g @plugins 'tmux-plugins/tmux-yank'
-set -g @plugins 'tmux-plugins/tmux-pain-control'
-set -g @plugins 'tmux-plugins/tmux-copycat'
-set -g @plugins 'tmux-plugins/tmux-open'
-set -g @plugins 'tmux-plugins/tmux-battery'
-set -g @plugins 'tmux-plugins/tmux-cpu'
+set -g @tpm_plugins '                     \
+     caiogondim/maglev                    \
+     tmux-plugins/tpm                     \
+     tmux-plugins/tmux-sensible           \
+     tmux-plugins/tmux-resurrect          \
+     tmux-plugins/tmux-continuum          \
+     tmux-plugins/tmux-yank               \
+     tmux-plugins/tmux-pain-control       \
+     tmux-plugins/tmux-copycat            \
+     tmux-plugins/tmux-open               \
+     tmux-plugins/tmux-battery            \
+     tmux-plugins/tmux-prefix-highlight   \
+ '
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
-#run-shell '~/.tmux/plugins/tmux-pain-control/pain_control.tmux'
-#run-shell '~/.tmux/plugins/tmux-copycat/copycat.tmux'
-#run-shell '~/.tmux/plugins/tmux-yank/yank.tmux'
+set -g status-interval 10
+
