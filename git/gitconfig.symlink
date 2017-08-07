@@ -30,7 +30,7 @@
 	renames = copies
 [core]
 	quotepath = off
-	excludesfile = ~/.gitignore_global
+	excludesfile = 
 [i18n]
 	filesEncoding = utf-8
 [push]
