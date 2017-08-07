@@ -4,5 +4,6 @@
     "editor.lineNumbers": "relative",
 
     "editor.renderWhitespace": "boundary",
-    "workbench.colorTheme": "Visual Studio Dark"
+    "workbench.colorTheme": "Visual Studio Dark",
+    "window.zoomLevel": 0
 }
