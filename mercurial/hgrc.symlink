@@ -2,7 +2,7 @@
 username = Daniel Dabrowski <dabrowski.daniel@42n.pl>
 ssh = c:\bat\plink.exe -ssh -i C:\users\rod\.ssh\id_rsa_putty.ppk
 editor = vim
-ignore = ~\.hgignore
+ignore=
 
 %include .hgrc_mac
 %include .hgrc_win
