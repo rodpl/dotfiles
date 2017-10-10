@@ -11,3 +11,4 @@ powershell/WindowsPowerShell.symlink/environment.ps1
 vim/vim.symlink/.netrwhist
 vim/vim.symlink/spell/
 vimperator/vimperator.symlink/info/
+bin/bin.symlink/OmniSharp
