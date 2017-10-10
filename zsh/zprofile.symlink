@@ -28,6 +28,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 PATH="$HOME/.bin:$PATH"
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/usr/local/bin"
+PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # mkdir .git/safe in the root of repositories you trust
 PATH=".git/safe/../../bin:$PATH"
@@ -52,8 +53,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
 
-syspip(){
-    PIP_REQUIRE_VIRTUALENV="" pip "$@"
+syspip2(){
+    PIP_REQUIRE_VIRTUALENV="" pip2 "$@"
 }
 syspip3(){
     PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
