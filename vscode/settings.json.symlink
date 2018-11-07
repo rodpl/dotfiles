@@ -3,7 +3,20 @@
     // Controls visibility of line numbers
     "editor.lineNumbers": "relative",
 
-    "editor.renderWhitespace": "boundary",
+    "editor.renderWhitespace": "all",
     "workbench.colorTheme": "Visual Studio Dark",
-    "window.zoomLevel": 0
+    "window.zoomLevel": 1,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "cSpell.userWords": [
+        "Dąbrowski"
+    ],
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "breadcrumbs.enabled": true,
+    "editor.renderControlCharacters": true,
+    "editor.minimap.enabled": false
 }
