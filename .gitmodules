@@ -25,3 +25,9 @@
 [submodule "emacs/emacs.d.symlink"]
 	path = emacs/emacs.d.symlink
 	url = https://github.com/syl20bnr/spacemacs.git
+[submodule "powershell/WindowsPowerShell.symlink/Modules/posh-dotnet"]
+	path = powershell/WindowsPowerShell.symlink/Modules/posh-dotnet
+	url = https://github.com/bergmeister/posh-dotnet.git
+[submodule "powershell/WindowsPowerShell.symlink/Modules/oh-my-posh"]
+	path = powershell/WindowsPowerShell.symlink/Modules/oh-my-posh
+	url = https://github.com/JanDeDobbeleer/oh-my-posh.git
