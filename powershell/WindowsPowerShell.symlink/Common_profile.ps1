@@ -1,3 +1,7 @@
+Push-Location (Split-Path -parent $profile)
+"components","functions","aliases","exports","extra" | Where-Object {Test-Path "$_.ps1"} | ForEach-Object -process {Invoke-Expression ". .\$_.ps1"}
+Pop-Location
+
 # Local functions
 function Test-InPath($fileName){
     $found = $false
@@ -49,8 +53,14 @@ if ($gitInstallDir -ne $null) {
     Remove-Item Env:\GIT_SSH
 }
 
-# Import PowerTab
+
+<############### Start of PowerTab Initialization Code ########################
+    Added to profile by PowerTab setup for loading of custom tab expansion.
+    Import other modules after this, they may contain PowerTab integration.
+#>
+
 Import-Module "PowerTab" -ArgumentList "C:\Temp\IsolatedStorage\PowerTabConfig.xml"
+################ End of PowerTab Initialization Code ##########################
 
 # Run posh-git init script
 pushd
@@ -81,6 +91,14 @@ cd $modules\posh-rake
 Import-Module .\posh-rake
 popd
 
+# Run posh-rake init script
+pushd
+cd $modules\posh-dotnet
+# Load posh-rake module from current directory
+Import-Module .\posh-dotnet
+popd
+
+Import-Module oh-my-posh
 Import-Module VirtualEnvWrapper
 
 # Configure prompt
