@@ -1,57 +1,14 @@
 Push-Location (Split-Path -parent $profile)
-"components","functions","aliases","exports","extra" | Where-Object {Test-Path "$_.ps1"} | ForEach-Object -process {Invoke-Expression ". .\$_.ps1"}
+"components", "functions", "aliases", "exports", "extra" | Where-Object { Test-Path "$_.ps1" } | ForEach-Object -process { Invoke-Expression ". .\$_.ps1" }
 Pop-Location
-
-# Local functions
-function Test-InPath($fileName){
-    $found = $false
-    Find-InPath $fileName | %{$found = $true}
-
-    return $found
-}
-
-function Find-InPath($fileName){
-    $env:PATH.Split(';') | ?{!([System.String]::IsNullOrEmpty($_))} | %{
-        if(Test-Path $_){
-            ls $_ | ?{ $_.Name -like $fileName }
-        }
-    }
-}
-
-# General variables
-$computer    = get-content env:computername
-$profileRoot = "$(split-path $profile)"
-$scripts     = "$profileRoot\Scripts"
-$modules     = "$profileRoot\Modules"
-
-# Include common functions
-. $scripts\common-utils.ps1
 
 $env:path += ";$profileRoot;$scripts"
 
-# Configurations based on computername
-switch($computer)
-{
-	{ "PC06244", "PC06639" -contains $_ }
-		{
-			$env:http_proxy = "http://proxy:8080";
-			$env:https_proxy = "http://proxy:8080";
-			break;
-		}
+if ($IsMacOS) {
+    return;
 }
 
 set-alias ai assembly-info
-
-# Configuring git
-$gitInstallDir = Get-FolderInProgramFiles "Git"
-if ($gitInstallDir -ne $null) {
-    $env:Path = "$env:Path;$gitInstallDir\bin;$gitInstallDir\mingw\bin"
-    if(!$Env:HOME) { $env:HOME = "$env:HOMEDRIVE$env:HOMEPATH" }
-    if(!$Env:HOME) { $env:HOME = $env:USERPROFILE }
-    if(!$Env:GIT_HOME) { $env:GIT_HOME = "$gitInstallDir" }
-    $env:PLINK_PROTOCOL = 'ssh'
-    Remove-Item Env:\GIT_SSH
-}
 
 
 <############### Start of PowerTab Initialization Code ########################
@@ -105,7 +62,7 @@ Import-Module VirtualEnvWrapper
 . $profileRoot\configurePrompt.ps1
 
 # Load local environment not visible to anyone
-if(!(Test-Path $profileRoot\environment.ps1)){
+if (!(Test-Path $profileRoot\environment.ps1)) {
     Write-Error "Environment configfile cannot be found - please edit & continue"
     copy $profileRoot\environment.example.ps1 $profileRoot\environment.ps1
     notepad $profileRoot\environment.ps1
@@ -115,9 +72,10 @@ if(!(Test-Path $profileRoot\environment.ps1)){
 
 
 # Configure ssh-agent so git doesn't require a password on every push
-if(Test-InPath ssh-agent.*){
+if (Test-InPath ssh-agent.*) {
     . $scripts\ssh-agent-utils.ps1
-}else{
+}
+else {
     Write-Error "ssh-agent cannot be found in your PATH, please add it"
 }
 
@@ -165,7 +123,7 @@ function Enable-VisualStudio($version = "11.0") {
 
 # launch VS dev webserver, from Harry Pierson
 # http://devhawk.net/2008/03/20/WebDevWebServer+PowerShell+Function.aspx
-function webdev($path,$port=8080,$vpath='/') {
+function webdev($path, $port = 8080, $vpath = '/') {
     $spath = "$env:ProgramFiles\Common*\microsoft*\DevServer\10.0\WebDev.WebServer40.EXE"
 
     $spath = resolve-path $spath
@@ -176,15 +134,15 @@ function webdev($path,$port=8080,$vpath='/') {
 
 # uuidgen.exe replacement
 function uuidgen {
-   [guid]::NewGuid().ToString('d')
+    [guid]::NewGuid().ToString('d')
 }
 
 # return all IP addresses
 function get-ips() {
-   $ent = [net.dns]::GetHostEntry([net.dns]::GetHostName())
-   return $ent.AddressList | ?{ $_.ScopeId -ne 0 } | %{
-      [string]$_
-   }
+    $ent = [net.dns]::GetHostEntry([net.dns]::GetHostName())
+    return $ent.AddressList | ? { $_.ScopeId -ne 0 } | % {
+        [string]$_
+    }
 }
 
 # save last 100 history items on exit
@@ -196,7 +154,7 @@ Register-EngineEvent -SourceIdentifier powershell.exiting -SupportEvent -Action 
  
 # load previous history, if it exists
 if ((Test-Path $historyPath)) {
-    Import-Clixml $historyPath | ? {$count++;$true} | Add-History
+    Import-Clixml $historyPath | ? { $count++; $true } | Add-History
     Write-Host -Fore Green "`nLoaded $count history item(s).`n"
 }
 
@@ -218,7 +176,7 @@ find-to-set-alias 'c:\windows\system32\WindowsPowerShell\v1.0\' PowerShell_ISE.e
 
 # creating a function since set-alias can't pass piped parameters
 function aia {
-    get-childitem | ?{ $_.extension -eq ".dll" } | %{ ai $_ }
+    get-childitem | ? { $_.extension -eq ".dll" } | % { ai $_ }
 }
 
 function dc {
@@ -232,40 +190,46 @@ function Get-ChildItemColor {
     $fore = $Host.UI.RawUI.ForegroundColor
 
     Invoke-Expression ("Get-ChildItem $args") |
-    %{
-      if ($_.GetType().Name -eq 'DirectoryInfo') {
-        $Host.UI.RawUI.ForegroundColor = 'White'
-        echo $_
-        $Host.UI.RawUI.ForegroundColor = $fore
-      } elseif ($_.Name -match '\.(zip|tar|gz|rar)$') {
-        $Host.UI.RawUI.ForegroundColor = 'Blue'
-        echo $_
-        $Host.UI.RawUI.ForegroundColor = $fore
-      } elseif ($_.Name -match '\.(exe|bat|cmd|py|pl|ps1|psm1|vbs|rb|reg)$') {
-        $Host.UI.RawUI.ForegroundColor = 'Green'
-        echo $_
-        $Host.UI.RawUI.ForegroundColor = $fore
-      } elseif ($_.Name -match '\.(txt|cfg|conf|ini|csv|sql|xml|config)$') {
-        $Host.UI.RawUI.ForegroundColor = 'Cyan'
-        echo $_
-        $Host.UI.RawUI.ForegroundColor = $fore
-      } elseif ($_.Name -match '\.(cs|asax|aspx.cs)$') {
-        $Host.UI.RawUI.ForegroundColor = 'Yellow'
-        echo $_
-        $Host.UI.RawUI.ForegroundColor = $fore
-       } elseif ($_.Name -match '\.(aspx|spark|master)$') {
-        $Host.UI.RawUI.ForegroundColor = 'DarkYellow'
-        echo $_
-        $Host.UI.RawUI.ForegroundColor = $fore
-       } elseif ($_.Name -match '\.(sln|csproj)$') {
-        $Host.UI.RawUI.ForegroundColor = 'Magenta'
-        echo $_
-        $Host.UI.RawUI.ForegroundColor = $fore
-       }
+    % {
+        if ($_.GetType().Name -eq 'DirectoryInfo') {
+            $Host.UI.RawUI.ForegroundColor = 'White'
+            echo $_
+            $Host.UI.RawUI.ForegroundColor = $fore
+        }
+        elseif ($_.Name -match '\.(zip|tar|gz|rar)$') {
+            $Host.UI.RawUI.ForegroundColor = 'Blue'
+            echo $_
+            $Host.UI.RawUI.ForegroundColor = $fore
+        }
+        elseif ($_.Name -match '\.(exe|bat|cmd|py|pl|ps1|psm1|vbs|rb|reg)$') {
+            $Host.UI.RawUI.ForegroundColor = 'Green'
+            echo $_
+            $Host.UI.RawUI.ForegroundColor = $fore
+        }
+        elseif ($_.Name -match '\.(txt|cfg|conf|ini|csv|sql|xml|config)$') {
+            $Host.UI.RawUI.ForegroundColor = 'Cyan'
+            echo $_
+            $Host.UI.RawUI.ForegroundColor = $fore
+        }
+        elseif ($_.Name -match '\.(cs|asax|aspx.cs)$') {
+            $Host.UI.RawUI.ForegroundColor = 'Yellow'
+            echo $_
+            $Host.UI.RawUI.ForegroundColor = $fore
+        }
+        elseif ($_.Name -match '\.(aspx|spark|master)$') {
+            $Host.UI.RawUI.ForegroundColor = 'DarkYellow'
+            echo $_
+            $Host.UI.RawUI.ForegroundColor = $fore
+        }
+        elseif ($_.Name -match '\.(sln|csproj)$') {
+            $Host.UI.RawUI.ForegroundColor = 'Magenta'
+            echo $_
+            $Host.UI.RawUI.ForegroundColor = $fore
+        }
         else {
-        $Host.UI.RawUI.ForegroundColor = $fore
-        echo $_
-      }
+            $Host.UI.RawUI.ForegroundColor = $fore
+            echo $_
+        }
     }
 }
 
@@ -276,7 +240,7 @@ function vsh {
 
     if ($param -eq $NULL) {
         "A solution was not specified, opening the first one found."
-        $solutions = get-childitem | ?{ $_.extension -eq ".sln" }
+        $solutions = get-childitem | ? { $_.extension -eq ".sln" }
     }
     else {
         "Opening {0} ..." -f $param
@@ -294,8 +258,8 @@ function vsh {
 }
 
 function set-ent-ram {
-    $Env:CustomBeforeMicrosoftCommonTargets="R:\Projects\Enterprise\Before.Microsoft.Common.targets"
-    $Env:GIT_DIR="C:\Projects\Enterprise\.git"
+    $Env:CustomBeforeMicrosoftCommonTargets = "R:\Projects\Enterprise\Before.Microsoft.Common.targets"
+    $Env:GIT_DIR = "C:\Projects\Enterprise\.git"
 }
 
 

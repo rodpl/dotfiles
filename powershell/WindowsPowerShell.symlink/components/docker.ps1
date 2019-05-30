@@ -1,7 +1,8 @@
 #docker rm $(docker ps -a -q)
 function Remove-StoppedContainers {
-	foreach ($id in & docker ps -a -q) { 
-		& docker rm $id }
+    foreach ($id in & docker ps -a -q) { 
+		& docker rm $id
+	}
 }
 
 #docker rmi $(docker images -f "dangling=true" -q)
