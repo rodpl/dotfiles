@@ -4,5 +4,6 @@ Push-Location (Join-Path (Split-Path -parent $profile) "components")
 
 # From within the ./components directory...
 . .\docker.ps1
+. .\powershell.ps1
 
 Pop-Location
