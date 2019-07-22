@@ -31,6 +31,7 @@ WINDOWS_FILE_MAP = {
   '.tmux.conf'         => :skip,
   '.tmux'              => :skip,
   '.settings.json'     => 'AppData/Roaming/Code/User/settings.json',
+  '.nvim'              => 'AppData/Local/nvim',
 }
 
 CYGWIN_FILE_MAP = {
@@ -88,6 +89,7 @@ task :install do
                 when 's' then next
                 end
             end
+	    next if skip_all
             overwrite_file(target) if overwrite || overwrite_all
             `mv "$HOME/.#{file}" "$HOME/.#{file}.backup"` if backup || backup_all
         end
