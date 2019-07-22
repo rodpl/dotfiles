@@ -31,3 +31,9 @@
 [submodule "powershell/WindowsPowerShell.symlink/Modules/oh-my-posh"]
 	path = powershell/WindowsPowerShell.symlink/Modules/oh-my-posh
 	url = https://github.com/JanDeDobbeleer/oh-my-posh.git
+[submodule ".\\nvim\\nvim.symlink\\dein"]
+	path = .\\nvim\\nvim.symlink\\dein
+	url = https://github.com/Shougo/dein.vim.git
+[submodule ".\\vim\\vim.symlink\\plugged\\repos\\github.com\\Shougo\\dein.vim"]
+	path = .\\vim\\vim.symlink\\plugged\\repos\\github.com\\Shougo\\dein.vim
+	url = https://github.com/Shougo/dein.vim.git
