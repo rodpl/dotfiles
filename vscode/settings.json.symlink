@@ -12,10 +12,13 @@
         "suppressShowKeyBindingsNotice": true
     },
     "cSpell.userWords": ["Dąbrowski"],
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
     "editor.formatOnType": false,
     "breadcrumbs.enabled": true,
     "editor.renderControlCharacters": true,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "docker.groupImagesBy": "RepositoryName",
+    "editor.suggestSelection": "first",
+    "workbench.tree.indent": 16
 }
