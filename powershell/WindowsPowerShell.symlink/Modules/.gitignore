@@ -1,4 +1,6 @@
 # Folders which are instaled as Modules from Powershell Gallery
+Az
+Az.*
 AzureAutomationAuthoringToolkit
 Docker
 Hosts
