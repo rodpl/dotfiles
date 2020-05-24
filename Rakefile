@@ -59,6 +59,10 @@ MAC_FILE_MAP = {
   '.hgrc_win'          => :skip,
   '.settings.json'     => 'Library/Application Support/Code/User/settings.json',
   '.nvim'              => :skip,
+  '.TwoTrees.ini'      => 'Library/Application Support/PrusaSlicer/vendor/TwoTrees.ini',
+  '.filament'          => 'Library/Application Support/PrusaSlicer/filament',
+  '.print'             => 'Library/Application Support/PrusaSlicer/print',
+  '.printer'           => 'Library/Application Support/PrusaSlicer/printer',
 }
 
 desc "Link the dotfiles into position"
