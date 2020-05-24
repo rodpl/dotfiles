@@ -8,7 +8,7 @@
 <key name="Software">
 	<key name="ConEmu">
 		<!-- Main configuration (/config argument is not specified) -->
-		<key name=".Vanilla" modified="2019-05-21 11:12:09" build="161206">
+		<key name=".Vanilla" modified="2020-05-24 15:50:53" build="161206">
 			<value name="IconID" type="long" data="1"/>
 			<value name="BackGround Image show" type="hex" data="00"/>
 			<value name="BackGround Image" type="string" data="c:\back.bmp"/>
@@ -465,9 +465,9 @@
 			<value name="KeyMacro32.Text" type="string" data=""/>
 			<value name="CTS.VkPrompt" type="hex" data="00"/>
 			<value name="WndDragKey" type="dword" data="00121101"/>
-				<key name="Tasks" modified="2019-05-08 17:07:42" build="161206">
-				<value name="Count" type="long" data="10"/>
-						<key name="Task1" modified="2019-05-08 17:07:42" build="161206">
+				<key name="Tasks" modified="2019-11-24 18:20:40" build="161206">
+				<value name="Count" type="long" data="11"/>
+						<key name="Task1" modified="2019-11-24 18:20:40" build="161206">
 					<value name="Name" type="string" data="{Far}"/>
 					<value name="GuiArgs" type="string" data=""/>
 					<value name="Cmd1" type="string" data="C:\Bat\Far\Far.exe"/>
@@ -476,7 +476,7 @@
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="Flags" type="dword" data="00000000"/>
 				</key>
-						<key name="Task2" modified="2019-05-08 17:07:42" build="161206">
+						<key name="Task2" modified="2019-11-24 18:20:40" build="161206">
 					<value name="Name" type="string" data="{Babun}"/>
 					<value name="GuiArgs" type="string" data="/icon &quot;C:\Bat\.babun\cygwin\bin\mintty.exe&quot; /dir &quot;%userprofile%&quot;"/>
 					<value name="Cmd1" type="string" data="C:\Bat\.babun\cygwin\bin\mintty.exe -"/>
@@ -485,7 +485,7 @@
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="Flags" type="dword" data="00000000"/>
 				</key>
-						<key name="Task3" modified="2019-05-08 17:07:42" build="161206">
+						<key name="Task3" modified="2019-11-24 18:20:40" build="161206">
 					<value name="Name" type="string" data="{Powershell}"/>
 					<value name="GuiArgs" type="string" data="/icon &quot;C:\Bat\vspowershell.ico&quot; /dir &quot;C:\Projects&quot; /single"/>
 					<value name="Cmd1" type="string" data="%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"/>
@@ -494,7 +494,7 @@
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="Flags" type="dword" data="00000003"/>
 				</key>
-						<key name="Task4" modified="2019-05-08 17:07:42" build="161206">
+						<key name="Task4" modified="2019-11-24 18:20:40" build="161206">
 					<value name="Name" type="string" data="{VS Console 2012 x86}"/>
 					<value name="GuiArgs" type="string" data="/icon &quot;C:\Bat\vscommand.ico&quot; /dir &quot;C:\Projects&quot; /single"/>
 					<value name="Cmd1" type="string" data="%comspec% /k RenameTab &quot;VS Console&quot; &amp;&amp; &quot;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\vcvarsall.bat&quot; x86"/>
@@ -504,7 +504,7 @@
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="Flags" type="dword" data="00000000"/>
 				</key>
-						<key name="Task5" modified="2019-05-08 17:07:42" build="161206">
+						<key name="Task5" modified="2019-11-24 18:20:40" build="161206">
 					<value name="Name" type="string" data="{GIT Bash}"/>
 					<value name="GuiArgs" type="string" data="/icon &quot;C:\Program Files (x86)\Git\etc\git.ico&quot;"/>
 					<value name="Cmd1" type="string" data="C:\Windows\System32\cmd.exe /k RenameTab &quot;Git Bash&quot; &amp;&amp; &quot;&quot;&quot;C:\Program Files (x86)\Git\bin\sh.exe&quot; --login -i&quot;&quot;"/>
@@ -514,17 +514,17 @@
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="Flags" type="dword" data="00000000"/>
 				</key>
-						<key name="Task6" modified="2019-05-08 17:07:42" build="161206">
+						<key name="Task6" modified="2019-11-24 18:20:40" build="161206">
 					<value name="Name" type="string" data="{Opus Vagtplan}"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data="/dir &quot;c:\Projects\KMD\Vagt\OpusVagtplan\Source\OpusVagtplan\&quot; /single"/>
-					<value name="Cmd1" type="string" data="&gt;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"/>
-					<value name="Cmd2" type="string" data="%comspec% /k RenameTab &quot;VS Console&quot; &amp;&amp; &quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\Tools\VsDevCmd.bat&quot;"/>
+					<value name="Cmd1" type="string" data="&gt; pwsh "/>
+					<value name="Cmd2" type="string" data="%comspec% /k RenameTab &quot;VS Console&quot; &amp;&amp; &quot;C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat&quot;"/>
 					<value name="Active" type="long" data="1"/>
 					<value name="Count" type="long" data="2"/>
 					<value name="Flags" type="dword" data="00000000"/>
 				</key>
-						<key name="Task7" modified="2019-05-08 17:07:42" build="161206">
+						<key name="Task7" modified="2019-11-24 18:20:40" build="161206">
 					<value name="Name" type="string" data="{Gluu}"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data="/dir &quot;c:\Projects\Rod\Gluu\&quot; /single"/>
@@ -534,27 +534,37 @@
 					<value name="Count" type="long" data="2"/>
 					<value name="Flags" type="dword" data="00000000"/>
 				</key>
-						<key name="Task8" modified="2019-05-08 17:07:42" build="161206">
+						<key name="Task8" modified="2019-11-24 18:20:40" build="161206">
+					<value name="Name" type="string" data="{Manna}"/>
+					<value name="Hotkey" type="dword" data="00000000"/>
+					<value name="GuiArgs" type="string" data="/dir &quot;c:\Projects\Rod\Manna\Manna-Api\&quot; /single"/>
+					<value name="Cmd1" type="string" data="&gt;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"/>
+					<value name="Cmd2" type="string" data="%comspec% /k RenameTab &quot;VS Console&quot; &amp;&amp; &quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\Tools\VsDevCmd.bat&quot;"/>
+					<value name="Active" type="long" data="1"/>
+					<value name="Count" type="long" data="2"/>
+					<value name="Flags" type="dword" data="00000004"/>
+				</key>
+						<key name="Task9" modified="2019-11-24 18:20:40" build="161206">
 					<value name="Name" type="string" data="{Orchard-Workshop}"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data="/dir &quot;C:\Projects\Rod\orchard\orchard-workshop&quot;"/>
 					<value name="Cmd1" type="string" data="&gt;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"/>
-					<value name="Cmd2" type="string" data="%comspec% /k RenameTab &quot;VS Console&quot; &amp;&amp; &quot;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\vcvarsall.bat&quot; x86"/>
 					<value name="Active" type="long" data="1"/>
 					<value name="Count" type="long" data="2"/>
 					<value name="Flags" type="dword" data="00000000"/>
+					<value name="Cmd2" type="string" data="%comspec% /k RenameTab &quot;VS Console&quot; &amp;&amp; &quot;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\vcvarsall.bat&quot; x86"/>
 				</key>
-						<key name="Task9" modified="2019-05-08 17:07:42" build="161206">
+				<key name="Task10" modified="2019-11-24 18:20:40" build="161206">
 					<value name="Name" type="string" data="{Medicover Mol}"/>
+					<value name="Flags" type="dword" data="00000000"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data="/dir &quot;C:\Projects\Medicover\Mol&quot;"/>
 					<value name="Cmd1" type="string" data="&gt;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"/>
 					<value name="Active" type="long" data="1"/>
 					<value name="Count" type="long" data="2"/>
-					<value name="Flags" type="dword" data="00000000"/>
 					<value name="Cmd2" type="string" data="%comspec% /k RenameTab &quot;VS Console&quot; &amp;&amp; &quot;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat&quot; x86"/>
 				</key>
-				<key name="Task10" modified="2019-05-08 17:07:42" build="161206">
+				<key name="Task11" modified="2019-11-24 18:20:40" build="161206">
 					<value name="Name" type="string" data="{Show ANSI colors}"/>
 					<value name="Flags" type="dword" data="00000000"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
@@ -564,7 +574,7 @@
 					<value name="Count" type="long" data="1"/>
 				</key>
 			</key>
-				<key name="Apps" modified="2019-05-08 17:07:42" build="161206">
+				<key name="Apps" modified="2019-11-24 18:20:40" build="161206">
 				<value name="Count" type="long" data="0"/>
 				<key name="App1" modified="2019-01-14 14:17:18" build="161206">
 					<value name="AppNames" type="string" data="powershell.exe"/>
@@ -632,9 +642,9 @@
 			<value name="PasteFileKey" type="dword" data="00101146"/>
 			<value name="PastePathKey" type="dword" data="00101144"/>
 			<value name="PasteCygwinKey" type="dword" data="00005d2d"/>
-				<key name="Colors" modified="2019-05-08 17:07:42" build="161206">
+				<key name="Colors" modified="2019-11-24 18:20:40" build="161206">
 				<value name="Count" type="long" data="1"/>
-				<key name="Palette1" modified="2019-05-08 17:07:42" build="161206">
+				<key name="Palette1" modified="2019-11-24 18:20:40" build="161206">
 					<value name="Name" type="string" data="#Attached:SourceTree"/>
 					<value name="ExtendColors" type="hex" data="00"/>
 					<value name="ExtendColorIdx" type="hex" data="0e"/>
@@ -760,7 +770,7 @@
 			<value name="Key.BufCursor" type="dword" data="00005d08"/>
 			<value name="FontOriginalKey" type="dword" data="00001104"/>
 			<value name="Multi.CloseConfirmFlags" type="hex" data="04"/>
-			<key name="HotKeys" modified="2019-05-08 17:07:42" build="161206">
+			<key name="HotKeys" modified="2019-10-25 10:21:03" build="161206">
 				<value name="KeyMacroVersion" type="hex" data="02"/>
 				<value name="Multi.Modifier" type="dword" data="0000005b"/>
 				<value name="Multi.ArrowsModifier" type="dword" data="0000005b"/>
@@ -975,9 +985,13 @@
 			<value name="StatusBar.Hide.RMode" type="hex" data="01"/>
 			<value name="CmdLineHistory" type="multi">
 				<line data="{Powershell}"/>
-				<line data="{Gluu}"/>
+				<line data="%comspec% /k RenameTab &quot;VS Console&quot; &amp;&amp; &quot;C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat&quot; -cur_console:b"/>
 				<line data="{Opus Vagtplan}"/>
+				<line data="{Gluu}"/>
+				<line data="pwsh"/>
 				<line data="{Orchard-Workshop}"/>
+				<line data="{GIT Bash}"/>
+				<line data="{Manna}"/>
 				<line data="{VS Console 2012 x86}"/>
 				<line data="{Far}"/>
 			</value>
