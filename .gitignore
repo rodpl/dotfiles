@@ -15,3 +15,4 @@ vimperator/vimperator.symlink/info/
 bin/bin.symlink/OmniSharp
 powershell/PowerShell.symlink/TabExpansion.xml
 powershell/PowerShell.symlink/Modules/
+emacs/spacemacs.d.symlink/.spacemacs.env
