@@ -20,5 +20,8 @@
     "editor.minimap.enabled": false,
     "docker.groupImagesBy": "RepositoryName",
     "editor.suggestSelection": "first",
-    "workbench.tree.indent": 16
+    "workbench.tree.indent": 16,
+    "team.showWelcomeMessage": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
 }

@@ -36,8 +36,8 @@ if (($interfaces.count -gt -0) -or ($ForceRestart -eq $true)) {
     Stop-Service com.docker.service
     Stop-Service docker
     Stop-Process -Name "dockerd" -Force -ErrorAction SilentlyContinue
-    Stop-Process -Name "Docker for Windows" -Force -ErrorAction Stop
+    Stop-Process -Name "Docker Desktop" -Force -ErrorAction Stop
     Start-Service docker
     Start-Service com.docker.service
-    Start-Process -FilePath "c:\program files\docker\docker\Docker for Windows.exe"
+    Start-Process -FilePath "c:\program files\docker\docker\Docker Desktop.exe"
 }
