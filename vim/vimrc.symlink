@@ -1,4 +1,4 @@
-﻿" Folding cheet sheetIndicates a fast terminal connection.
+" Folding cheet sheetIndicates a fast terminal connection.
 "
 " zR    open all folds
 " zM    close all folds
@@ -80,8 +80,9 @@ else
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
+endif " {{{3
+  let g:deoplete#enable_at_startup = 1
+"}}}
 
 " Operators, motions, formatting, editing etc ... {{{2
 Plug 'tpope/vim-commentary'
@@ -124,11 +125,7 @@ Plug 'rodpl/vim-snippets'
 " }}}
 
 " Syntax checking {{{2
-Plug 'scrooloose/syntastic' "{{{3
-  let g:syntastic_python_checkers = ['pylama', 'python']
-  let g:syntastic_html_tidy_ignore_errors=[
-        \"trimming empty <i>",
-      \]
+Plug 'w0rp/ale' "{{{3
 " }}}
 
 " Version control systems {{{2
@@ -139,6 +136,11 @@ Plug 'mhinz/vim-signify' "{{{3
   nmap [h <plug>(signify-prev-hunk)
 " }}}
 Plug 'gregsexton/gitv'
+
+" .NET {{{2
+Plug 'OmniSharp/omnisharp-vim' "{{{3
+  let g:OmniSharp_server_stdio = 1
+" }}}
 
 " Python {{{2
 Plug 'jmcantrell/vim-virtualenv'
@@ -388,7 +390,7 @@ function! SaveSession()
   wall
     let ses = strftime("%y-%m-%d_%H-%M")
     try
-        exe "mksession! "."~\\.vimsessions\\".ses
+        exe "mksession! "."~\\.vim\\sessions\\".ses
         echomsg "mks success! session file : ".ses
     catch /^Vim\%((\a\+)\)\=:/
         echoe "mks failure! error: " .v:exception
@@ -492,6 +494,16 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.bat :set tw=0
   autocmd BufNewFile,BufRead *.cmd :set tw=0
 endif
+
+" Late plugin settings {{{1
+" Deoplete {{{2
+  let g:deoplete#auto_complete_start_length = 0
+  call deoplete#custom#option({
+  \  'cs': ['omnisharp']
+  \})
+  call deoplete#enable_logging('DEBUG', 'deoplete.log')
+" }}}
+
 
 "  Modelines {{{1
 " vim: nowrap fdm=marker ts=2 sts=2 sw=2 fdl=0 et

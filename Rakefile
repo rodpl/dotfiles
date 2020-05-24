@@ -32,7 +32,7 @@ WINDOWS_FILE_MAP = {
   '.tmux.conf'         => :skip,
   '.tmux'              => :skip,
   '.settings.json'     => 'AppData/Roaming/Code/User/settings.json',
-  '.nvim'              => 'AppData/Local/nvim',
+  '.nvim'              => :skip, # 'AppData/Local/nvim',
 }
 
 CYGWIN_FILE_MAP = {
@@ -61,6 +61,11 @@ MAC_FILE_MAP = {
   '.gitconfig_win'     => :skip,
   '.hgrc_win'          => :skip,
   '.settings.json'     => 'Library/Application Support/Code/User/settings.json',
+  '.nvim'              => :skip,
+  '.TwoTrees.ini'      => 'Library/Application Support/PrusaSlicer/vendor/TwoTrees.ini',
+  '.filament'          => 'Library/Application Support/PrusaSlicer/filament',
+  '.print'             => 'Library/Application Support/PrusaSlicer/print',
+  '.printer'           => 'Library/Application Support/PrusaSlicer/printer',
 }
 
 desc "Link the dotfiles into position"
