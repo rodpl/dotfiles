@@ -31,6 +31,7 @@
 [core]
 	quotepath = off
 	excludesfile = 
+	autocrlf = true
 [i18n]
 	filesEncoding = utf-8
 [push]
@@ -55,7 +56,12 @@
 	trustExitCode = true
 [http]
 	sslVerify = true
+[credential "helperselector"]
+	selected = wincred
 [credential]
 	helper = manager
-[credential "helperselector"]
-	selected = store
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -2,7 +2,7 @@
 	autocrlf = true
 
 [mergetool "p4merge"]
-    path = C:/PROGRA~1/Perforce/p4merge.exe
+    path = p4merge.exe
 
 [mergetool "sm"]
     path = C:/Program Files/PlasticSCM4/semanticmerge/semanticmergetool.exe
