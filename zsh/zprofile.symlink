@@ -6,6 +6,7 @@ export ZSH_CUSTOM=$HOME/.zsh
 
 export LANG='pl_PL.UTF-8'
 export LC_ALL='pl_PL.UTF-8'
+export LC_MESSAGES='en_GB.UTF-8'
 
 # use vim as the visual editor
 export EDITOR='vim'
