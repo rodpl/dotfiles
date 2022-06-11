@@ -2,9 +2,9 @@
 	name = Daniel Dabrowski
 	email = dabrowski.daniel@42n.pl
 [include]
-    path = ~/.gitconfig.github
-    path = ~/.gitconfig_win
-    path = ~/.gitconfig_mac
+	path = ~/.gitconfig.github
+	path = ~/.gitconfig_win
+	path = ~/.gitconfig_mac
 [alias]
 	glog = log --graph --full-history --all --color --date=short --pretty=format:'%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%ad [%an] %s'
 	glog5 = glog -5
@@ -30,8 +30,6 @@
 	renames = copies
 [core]
 	quotepath = off
-	excludesfile = 
-	autocrlf = true
 [i18n]
 	filesEncoding = utf-8
 [push]
@@ -65,3 +63,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+;  vim: noet ci pi ts=4 sts=0 sw=4
