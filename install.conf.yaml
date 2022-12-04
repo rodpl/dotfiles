@@ -1,0 +1,16 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.zshrc:
+    ~/.gitconfig: git/gitconfig.symlink
+
+- create:
+    - ~/Code
+
+- shell:
+# - [git submodule update --init --recursive, Installing submodules]
+    - echo "Hello"

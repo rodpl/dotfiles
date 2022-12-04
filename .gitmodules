@@ -34,3 +34,7 @@
 [submodule "vim/vim.symlink/plugged/repos/github.com/Shougo/dein.vim"]
 	path = vim/vim.symlink/plugged/repos/github.com/Shougo/dein.vim
 	url = https://github.com/Shougo/dein.vim.git
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty

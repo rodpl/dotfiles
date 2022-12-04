@@ -1,6 +1,6 @@
 [user]
 	name = Daniel Dabrowski
-	email = dabrowski.daniel@42n.pl
+	email = 106607+rodpl@users.noreply.github.com
 [include]
 	path = ~/.gitconfig.github
 	path = ~/.gitconfig_win
