@@ -1,3 +1,12 @@
+# ---------------------------------------------------------------------------------------------
+#  This is my install script for dotbot to setup and update my computeR
+#
+# install.conf.yaml for dotbot https://github.com/anishathalye/dotbot
+# ---------------------------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------------------------
+# --  Initialize
+# ---------------------------------------------------------------------------------------------
 - defaults:
     link:
       relink: true
@@ -5,12 +14,27 @@
 - clean: ['~']
 
 - link:
+    ~/.zshenv:
     ~/.zshrc:
     ~/.gitconfig: git/gitconfig.symlink
+    ~/.config/bat:
+      create: true
+      path: bat
+    ~/.config/nvim:
+      create: true
+      path: nvim/nvim.symlink
 
 - create:
     - ~/Code
 
 - shell:
 # - [git submodule update --init --recursive, Installing submodules]
-    - echo "Hello"
+    - command: ./setup_homebrew.zsh
+      stdout: true
+      stderr: true
+    - command: ./setup_zsh.zsh
+      stdout: true
+      stderr: true
+    - command: ./setup_node.zsh
+      stdout: true
+      stderr: true
