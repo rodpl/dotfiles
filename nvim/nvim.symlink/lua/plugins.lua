@@ -1,5 +1,9 @@
 local M = {}
 
+_G.dump = function(...)
+  print(vim.inspect(...))
+end
+
 function M.setup()
   -- Indicate first time installation
   local packer_bootstrap = false
@@ -8,7 +12,7 @@ function M.setup()
   local conf = {
     profile = {
       enable = true,
-      threshold = 0, -- the amount in ms that a plugins load time must be over for it to be included in the profile
+      threshold = 1, -- the amount in ms that a plugins load time must be over for it to be included in the profile
     },
 
     display = {
@@ -99,7 +103,6 @@ function M.setup()
     -- Better Comment
     use {
       "numToStr/Comment.nvim",
-      opt = true,
       keys = { "gc", "gcc", "gbc" },
       config = function()
         require("Comment").setup {}
@@ -113,6 +116,7 @@ function M.setup()
       config = function()
         require("hop").setup {}
       end,
+      disable = true,
     }
 
     -- Easy motion
@@ -132,6 +136,33 @@ function M.setup()
       end,
       ft = "markdown",
       cmd = { "MarkdownPreview" },
+    }
+
+    -- Status line
+    use {
+      "nvim-lualine/lualine.nvim",
+      event = "VimEnter",
+      config = function()
+        require("config.lualine").setup()
+      end,
+      requires = { "nvim-web-devicons" },
+    }
+
+    -- Treesitter
+    use {
+      "nvim-treesitter/nvim-treesitter",
+      run = ":TSUpdate",
+      config = function()
+        require("config.treesitter").setup()
+      end,
+    }
+    use {
+      "SmiteshP/nvim-gps",
+      requires = "nvim-treesitter/nvim-treesitter",
+      module = "nvim-gps",
+      config = function()
+        require("nvim-gps").setup()
+      end,
     }
 
     -- Bootstrap Neovim
